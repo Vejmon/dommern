@@ -1,3 +1,9 @@
 spring:
   application:
     name: dommern
+  datasource:
+    password: password
+    username: user
+  flyway:
+    user: user
+    password: password
