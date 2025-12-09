@@ -7,11 +7,11 @@ spring:
       ddl-auto: update
   datasource:
     driver-class-name: org.testcontainers.jdbc.ContainerDatabaseDriver
-    url: jdbc:tc:postgresql:18.1:///dommern
+    url: jdbc:tc:postgresql:17.4:///dommern
     username: user
     password: password
   flyway:
     driver-class-name: org.testcontainers.jdbc.ContainerDatabaseDriver
-    url: jdbc:tc:postgresql:18.1:///dommern
+    url: jdbc:tc:postgresql:17.4:///dommern
     user: flyway
     password: password
