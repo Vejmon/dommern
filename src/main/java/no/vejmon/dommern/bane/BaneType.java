@@ -4,6 +4,6 @@ package no.vejmon.dommern.bane;
 public enum BaneType {
     BESTEFAR_BANEN,
     FRODE_SPESIAL,
-    BANE3,
+    UTEN_NAVN,
     KORTESTE_VEIEN
 }
