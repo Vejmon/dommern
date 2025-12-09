@@ -1,7 +1,7 @@
 services:
   dommern-db:
     container_name: dommern-db
-    image: 'postgres:latest'
+    image: 'postgres:18.1'
     environment:
       - 'POSTGRES_DB=race'
       - 'POSTGRES_PASSWORD=user'

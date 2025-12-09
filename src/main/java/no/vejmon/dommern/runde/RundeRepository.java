@@ -1,3 +1,4 @@
+/*
 package no.vejmon.dommern.runde;
 
 
@@ -9,3 +10,4 @@ import java.util.UUID;
 @Repository
 public interface RundeRepository extends JpaRepository<UUID, Runde> {
 }
+*/
