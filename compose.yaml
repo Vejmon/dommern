@@ -8,11 +8,4 @@ services:
       - 'POSTGRES_USER=password'
     ports:
       - '5432'
-    networks:
-      - api
-
-networks:
-  api:
-    name: api
-    driver: bridge
-
+    network_mode: host
