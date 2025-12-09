@@ -1,4 +1,4 @@
-package no.vejmon.dommern.runde;
+package no.vejmon.dommern.bane;
 
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.UUID;
 
 @Repository
-public interface FørerRepository extends JpaRepository<Kusk, UUID> {
+public interface KuskRepository extends JpaRepository<Kusk, UUID> {
 
 
 }

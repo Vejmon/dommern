@@ -1,4 +1,4 @@
-package no.vejmon.dommern.runde;
+package no.vejmon.dommern.bane;
 
 import jakarta.persistence.*;
 import lombok.Getter;
