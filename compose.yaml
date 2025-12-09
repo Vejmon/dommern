@@ -1,5 +1,6 @@
 services:
-  postgres:
+  dommern-db:
+    container_name: dommern-db
     image: 'postgres:latest'
     environment:
       - 'POSTGRES_DB=race'
@@ -7,3 +8,11 @@ services:
       - 'POSTGRES_USER=password'
     ports:
       - '5432'
+    networks:
+      - api
+
+networks:
+  api:
+    name: api
+    driver: bridge
+

@@ -1,15 +1,13 @@
-package no.vejmon.dommern
+package no.vejmon.dommern;
 
-import org.junit.jupiter.api.Test
-import org.springframework.boot.test.context.SpringBootTest
-import org.springframework.context.annotation.Import
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
 
-@Import(TestcontainersConfiguration)
+
 @SpringBootTest
-class DommernApplicationTests {
-
+public class DommernApplicationTests {
     @Test
-    void contextLoads() {
+    public void contextLoads() {
     }
 
 }
