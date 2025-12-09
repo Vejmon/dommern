@@ -1,7 +1,7 @@
 CREATE TABLE kusk
 (
     id   UUID NOT NULL,
-    navn VARCHAR(255),
+    name VARCHAR(255),
     CONSTRAINT pk_kusk PRIMARY KEY (id)
 );
 

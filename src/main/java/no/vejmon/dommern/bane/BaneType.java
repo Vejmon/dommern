@@ -5,5 +5,6 @@ public enum BaneType {
     BESTEFAR_BANEN,
     FRODE_SPESIAL,
     UTEN_NAVN,
-    KORTESTE_VEIEN
+    KORTESTE_VEIEN,
+    UTENFOR_BANEN
 }

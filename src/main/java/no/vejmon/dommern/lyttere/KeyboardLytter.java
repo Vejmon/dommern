@@ -5,13 +5,16 @@ import com.github.kwhat.jnativehook.NativeHookException;
 import com.github.kwhat.jnativehook.keyboard.NativeKeyEvent;
 import com.github.kwhat.jnativehook.keyboard.NativeKeyListener;
 import jakarta.annotation.PostConstruct;
+import lombok.extern.slf4j.Slf4j;
 import no.vejmon.dommern.bane.BaneType;
+import no.vejmon.dommern.bane.Runde;
 import org.springframework.stereotype.Component;
 
 import java.time.Instant;
 
 @Component
-public class KeyboardLytter implements Lytter, NativeKeyListener{
+@Slf4j
+public class KeyboardLytter implements Lytter, NativeKeyListener {
 
     @PostConstruct
     public void init() throws NativeHookException {
@@ -27,9 +30,9 @@ public class KeyboardLytter implements Lytter, NativeKeyListener{
 
     @Override
     public void nativeKeyPressed(NativeKeyEvent e) {
-        if (e.getKeyCode() == NativeKeyEvent.VC_H) {
-            System.out.println("H pressed!");
-        }
+        BaneType baneType = Runde.hentBaneType(e.getKeyCode());
+        Runde runde = new Runde(baneType);
+        log.debug("Ny runde: {}", runde);
     }
 }
 

@@ -9,5 +9,7 @@ import java.util.UUID;
 @Repository
 public interface KuskRepository extends JpaRepository<Kusk, UUID> {
 
+    Runde findTopByOrderByRunder_endDesc();
 
+    Kusk findByName(String name);
 }
