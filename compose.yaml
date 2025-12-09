@@ -3,9 +3,15 @@ services:
     container_name: dommern-db
     image: 'postgres:18.1'
     environment:
-      - 'POSTGRES_DB=race'
-      - 'POSTGRES_PASSWORD=user'
-      - 'POSTGRES_USER=password'
-    ports:
-      - '5432'
+      - 'POSTGRES_DB=dommern'
+      - 'POSTGRES_PASSWORD=password'
+      - 'POSTGRES_USER=user'
     network_mode: host
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    healthcheck:
+      test: [ "CMD-SHELL", "sh -c 'pg_isready --port 5432 --username=user --dbname=dommern'" ]
+      interval: 2s
+      retries: 5
+      timeout: 1s
+

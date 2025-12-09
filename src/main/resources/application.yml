@@ -1,9 +1,22 @@
 spring:
   application:
     name: dommern
+  jpa:
+    database: POSTGRESQL
+    open-in-view: false
+    show-sql: false
   datasource:
+    username: dommern_api_user
     password: password
-    username: user
+    url: jdbc:postgresql://localhost:5432/dommern
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      connection-timeout: 2000
+      idle-timeout: 15000
+      maximum-pool-size: 10
+      minimum-idle: 5
   flyway:
-    user: user
+    enabled: true
+    user: dommern_api_flyway
     password: password
+    url: jdbc:postgresql://localhost:5432/dommern
