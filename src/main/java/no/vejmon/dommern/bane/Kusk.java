@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-@ToString
+@ToString(exclude = "runder")
 @NoArgsConstructor
 @Getter
 @Setter
@@ -24,7 +24,7 @@ public class Kusk {
 
     private BaneType currentBane;
 
-    @OneToMany(mappedBy = "kusk", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "kusk", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private List<Runde> runder = new ArrayList<>();
 
     public Kusk(String name, BaneType currentBane) {

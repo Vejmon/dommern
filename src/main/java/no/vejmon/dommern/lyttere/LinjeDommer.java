@@ -11,7 +11,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class LinjeDommer {
@@ -39,22 +38,14 @@ public class LinjeDommer {
                 k.getCurrentBane() == nyRundeEvent.getRunde().getBaneType()
         ).findFirst().orElseThrow();
 
-        Optional<Runde> lastRunde = kuskService.findLastRunde(kusk);
-        if (lastRunde.isPresent()) {
-            lastRunde.get().setStop(nyRundeEvent.getRunde().getStart());
-            kusk.getRunder().add(nyRundeEvent.getRunde());
+        List<Runde> laps = kuskService.findLastRunde(kusk);
+        if (!laps.isEmpty()) {
+            laps.getLast().setStop(nyRundeEvent.getRunde().getStart());
         }
-        else kusk.getRunder().add(nyRundeEvent.getRunde());
-
-        if (kusk.getRunder().isEmpty()) {
-            kusk.getRunder().add(nyRundeEvent.getRunde());
-        } else {
-            Runde previousRunde = kusk.getRunder().getLast();
-            previousRunde.setStop(nyRundeEvent.getRunde().getStart());
-            kusk.getRunder().add(nyRundeEvent.getRunde());
-        }
-
-        kuskService.saveKusk(kusk);
+        Runde lap = new Runde(nyRundeEvent.getRunde().getBaneType());
+        lap.setKusk(kusk);
+        laps.add(lap);
+        kuskService.saveLaps(laps);
 
     }
 
