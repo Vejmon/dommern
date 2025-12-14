@@ -1,8 +1,6 @@
 spring:
   application:
     name: dommern
-  main:
-    keep-alive: true
   jpa:
     database: POSTGRESQL
     open-in-view: false
