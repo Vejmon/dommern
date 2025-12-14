@@ -8,6 +8,7 @@ import jakarta.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
 import no.vejmon.dommern.bane.BaneType;
 import no.vejmon.dommern.bane.Runde;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Component;
 
 import java.time.Instant;
@@ -15,6 +16,12 @@ import java.time.Instant;
 @Component
 @Slf4j
 public class KeyboardLytter implements Lytter, NativeKeyListener {
+
+    private final ApplicationEventPublisher publisher;
+
+    public KeyboardLytter(ApplicationEventPublisher publisher) {
+        this.publisher = publisher;
+    }
 
     @PostConstruct
     public void init() throws NativeHookException {
@@ -27,11 +34,11 @@ public class KeyboardLytter implements Lytter, NativeKeyListener {
         return Instant.now();
     }
 
-
     @Override
     public void nativeKeyPressed(NativeKeyEvent e) {
         BaneType baneType = Runde.hentBaneType(e.getKeyCode());
         Runde runde = new Runde(baneType);
+        publisher.publishEvent(new NyRundeEvent(this, runde));
         log.debug("Ny runde: {}", runde);
     }
 }

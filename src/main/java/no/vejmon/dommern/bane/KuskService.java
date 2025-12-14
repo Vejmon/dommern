@@ -12,10 +12,19 @@ public class KuskService {
     }
 
     public Runde findLastRunde(Kusk kusk) {
-        return kuskRepository.findTopByOrderByRunder_endDesc();
+        return kuskRepository.findTopByOrderByRunder_stopDesc();
+    }
+
+    public Kusk initKusk(String name, BaneType baneType){
+        Kusk kusk =  kuskRepository.findByName(name).orElseGet(() -> new Kusk(name, baneType));
+        return kuskRepository.save(kusk);
+    }
+
+    public Kusk saveKusk(Kusk kusk){
+        return kuskRepository.save(kusk);
     }
 
     public Kusk findByName(String name){
-        return kuskRepository.findByName(name);
+        return kuskRepository.findByName(name).orElseThrow();
     }
 }

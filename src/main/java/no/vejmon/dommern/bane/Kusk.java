@@ -22,11 +22,14 @@ public class Kusk {
 
     private String name =  "ukjent";
 
+    private BaneType currentBane;
+
     @ElementCollection
     private List<Runde> runder = new ArrayList<>();
 
-    public Kusk(String name) {
+    public Kusk(String name, BaneType currentBane) {
         this.name = name;
+        this.currentBane = currentBane;
     }
 
 
