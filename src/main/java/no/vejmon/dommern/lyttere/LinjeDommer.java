@@ -10,19 +10,12 @@ import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 @Service
 public class LinjeDommer {
 
-    public static Kusk kusk1 = new Kusk("Korteste veien", BaneType.KORTESTE_VEIEN);
-    public static Kusk kusk2 = new Kusk("Frode spesial", BaneType.FRODE_SPESIAL);
-    public static Kusk kusk3 = new Kusk("Uten navn", BaneType.UTEN_NAVN);
-    public static Kusk kusk4 = new Kusk("Bestefar banen", BaneType.BESTEFAR_BANEN);
-    public static List<Kusk> kusker = new ArrayList<>(Arrays.asList(
-            kusk1, kusk2, kusk3, kusk4
-    ));
+    private final List<Kusk> kusker = new ArrayList<>();
 
     private final KuskService kuskService;
 
@@ -32,10 +25,10 @@ public class LinjeDommer {
 
     @PostConstruct
     public void init() {
-        for (Kusk kusk : kusker) {
-            kusk = kuskService.initKusk(kusk.getName(), kusk.getCurrentBane());
-        }
-
+        kusker.add(kuskService.initKusk("Korteste veien", BaneType.KORTESTE_VEIEN));
+        kusker.add(kuskService.initKusk("Frode spesial", BaneType.FRODE_SPESIAL));
+        kusker.add(kuskService.initKusk("Uten navn", BaneType.UTEN_NAVN));
+        kusker.add(kuskService.initKusk("Bestefar banen", BaneType.BESTEFAR_BANEN));
     }
 
     @EventListener

@@ -24,7 +24,7 @@ public class Kusk {
 
     private BaneType currentBane;
 
-    @ElementCollection
+    @ElementCollection(fetch = FetchType.EAGER)
     private List<Runde> runder = new ArrayList<>();
 
     public Kusk(String name, BaneType currentBane) {

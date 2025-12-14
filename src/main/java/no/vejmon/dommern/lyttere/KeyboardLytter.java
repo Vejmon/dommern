@@ -37,6 +37,7 @@ public class KeyboardLytter implements Lytter, NativeKeyListener {
     @Override
     public void nativeKeyPressed(NativeKeyEvent e) {
         BaneType baneType = Runde.hentBaneType(e.getKeyCode());
+        if (baneType == BaneType.UTENFOR_BANEN) return;
         Runde runde = new Runde(baneType);
         publisher.publishEvent(new NyRundeEvent(this, runde));
         log.debug("Ny runde: {}", runde);
