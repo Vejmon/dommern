@@ -24,7 +24,7 @@ public class Kusk {
 
     private BaneType currentBane;
 
-    @ElementCollection(fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "kusk", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Runde> runder = new ArrayList<>();
 
     public Kusk(String name, BaneType currentBane) {

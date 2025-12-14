@@ -6,13 +6,15 @@ CREATE TABLE kusk
     CONSTRAINT pk_kusk PRIMARY KEY (id)
 );
 
-CREATE TABLE kusk_runder
+CREATE TABLE runde
 (
-    kusk_id   UUID NOT NULL,
-    start     TIMESTAMP WITHOUT TIME ZONE,
-    stop     TIMESTAMP WITHOUT TIME ZONE,
-    bane_type SMALLINT
+    id         UUID NOT NULL,
+    kusk_id UUID NOT NULL,
+    start      TIMESTAMP WITHOUT TIME ZONE,
+    stop       TIMESTAMP WITHOUT TIME ZONE,
+    bane_type  SMALLINT,
+    CONSTRAINT pk_runde PRIMARY KEY (id)
 );
 
-ALTER TABLE kusk_runder
-    ADD CONSTRAINT fk_kusk_runder_on_kusk FOREIGN KEY (kusk_id) REFERENCES kusk (id);
+ALTER TABLE runde
+    ADD CONSTRAINT FK_RUNDE_ON_KUSKID FOREIGN KEY (kusk_id) REFERENCES kusk (id);

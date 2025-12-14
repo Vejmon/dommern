@@ -2,6 +2,8 @@ package no.vejmon.dommern.bane;
 
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class KuskService {
 
@@ -11,7 +13,7 @@ public class KuskService {
         this.kuskRepository = kuskRepository;
     }
 
-    public Runde findLastRunde(Kusk kusk) {
+    public Optional<Runde> findLastRunde(Kusk kusk) {
         return kuskRepository.findTopByOrderByRunder_stopDesc();
     }
 

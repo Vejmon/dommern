@@ -1,8 +1,7 @@
 package no.vejmon.dommern.bane;
 
 import com.github.kwhat.jnativehook.keyboard.NativeKeyEvent;
-import jakarta.persistence.Embeddable;
-import jakarta.persistence.Transient;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -10,6 +9,7 @@ import lombok.ToString;
 
 import java.time.Instant;
 import java.util.Map;
+import java.util.UUID;
 
 import static no.vejmon.dommern.bane.BaneType.*;
 
@@ -17,8 +17,14 @@ import static no.vejmon.dommern.bane.BaneType.*;
 @NoArgsConstructor
 @Getter
 @Setter
-@Embeddable
+@Entity
 public class Runde {
+    @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID id;
+
+    @ManyToOne(optional = false)
+    private Kusk kusk;
     private Instant start = Instant.now();
     private Instant stop;
     private BaneType baneType;
