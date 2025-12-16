@@ -9,10 +9,11 @@ import lombok.extern.slf4j.Slf4j;
 import no.vejmon.dommern.bane.BaneType;
 import no.vejmon.dommern.bane.Runde;
 import org.springframework.context.ApplicationEventPublisher;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
-import java.time.Instant;
 
+@Profile("local")
 @Component
 @Slf4j
 public class KeyboardLytter implements Lytter, NativeKeyListener {
@@ -27,11 +28,6 @@ public class KeyboardLytter implements Lytter, NativeKeyListener {
     public void init() throws NativeHookException {
         GlobalScreen.registerNativeHook();
         GlobalScreen.addNativeKeyListener(this);
-    }
-
-    @Override
-    public Instant lytt(BaneType baneType) {
-        return Instant.now();
     }
 
     @Override
