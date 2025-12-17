@@ -1,6 +1,5 @@
 package no.vejmon.dommern.bane;
 
-import com.github.kwhat.jnativehook.keyboard.NativeKeyEvent;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,7 +10,7 @@ import java.time.Instant;
 import java.util.Map;
 import java.util.UUID;
 
-import static no.vejmon.dommern.bane.BaneType.*;
+import static no.vejmon.dommern.bane.BaneType.UTENFOR_BANEN;
 
 @ToString
 @NoArgsConstructor
@@ -41,14 +40,8 @@ public class Runde {
         return Instant.ofEpochMilli(stop.toEpochMilli() - start.toEpochMilli());
     }
 
-    private static Map<BaneType, Integer> baneMap = Map.of(
-            BESTEFAR_BANEN, NativeKeyEvent.VC_H,
-            FRODE_SPESIAL, NativeKeyEvent.VC_J,
-            UTEN_NAVN, NativeKeyEvent.VC_K,
-            KORTESTE_VEIEN, NativeKeyEvent.VC_L
-    );
 
-    public static BaneType hentBaneType(int keyCode) {
+    public static BaneType hentBaneType(int keyCode, Map<BaneType, Integer> baneMap) {
         return baneMap.entrySet()
                 .stream()
                 .filter(entry -> entry.getValue() == keyCode)

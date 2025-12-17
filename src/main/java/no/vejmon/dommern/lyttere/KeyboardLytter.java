@@ -12,6 +12,8 @@ import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
+import java.util.Map;
+
 
 @Profile("local")
 @Component
@@ -19,9 +21,12 @@ import org.springframework.stereotype.Component;
 public class KeyboardLytter implements Lytter, NativeKeyListener {
 
     private final ApplicationEventPublisher publisher;
+    private final Map<BaneType, Integer> baneMap;
 
-    public KeyboardLytter(ApplicationEventPublisher publisher) {
+    public KeyboardLytter(ApplicationEventPublisher publisher,
+                          Map<BaneType, Integer> baneMap) {
         this.publisher = publisher;
+        this.baneMap = baneMap;
     }
 
     @PostConstruct
@@ -32,7 +37,7 @@ public class KeyboardLytter implements Lytter, NativeKeyListener {
 
     @Override
     public void nativeKeyPressed(NativeKeyEvent e) {
-        BaneType baneType = Runde.hentBaneType(e.getKeyCode());
+        BaneType baneType = Runde.hentBaneType(e.getKeyCode(), baneMap);
         if (baneType == BaneType.UTENFOR_BANEN) return;
         Runde runde = new Runde(baneType);
         publisher.publishEvent(new NyRundeEvent(this, runde));
