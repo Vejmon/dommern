@@ -5,3 +5,8 @@
 > We went car racing
 > - Michael Masi
 
+
+
+## GPIO pinout
+
+![gpio.png](src/main/resources/static/img/gpio.png)
