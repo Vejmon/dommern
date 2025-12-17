@@ -24,7 +24,7 @@ public class GPIOLytter implements Lytter {
 
     private final ApplicationEventPublisher publisher;
     private final Map<BaneType, Integer> baneMap;
-    private static Context pi4j;
+    private Context pi4j;
 
     public GPIOLytter(ApplicationEventPublisher publisher,
                       Map<BaneType, Integer> baneMap) {
