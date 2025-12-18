@@ -1,4 +1,15 @@
 services:
+  dommern:
+    container_name: dommern
+    build: .
+    restart: unless-stopped
+    network_mode: host
+    depends_on:
+      dommern-db:
+        condition: service_healthy
+    environment:
+      SPRING_PROFILES_ACTIVE: local
+
   dommern-db:
     container_name: dommern-db
     image: 'postgres:17.4'
