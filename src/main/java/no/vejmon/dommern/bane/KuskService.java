@@ -20,8 +20,8 @@ public class KuskService {
         return rundeRepository.findTopByKuskOrderByStartDesc(kusk);
     }
 
-    public Kusk initKusk(String name, BaneType baneType){
-        Kusk kusk =  kuskRepository.findByName(name).orElseGet(() -> new Kusk(name, baneType));
+    public Kusk initKusk(BaneType baneType){
+        Kusk kusk =  kuskRepository.findByName(baneType.name()).orElseGet(() -> new Kusk(baneType.name(), baneType));
         return kuskRepository.save(kusk);
     }
 

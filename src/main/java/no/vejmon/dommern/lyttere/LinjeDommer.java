@@ -25,10 +25,10 @@ public class LinjeDommer {
 
     @PostConstruct
     public void init() {
-        kusker.add(kuskService.initKusk("Korteste veien", BaneType.KORTESTE_VEIEN));
-        kusker.add(kuskService.initKusk("Frode spesial", BaneType.FRODE_SPESIAL));
-        kusker.add(kuskService.initKusk("Uten navn", BaneType.UTEN_NAVN));
-        kusker.add(kuskService.initKusk("Bestefar banen", BaneType.BESTEFAR_BANEN));
+        kusker.add(kuskService.initKusk(BaneType.KORTESTE_VEIEN));
+        kusker.add(kuskService.initKusk(BaneType.FRODE_SPESIAL));
+        kusker.add(kuskService.initKusk(BaneType.UTEN_NAVN));
+        kusker.add(kuskService.initKusk(BaneType.BESTEFAR_BANEN));
     }
 
     @EventListener
