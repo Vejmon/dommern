@@ -33,6 +33,16 @@ public class LinjeDommer {
 
     @EventListener
     @Async
+    public void newKusk(NyKuskEvent newKusk){
+        Kusk oldKusk = kusker.stream().filter(k ->
+                k.getCurrentBane().equals(newKusk.getKusk().getCurrentBane())).findFirst().orElseThrow();
+        kusker.remove(oldKusk);
+        kusker.add(newKusk.getKusk());
+    }
+
+
+    @EventListener
+    @Async
     public void handleNewRound(NyRundeEvent nyRundeEvent){
         Kusk kusk = kusker.stream().filter(k ->
                 k.getCurrentBane() == nyRundeEvent.getRunde().getBaneType()

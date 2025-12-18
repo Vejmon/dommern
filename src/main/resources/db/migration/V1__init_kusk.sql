@@ -18,3 +18,6 @@ CREATE TABLE runde
 
 ALTER TABLE runde
     ADD CONSTRAINT FK_RUNDE_ON_KUSKID FOREIGN KEY (kusk_id) REFERENCES kusk (id);
+
+ALTER TABLE kusk
+    ADD CONSTRAINT uc_kusk_name UNIQUE (name);
