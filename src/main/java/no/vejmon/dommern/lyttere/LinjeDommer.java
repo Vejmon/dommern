@@ -1,6 +1,8 @@
 package no.vejmon.dommern.lyttere;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.annotation.PostConstruct;
+import lombok.Getter;
 import no.vejmon.dommern.bane.BaneType;
 import no.vejmon.dommern.bane.Kusk;
 import no.vejmon.dommern.bane.KuskService;
@@ -12,11 +14,13 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
+@Getter
 @Service
 public class LinjeDommer {
 
     private final List<Kusk> kusker = new ArrayList<>();
 
+    @JsonIgnore
     private final KuskService kuskService;
 
     public LinjeDommer(KuskService kuskService) {

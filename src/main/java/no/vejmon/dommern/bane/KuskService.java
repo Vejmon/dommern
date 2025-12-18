@@ -39,7 +39,9 @@ public class KuskService {
     }
 
     public Kusk saveKusk(Kusk kusk){
-        return kuskRepository.save(kusk);
+        Kusk savedKusk = kuskRepository.save(kusk);
+        replaceKusk(savedKusk);
+        return savedKusk;
     }
 
     public Kusk findByName(String name){

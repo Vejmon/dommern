@@ -1,10 +1,7 @@
 package no.vejmon.dommern.bane;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,12 +20,13 @@ public class Kusk {
     @Column(unique = true)
     private String name =  "ukjent";
 
+    @NonNull
     private BaneType currentBane;
 
     @OneToMany(mappedBy = "kusk", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private List<Runde> runder = new ArrayList<>();
 
-    public Kusk(String name, BaneType currentBane) {
+    public Kusk(String name, @NonNull BaneType currentBane) {
         this.name = name;
         this.currentBane = currentBane;
     }
