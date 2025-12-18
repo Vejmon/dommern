@@ -31,5 +31,14 @@ public class Kusk {
         this.currentBane = currentBane;
     }
 
+    @OneToOne
+    private Runde personalBest;
 
+    public void setPersonalBest(Runde personalBest) {
+        if (personalBest == null || personalBest.getTid() == null) return;
+        if (this.personalBest == null )
+            this.personalBest = personalBest;
+        else if (this.personalBest.getTid().toEpochMilli() > personalBest.getTid().toEpochMilli())
+            this.personalBest = personalBest;
+    }
 }

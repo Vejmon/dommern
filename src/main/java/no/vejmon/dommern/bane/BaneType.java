@@ -6,5 +6,6 @@ public enum BaneType {
     FRODE_SPESIAL,
     UTEN_NAVN,
     KORTESTE_VEIEN,
-    UTENFOR_BANEN
+    UTENFOR_BANEN,
+    I_DEPO
 }

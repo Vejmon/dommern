@@ -41,7 +41,10 @@ public class LinjeDommer {
         Kusk oldKusk = kusker.stream().filter(k ->
                 k.getCurrentBane().equals(newKusk.getKusk().getCurrentBane())).findFirst().orElseThrow();
         kusker.remove(oldKusk);
+        oldKusk.setCurrentBane(BaneType.I_DEPO);
+        kuskService.saveKusk(oldKusk);
         kusker.add(newKusk.getKusk());
+
     }
 
 
@@ -55,12 +58,13 @@ public class LinjeDommer {
         List<Runde> laps = kuskService.findLastRunde(kusk);
         if (!laps.isEmpty()) {
             laps.getLast().setStop(nyRundeEvent.getRunde().getStart());
+            kusk.setPersonalBest(laps.getLast());
+            kuskService.saveKusk(kusk);
         }
         Runde lap = new Runde(nyRundeEvent.getRunde().getBaneType());
         lap.setKusk(kusk);
         laps.add(lap);
         kuskService.saveLaps(laps);
-
     }
 
 }
