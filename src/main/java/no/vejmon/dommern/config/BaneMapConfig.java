@@ -1,11 +1,8 @@
-package no.vejmon.dommern.bane;
+package no.vejmon.dommern.config;
 
 import com.github.kwhat.jnativehook.keyboard.NativeKeyEvent;
-import com.pi4j.Pi4J;
-import com.pi4j.context.Context;
-import com.pi4j.plugin.gpiod.provider.gpio.digital.GpioDDigitalInputProvider;
-import com.pi4j.plugin.mock.provider.gpio.digital.MockDigitalInputProvider;
 import lombok.extern.slf4j.Slf4j;
+import no.vejmon.dommern.bane.BaneType;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
@@ -42,19 +39,4 @@ public class BaneMapConfig {
         );
     }
 
-    @Bean
-    @Profile("production")
-    public Context pi4j(){
-        return Pi4J.newContextBuilder()
-                .add(GpioDDigitalInputProvider.newInstance())
-                .build();
-    }
-
-    @Bean
-    @Profile({"test", "local"})
-    public Context mockedPi4j(){
-        return Pi4J.newContextBuilder()
-                .add(MockDigitalInputProvider.newInstance())
-                .build();
-    }
 }
