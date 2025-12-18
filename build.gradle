@@ -37,6 +37,8 @@ dependencies {
     implementation 'com.pi4j:pi4j-core:3.0.3'
     implementation 'com.pi4j:pi4j-plugin-raspberrypi:3.0.3'
     implementation 'com.pi4j:pi4j-plugin-gpiod:3.0.3'
+    implementation 'com.pi4j:pi4j-plugin-mock:3.0.3'
+
     implementation 'com.github.kwhat:jnativehook:2.2.2'
 
     compileOnly 'org.projectlombok:lombok'
@@ -48,7 +50,6 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-testcontainers'
     testImplementation 'org.testcontainers:junit-jupiter'
     testImplementation 'org.testcontainers:postgresql'
-    testImplementation 'com.pi4j:pi4j-plugin-mock:3.0.3'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
