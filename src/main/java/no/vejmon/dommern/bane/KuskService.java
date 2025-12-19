@@ -1,6 +1,6 @@
 package no.vejmon.dommern.bane;
 
-import no.vejmon.dommern.lyttere.NyKuskEvent;
+import no.vejmon.dommern.judge.NyKuskEvent;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
 

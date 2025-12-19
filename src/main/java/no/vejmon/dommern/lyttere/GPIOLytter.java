@@ -10,6 +10,7 @@ import jakarta.annotation.PreDestroy;
 import lombok.extern.slf4j.Slf4j;
 import no.vejmon.dommern.bane.BaneType;
 import no.vejmon.dommern.bane.Runde;
+import no.vejmon.dommern.judge.NyRundeEvent;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Component;
 

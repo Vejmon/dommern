@@ -1,4 +1,4 @@
-package no.vejmon.dommern.lyttere;
+package no.vejmon.dommern.judge;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.annotation.PostConstruct;

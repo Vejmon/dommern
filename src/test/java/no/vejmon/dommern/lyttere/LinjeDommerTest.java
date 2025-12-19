@@ -3,6 +3,8 @@ package no.vejmon.dommern.lyttere;
 import no.vejmon.dommern.bane.BaneType;
 import no.vejmon.dommern.bane.Kusk;
 import no.vejmon.dommern.bane.KuskService;
+import no.vejmon.dommern.judge.LinjeDommer;
+import no.vejmon.dommern.judge.NyKuskEvent;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
