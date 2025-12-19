@@ -41,14 +41,14 @@ public class LinjeDommerTest {
     public void kuskCantBeInvalidBane() {
         Kusk kusk = new Kusk("Test", BaneType.UTENFOR_BANEN);
         NyKuskEvent event = new NyKuskEvent(this, kusk);
-        Assertions.assertThrows(NoSuchElementException.class, () -> linjeDommer.newKusk(event));
+        Assertions.assertThrows(NoSuchElementException.class, () -> linjeDommer.handleNewKusk(event));
     }
 
     @Test
     public void ableToReplaceKusk(){
         String kuskName = UUID.randomUUID().toString();
         Kusk kusk = new Kusk(kuskName, BaneType.KORTESTE_VEIEN);
-        linjeDommer.newKusk(new NyKuskEvent(this, kusk));
+        linjeDommer.handleNewKusk(new NyKuskEvent(this, kusk));
         linjeDommer.getKusker().stream().filter(k -> k.getName().equals(kuskName)).findFirst().orElseThrow();
     }
     
