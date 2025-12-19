@@ -23,6 +23,9 @@ public class Kusk {
     @NonNull
     private BaneType currentBane;
 
+    @ManyToOne(fetch = FetchType.EAGER)
+    private Laup laup;
+
     @OneToMany(mappedBy = "kusk", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private List<Runde> runder = new ArrayList<>();
 
