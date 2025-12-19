@@ -2,6 +2,7 @@ package no.vejmon.dommern.bane;
 
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -19,6 +20,7 @@ public class Laup {
     private UUID id;
 
     @OneToMany(mappedBy = "laup", fetch = FetchType.EAGER)
+    @Size(max = 4)
     private List<Kusk> participants;
 
     @OneToOne

@@ -1,12 +1,9 @@
 package no.vejmon.dommern.judge;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.annotation.PostConstruct;
+import lombok.AccessLevel;
 import lombok.Getter;
-import no.vejmon.dommern.bane.BaneType;
-import no.vejmon.dommern.bane.Kusk;
-import no.vejmon.dommern.bane.KuskService;
-import no.vejmon.dommern.bane.Runde;
+import no.vejmon.dommern.bane.*;
 import org.springframework.context.event.EventListener;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
@@ -20,8 +17,10 @@ public class LinjeDommer {
 
     private final List<Kusk> kusker = new ArrayList<>();
 
-    @JsonIgnore
+    @Getter(AccessLevel.NONE)
     private final KuskService kuskService;
+
+    private Laup laup = null;
 
     public LinjeDommer(KuskService kuskService) {
         this.kuskService = kuskService;
@@ -37,13 +36,22 @@ public class LinjeDommer {
 
     @EventListener
     @Async
-    public void newKusk(NyKuskEvent newKusk){
+    public void handleNewLaup(NyLaupEvent newLaupEvent){
+        this.laup = newLaupEvent.getLaup();
+        for (Kusk kusk : kusker) {
+            kusk.setLaup(laup);
+        }
+    }
+
+    @EventListener
+    @Async
+    public void handleNewKusk(NyKuskEvent newKuskEvent){
         Kusk oldKusk = kusker.stream().filter(k ->
-                k.getCurrentBane().equals(newKusk.getKusk().getCurrentBane())).findFirst().orElseThrow();
+                k.getCurrentBane().equals(newKuskEvent.getKusk().getCurrentBane())).findFirst().orElseThrow();
         kusker.remove(oldKusk);
         oldKusk.setCurrentBane(BaneType.I_DEPO);
         kuskService.saveKusk(oldKusk);
-        kusker.add(newKusk.getKusk());
+        kusker.add(newKuskEvent.getKusk());
 
     }
 
