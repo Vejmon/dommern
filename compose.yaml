@@ -1,6 +1,7 @@
 services:
   dommern:
     container_name: dommern
+    platform: linux/arm64
     build: .
     restart: unless-stopped
     network_mode: host
@@ -8,9 +9,9 @@ services:
       dommern-db:
         condition: service_healthy
     environment:
-      SPRING_PROFILES_ACTIVE: local
+      SPRING_PROFILES_ACTIVE: production
 
-  dommern-db:
+  db: &basedb
     container_name: dommern-db
     image: 'postgres:17.4'
     environment:
@@ -26,3 +27,9 @@ services:
       retries: 5
       timeout: 1s
 
+  dommern-db:
+    <<: *basedb
+    platform: linux/arm64
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
