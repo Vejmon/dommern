@@ -50,11 +50,24 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.boot:spring-boot-testcontainers'
     testImplementation 'org.junit.jupiter:junit-jupiter'
+    testImplementation 'org.mockito:mockito-inline:5.2.0'
     testImplementation 'org.testcontainers:junit-jupiter'
     testImplementation 'org.testcontainers:postgresql'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
-
-tasks.named('test') {
-    useJUnitPlatform()
+configurations {
+    mockitoAgent
 }
+dependencies {
+    testImplementation(libs.mockito)
+    mockitoAgent(libs.mockito) {
+        transitive = false
+    }
+}
+tasks {
+    test {
+        jvmArgs += "-javaagent:${configurations.mockitoAgent.asPath}"
+        useJUnitPlatform()
+    }
+}
+
