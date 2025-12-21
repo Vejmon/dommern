@@ -7,6 +7,7 @@ import com.github.kwhat.jnativehook.keyboard.NativeKeyListener;
 import jakarta.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
 import no.vejmon.dommern.bane.BaneType;
+import no.vejmon.dommern.bane.MinimalRunde;
 import no.vejmon.dommern.bane.Runde;
 import no.vejmon.dommern.judge.NyRundeEvent;
 import org.springframework.context.ApplicationEventPublisher;
@@ -40,7 +41,7 @@ public class KeyboardLytter implements Lytter, NativeKeyListener {
     public void nativeKeyPressed(NativeKeyEvent e) {
         BaneType baneType = Runde.hentBaneType(e.getKeyCode(), baneMap);
         if (baneType == BaneType.UTENFOR_BANEN) return;
-        Runde runde = new Runde(baneType);
+        MinimalRunde runde = new MinimalRunde(baneType);
         publisher.publishEvent(new NyRundeEvent(this, runde));
         log.debug("Ny runde: {}", runde);
     }

@@ -9,7 +9,7 @@ import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
 import lombok.extern.slf4j.Slf4j;
 import no.vejmon.dommern.bane.BaneType;
-import no.vejmon.dommern.bane.Runde;
+import no.vejmon.dommern.bane.MinimalRunde;
 import no.vejmon.dommern.judge.NyRundeEvent;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Component;
@@ -47,7 +47,7 @@ public class GPIOLytter implements Lytter {
 
             button.addListener(event -> {
                 if (event.state() == DigitalState.LOW){
-                    Runde runde = new Runde(baneMapEntry.getKey());
+                    MinimalRunde runde = new MinimalRunde(baneMapEntry.getKey());
                     publisher.publishEvent(new NyRundeEvent(this, runde));
                 }
             });

@@ -23,7 +23,13 @@ public class Kusk {
     @NonNull
     private BaneType currentBane;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
+    private Bil currentBil;
+
+    @OneToMany(mappedBy = "kusk", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Bil> bil;
+
+    @ManyToOne(fetch = FetchType.LAZY)
     private Laup laup;
 
     @OneToMany(mappedBy = "kusk", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)

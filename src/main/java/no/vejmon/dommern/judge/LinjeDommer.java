@@ -36,11 +36,21 @@ public class LinjeDommer {
 
     @EventListener
     @Async
-    public void handleNewLaup(NyLaupEvent newLaupEvent){
-        this.laup = newLaupEvent.getLaup();
-        for (Kusk kusk : kusker) {
-            kusk.setLaup(laup);
+    public void handleNewRound(NyRundeEvent nyRundeEvent){
+        MinimalRunde runde = nyRundeEvent.getRunde();
+        Kusk kusk = kusker.stream().filter(k ->
+                k.getCurrentBane() == nyRundeEvent.getRunde().getBaneType()
+        ).findFirst().orElseThrow();
+
+        List<Runde> laps = kuskService.findLastRunde(kusk);
+        if (!laps.isEmpty()) {
+            laps.getLast().setStop(runde.getStart());
+            kusk.setPersonalBest(laps.getLast());
+            kuskService.saveKusk(kusk);
         }
+        Runde lap = new Runde(kusk, kusk.getCurrentBil(), runde.getBaneType());
+        laps.add(lap);
+        kuskService.saveLaps(laps);
     }
 
     @EventListener
@@ -55,24 +65,13 @@ public class LinjeDommer {
 
     }
 
-
     @EventListener
     @Async
-    public void handleNewRound(NyRundeEvent nyRundeEvent){
-        Kusk kusk = kusker.stream().filter(k ->
-                k.getCurrentBane() == nyRundeEvent.getRunde().getBaneType()
-        ).findFirst().orElseThrow();
-
-        List<Runde> laps = kuskService.findLastRunde(kusk);
-        if (!laps.isEmpty()) {
-            laps.getLast().setStop(nyRundeEvent.getRunde().getStart());
-            kusk.setPersonalBest(laps.getLast());
-            kuskService.saveKusk(kusk);
+    public void handleNewLaup(NyLaupEvent newLaupEvent){
+        this.laup = newLaupEvent.getLaup();
+        for (Kusk kusk : kusker) {
+            kusk.setLaup(laup);
         }
-        Runde lap = new Runde(nyRundeEvent.getRunde().getBaneType());
-        lap.setKusk(kusk);
-        laps.add(lap);
-        kuskService.saveLaps(laps);
     }
 
 }
