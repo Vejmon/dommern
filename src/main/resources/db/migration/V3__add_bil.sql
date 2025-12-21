@@ -4,7 +4,7 @@ CREATE TABLE bil
     kusk_id        UUID NOT NULL,
     make           VARCHAR(255),
     model          VARCHAR(255),
-    g_pr_cm_torque VARCHAR(255),
+    g_pr_cm_torque FLOAT,
     k_rpm          FLOAT,
     based_make     VARCHAR(255),
     based_model    VARCHAR(255),
