@@ -15,6 +15,7 @@ java {
 }
 
 configurations {
+    mockitoAgent
     compileOnly {
         extendsFrom annotationProcessor
     }
@@ -25,20 +26,9 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter'
-    implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-    implementation 'org.springframework.boot:spring-boot-starter-data-rest'
-    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.14' // <.<
-    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
-    implementation 'org.flywaydb:flyway-core'
-    implementation 'org.flywaydb:flyway-database-postgresql'
-    implementation 'jakarta.validation:jakarta.validation-api:3.1.1'
-
-    implementation 'com.pi4j:pi4j-core:3.0.3'
-    implementation 'com.pi4j:pi4j-plugin-raspberrypi:3.0.3'
-    implementation 'com.pi4j:pi4j-plugin-gpiod:3.0.3'
-    implementation 'com.pi4j:pi4j-plugin-mock:3.0.3'
+    implementation libs.bundles.spring.starters
+    implementation libs.bundles.db
+    implementation libs.bundles.pi4j
 
     implementation 'com.github.kwhat:jnativehook:2.2.2'
 
@@ -47,23 +37,14 @@ dependencies {
     runtimeOnly 'org.postgresql:postgresql'
     annotationProcessor 'org.projectlombok:lombok'
 
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    testImplementation 'org.springframework.boot:spring-boot-testcontainers'
-    testImplementation 'org.junit.jupiter:junit-jupiter'
-    testImplementation 'org.mockito:mockito-inline:5.2.0'
-    testImplementation 'org.testcontainers:junit-jupiter'
-    testImplementation 'org.testcontainers:postgresql'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
-}
-configurations {
-    mockitoAgent
-}
-dependencies {
-    testImplementation(libs.mockito)
-    mockitoAgent(libs.mockito) {
+    testImplementation libs.bundles.test
+    mockitoAgent(libs.mockito.core) {
         transitive = false
     }
+
 }
+
 tasks {
     test {
         jvmArgs += "-javaagent:${configurations.mockitoAgent.asPath}"
