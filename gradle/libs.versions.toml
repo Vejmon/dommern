@@ -30,11 +30,13 @@ testcontainers-postgresql = { module = 'org.testcontainers:postgresql' }
 
 
 [bundles]
-pi4j = ['pi4j-core', 'pi4j-plugin-gpiod', 'pi4j-plugin-mock', 'pi4j-plugin-raspberrypi']
+pi4j = ['pi4j-core', 'pi4j-plugin-gpiod', 'pi4j-plugin-mock', 'pi4j-plugin-raspberrypi'
+]
 spring-starters = ['spring-boot-starter', 'spring-boot-starter-data-jpa', 'spring-boot-starter-data-rest',
     'spring-boot-starter-thymeleaf', 'spring-boot-starter-web', 'springdoc-openapi-webmvc-ui'
 ]
-db = ['flyway-core', 'flyway-database-postgresql', 'jakarta-validation-api']
+db = ['flyway-core', 'flyway-database-postgresql', 'jakarta-validation-api'
+]
 test = ['mockito-inline', 'mockito-core', 'junit-jupiter', 'testcontainers-junit-jupiter', 'testcontainers-postgresql',
     'spring-boot-starter-test', 'spring-boot-testcontainers'
 ]
