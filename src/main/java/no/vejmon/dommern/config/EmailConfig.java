@@ -38,7 +38,7 @@ public class EmailConfig {
         message.setTo(mail);
         message.setSubject("🔥 Dommern har ett problem! 🔥");
         message.setText(buildEmailBody(ex));
-        log.warn("Sending email notification for exception to {}", mail);
+        log.info("Sending email notification for exception to {}", mail);
         sender.send(message);
         counter++;
     }
