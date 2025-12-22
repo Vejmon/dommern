@@ -12,16 +12,17 @@ import org.springframework.stereotype.Component;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 
-@Profile("production")
 @Slf4j
 @Aspect
 @Component
+@Profile("production")
 public class EmailConfig {
 
     @Value("${spring.mail.username}")
     private String mail;
-    private final MailSender sender;
     private Integer counter = 0;
+
+    private final MailSender sender;
 
     public EmailConfig(MailSender sender) {
         this.sender = sender;
