@@ -21,8 +21,8 @@ spring:
     password: password
     url: jdbc:postgresql://localhost:5432/dommern
   mail:
-    password: ${EMAIL-PW:#{null}}
-    username: ${EMAIL-USER:#{null}}
+    password: ${EMAIL-PW:}
+    username: ${EMAIL-USER:}
     host: smtp.gmail.com
     port: 587
     properties:
