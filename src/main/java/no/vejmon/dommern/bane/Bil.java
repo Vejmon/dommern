@@ -7,6 +7,7 @@ import lombok.*;
 import java.util.List;
 import java.util.UUID;
 
+@ToString(exclude = {"runder", "kusk"})
 @Getter
 @Setter
 @RequiredArgsConstructor
@@ -25,6 +26,8 @@ public class Bil {
     @ManyToOne(optional = false, fetch = FetchType.EAGER)
     private Kusk kusk;
 
+    @NonNull
+    private String name;
     @NonNull
     private String make;
     @NonNull

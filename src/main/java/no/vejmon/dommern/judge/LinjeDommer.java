@@ -48,7 +48,7 @@ public class LinjeDommer {
             kusk.setPersonalBest(laps.getLast());
             kuskService.saveKusk(kusk);
         }
-        Runde lap = new Runde(kusk, kusk.getCurrentBil(), runde.getBaneType());
+        Runde lap = new Runde(kusk, runde.getBaneType());
         laps.add(lap);
         kuskService.saveLaps(laps);
     }

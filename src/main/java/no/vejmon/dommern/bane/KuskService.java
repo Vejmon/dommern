@@ -26,12 +26,9 @@ public class KuskService {
     }
 
     public Kusk initKusk(BaneType baneType){
-        Kusk kusk =  kuskRepository.findByName(baneType.name()).orElseGet(() -> {
-            Kusk initKusk = new Kusk(baneType.name(), baneType);
-            Bil ukjentBil = new Bil(initKusk,"ukjent merke", "ukjent model");
-            initKusk.setCurrentBil(ukjentBil);
-            return initKusk;
-        });
+        Kusk kusk =  kuskRepository.findByName(baneType.name()).orElseGet(() ->
+            new Kusk(baneType.name(), baneType)
+        );
         return kuskRepository.save(kusk);
     }
 

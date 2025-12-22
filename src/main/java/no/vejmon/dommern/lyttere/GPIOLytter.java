@@ -41,7 +41,7 @@ public class GPIOLytter implements Lytter {
                     .name(baneMapEntry.getKey().name())
                     .address(baneMapEntry.getValue())
                     .pull(PullResistance.PULL_DOWN)
-                    .debounce(3000L);
+                    .debounce(4_000_000L);
             DigitalInput button = pi4j.create(buttonConfig);
             log.info("Created button: {}", button.getName());
 

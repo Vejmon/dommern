@@ -1,6 +1,7 @@
 package no.vejmon.dommern.bane;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.ManyToOne;
 import lombok.*;
 
@@ -13,18 +14,17 @@ import lombok.*;
 public class Runde extends MinimalRunde {
 
     @NonNull
-    @ManyToOne(optional = false)
+    @ManyToOne(optional = false, fetch = FetchType.EAGER)
     private Kusk kusk;
     @NonNull
-    @ManyToOne(optional = false)
+    @ManyToOne(fetch = FetchType.EAGER)
     private Bil bil;
-    @ManyToOne(optional = true)
+    @ManyToOne
     private Laup laup;
 
 
-    public Runde(@NonNull Kusk kusk, @NonNull Bil currentBil, @NonNull BaneType baneType) {
+    public Runde(@NonNull Kusk kusk, @NonNull BaneType baneType) {
         super(baneType);
         this.kusk = kusk;
-        this.bil = currentBil;
     }
 }

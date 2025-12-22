@@ -1,6 +1,9 @@
 package no.vejmon.dommern.judge;
 
-import no.vejmon.dommern.bane.*;
+import no.vejmon.dommern.bane.BaneType;
+import no.vejmon.dommern.bane.Kusk;
+import no.vejmon.dommern.bane.KuskService;
+import no.vejmon.dommern.bane.MinimalRunde;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
@@ -31,9 +34,7 @@ public class LinjeDommerTest {
         when(kuskService.initKusk(any(BaneType.class)))
                 .thenAnswer(invocation -> {
                     BaneType baneType = invocation.getArgument(0, BaneType.class);
-                    Kusk kusk = new Kusk(baneType.name(), baneType);
-                    kusk.setCurrentBil(new Bil(kusk, "test", "test"));
-                    return kusk;
+                    return new Kusk(baneType.name(), baneType);
                 });
 
         linjeDommer = new LinjeDommer(kuskService);

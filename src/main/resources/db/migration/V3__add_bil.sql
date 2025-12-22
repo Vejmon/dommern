@@ -8,6 +8,7 @@ CREATE TABLE bil
     k_rpm          FLOAT,
     based_make     VARCHAR(255),
     based_model    VARCHAR(255),
+    name           VARCHAR(255),
     CONSTRAINT pk_bil PRIMARY KEY (id)
 );
 
@@ -22,9 +23,6 @@ ALTER TABLE kusk
 
 ALTER TABLE kusk
     ADD CONSTRAINT FK_KUSK_ON_CURRENTBIL FOREIGN KEY (current_bil_id) REFERENCES bil (id);
-
-ALTER TABLE runde
-    ALTER COLUMN bil_id SET NOT NULL;
 
 ALTER TABLE bil
     ADD CONSTRAINT FK_BIL_ON_KUSK FOREIGN KEY (kusk_id) REFERENCES kusk (id);

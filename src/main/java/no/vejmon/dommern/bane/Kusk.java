@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-@ToString(exclude = "runder")
+@ToString(exclude = {"runder", "bil", "laup"})
 @NoArgsConstructor
 @Getter
 @Setter
@@ -26,13 +26,13 @@ public class Kusk {
     @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
     private Bil currentBil;
 
-    @OneToMany(mappedBy = "kusk", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "kusk", fetch = FetchType.LAZY, orphanRemoval = true)
     private List<Bil> bil;
 
     @ManyToOne(fetch = FetchType.LAZY)
     private Laup laup;
 
-    @OneToMany(mappedBy = "kusk", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "kusk", orphanRemoval = true, fetch = FetchType.LAZY)
     private List<Runde> runder = new ArrayList<>();
 
     public Kusk(String name, @NonNull BaneType currentBane) {
