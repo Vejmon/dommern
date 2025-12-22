@@ -10,6 +10,7 @@ services:
         condition: service_healthy
     environment:
       SPRING_PROFILES_ACTIVE: production
+      DOMMERN_MAIL: true
 
   db: &basedb
     container_name: dommern-db
