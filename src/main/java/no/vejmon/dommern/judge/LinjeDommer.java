@@ -4,6 +4,9 @@ import jakarta.annotation.PostConstruct;
 import lombok.AccessLevel;
 import lombok.Getter;
 import no.vejmon.dommern.bane.*;
+import no.vejmon.dommern.lyttere.Lyd;
+import no.vejmon.dommern.lyttere.LydType;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.context.event.EventListener;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
@@ -19,11 +22,15 @@ public class LinjeDommer {
 
     @Getter(AccessLevel.NONE)
     private final KuskService kuskService;
+    @Getter(AccessLevel.NONE)
+    private final ApplicationEventPublisher publisher;
 
     private Laup laup = null;
 
-    public LinjeDommer(KuskService kuskService) {
+    public LinjeDommer(KuskService kuskService,
+                       ApplicationEventPublisher publisher) {
         this.kuskService = kuskService;
+        this.publisher = publisher;
     }
 
     @PostConstruct
@@ -43,14 +50,16 @@ public class LinjeDommer {
         ).findFirst().orElseThrow();
 
         List<Runde> laps = kuskService.findLastRunde(kusk);
+        boolean newPB = false;
         if (!laps.isEmpty()) {
             laps.getLast().setStop(runde.getStart());
-            boolean newRecord = kusk.setPersonalBest(laps.getLast());
+            newPB = kusk.setPersonalBest(laps.getLast());
             kuskService.saveKusk(kusk);
         }
         Runde lap = new Runde(kusk, runde.getBaneType());
         laps.add(lap);
         kuskService.saveLaps(laps);
+        publishLydEvent(newPB, runde.getBaneType());
 
     }
 
@@ -73,6 +82,12 @@ public class LinjeDommer {
         for (Kusk kusk : kusker) {
             kusk.setLaup(laup);
         }
+    }
+
+    private void publishLydEvent(boolean newPB, BaneType baneType){
+        LydType lydType = newPB ? LydType.RECORD : LydType.DEFAULT;
+        NyLydEvent lydEvent = new NyLydEvent(this, new Lyd(baneType, lydType));
+        publisher.publishEvent(lydEvent);
     }
 
 }
