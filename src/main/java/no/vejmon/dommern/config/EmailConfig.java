@@ -34,6 +34,7 @@ public class EmailConfig {
     )
     public void sendEmail(Throwable ex){
         if (counter > 15) return;
+
         SimpleMailMessage message = new SimpleMailMessage();
         message.setFrom(mail);
         message.setTo(mail);
@@ -41,6 +42,8 @@ public class EmailConfig {
         message.setText(buildEmailBody(ex));
         log.info("Sending email notification for exception to {}", mail);
         sender.send(message);
+        log.info("email sendt successfully");
+
         counter++;
     }
 
