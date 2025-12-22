@@ -43,11 +43,12 @@ public class Kusk {
     @OneToOne
     private Runde personalBest;
 
-    public void setPersonalBest(Runde personalBest) {
-        if (personalBest == null || personalBest.getTid() == null) return;
-        if (this.personalBest == null )
+    public boolean setPersonalBest(Runde personalBest) {
+        if (personalBest == null || personalBest.getTid() == null) return false;
+        if (this.personalBest == null || (this.personalBest.getTid().toEpochMilli() > personalBest.getTid().toEpochMilli())){
             this.personalBest = personalBest;
-        else if (this.personalBest.getTid().toEpochMilli() > personalBest.getTid().toEpochMilli())
-            this.personalBest = personalBest;
+            return true;
+        }
+        return false;
     }
 }

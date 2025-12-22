@@ -45,12 +45,13 @@ public class LinjeDommer {
         List<Runde> laps = kuskService.findLastRunde(kusk);
         if (!laps.isEmpty()) {
             laps.getLast().setStop(runde.getStart());
-            kusk.setPersonalBest(laps.getLast());
+            boolean newRecord = kusk.setPersonalBest(laps.getLast());
             kuskService.saveKusk(kusk);
         }
         Runde lap = new Runde(kusk, runde.getBaneType());
         laps.add(lap);
         kuskService.saveLaps(laps);
+
     }
 
     @EventListener

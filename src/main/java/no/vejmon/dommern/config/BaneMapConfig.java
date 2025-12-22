@@ -5,6 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import no.vejmon.dommern.bane.BaneType;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.Profile;
 
 import java.util.Map;
@@ -16,6 +17,7 @@ import static no.vejmon.dommern.bane.BaneType.*;
 public class BaneMapConfig {
 
     @Bean
+    @Primary
     @Profile("local")
     public Map<BaneType, Integer> baneMapLocal() {
         log.info("Creating local keyboard baneMap");
@@ -27,7 +29,20 @@ public class BaneMapConfig {
         );
     }
 
+    @Bean(value = "baneMapLyd")
+    public Map<BaneType, Integer> baneMapLyd(){
+        log.info("creating lyd banemap");
+        return Map.of(
+                KORTESTE_VEIEN, 1,
+                FRODE_SPESIAL, 2,
+                UTEN_NAVN, 3,
+                BESTEFAR_BANEN, 4
+        );
+    }
+
+
     @Bean
+    @Primary
     @Profile("production")
     public Map<BaneType, Integer> baneMap() {
         log.info("Creating production gpio baneMap");
