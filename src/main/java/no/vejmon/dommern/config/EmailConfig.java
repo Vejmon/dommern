@@ -21,6 +21,7 @@ public class EmailConfig {
     @Value("${spring.mail.username}")
     private String mail;
     private final MailSender sender;
+    private Integer counter = 0;
 
     public EmailConfig(MailSender sender) {
         this.sender = sender;
@@ -31,13 +32,15 @@ public class EmailConfig {
             throwing = "ex"
     )
     public void sendEmail(Throwable ex){
-        log.warn("Sending email notification for exception");
+        if (counter > 15) return;
         SimpleMailMessage message = new SimpleMailMessage();
         message.setFrom(mail);
         message.setTo(mail);
         message.setSubject("🔥 Dommern har ett problem! 🔥");
         message.setText(buildEmailBody(ex));
+        log.warn("Sending email notification for exception to {}", mail);
         sender.send(message);
+        counter++;
     }
 
     private String buildEmailBody(Throwable ex) {
