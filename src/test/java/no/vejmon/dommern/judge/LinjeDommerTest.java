@@ -12,6 +12,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.context.ApplicationEventPublisher;
 
 import java.util.NoSuchElementException;
 import java.util.UUID;
@@ -26,6 +27,8 @@ public class LinjeDommerTest {
 
     @Mock
     private KuskService kuskService;
+    @Mock
+    private ApplicationEventPublisher publisher;
 
     private LinjeDommer linjeDommer;
 
@@ -37,7 +40,7 @@ public class LinjeDommerTest {
                     return new Kusk(baneType.name(), baneType);
                 });
 
-        linjeDommer = new LinjeDommer(kuskService);
+        linjeDommer = new LinjeDommer(kuskService, publisher);
         linjeDommer.init();
 
     }
