@@ -1,7 +1,9 @@
 ## Some ideas for improvements / features to add
 
 USB QR reader, register car for track.
+
 minimal viable time.
+
 leaderboards with all time, current season and current day.
 
 ### different types of races
