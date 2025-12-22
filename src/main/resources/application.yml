@@ -20,3 +20,11 @@ spring:
     user: dommern_api_flyway
     password: password
     url: jdbc:postgresql://localhost:5432/dommern
+  mail:
+    password: ${EMAIL-PW}
+    username: ${EMAIL-USER}
+    ssl:
+      enabled: true
+    host: smtp.gmail.com
+    port: 465
+
