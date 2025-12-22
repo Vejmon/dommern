@@ -10,6 +10,7 @@ import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
 
 import java.io.InputStream;
+import java.util.List;
 import java.util.Map;
 
 @Slf4j
@@ -26,7 +27,14 @@ public class LydLytter {
     @Async
     public void handleLyd(NyLydEvent lydEvent){
         StringBuilder sb = new StringBuilder("/static/lyd/");
-        sb.append(lydEvent.getLyd().hentLydNavn(baneMapLyd));
+        if (lydEvent.getLyd().getLydType() == LydType.RACE_COUNTDOWN){
+            return; // todo: handle RACE_COUNTDOWN lyd i loop med race start
+        }
+        List<LydType> baneLydTyper = List.of(LydType.RECORD, LydType.DEFAULT);
+        Lyd lyd = lydEvent.getLyd();
+        if (baneLydTyper.contains(lyd.getLydType()))
+            sb.append(lyd.hentLydNavn(baneMapLyd));
+        else sb.append(lyd.getLydType().getName());
 
         try (InputStream is = getClass().getResourceAsStream(sb.toString())) {
             if (is == null) {
