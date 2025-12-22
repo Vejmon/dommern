@@ -6,6 +6,8 @@
 > - Michael Masi
 
 
+## Error tracking
+any thrown exception will be sent to the configured email address in production mode
 
 ## GPIO pinout
 
