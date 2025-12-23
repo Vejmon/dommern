@@ -1,17 +1,18 @@
 name: Tailscale deploy Dommern
+description: 'Connects the runner to a Tailscale network using OAuth credentials'
+inputs:
+  oauth-client-id:
+    description: 'Tailscale OAuth Client ID'
+    required: true
+  oauth-secret:
+    description: 'Tailscale OAuth Client Secret'
+    required: true
 
-
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
-
-    steps:
+runs:
+  using: 'composite'
+  steps:
     - name: Login to tailscale
-      uses: tailscale/@v4
+      uses: tailscale/github-action@v4
       with:
-        oauth-client-id: ${{ secrets.TAILSCALE_CLIENT_ID }}
-        oauth-secret: ${{ secrets.TAILSCALE_CLIENT_SECRET }}
-
+        oauth-client-id: ${{ inputs.oauth-client-id }}
+        oauth-secret: ${{ inputs.oauth-secret }}
