@@ -52,5 +52,5 @@ tasks {
         jvmArgs += "-javaagent:${configurations.mockitoAgent.asPath}"
         useJUnitPlatform()
     }
-}2
+}
 
