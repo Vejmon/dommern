@@ -1,0 +1,20 @@
+name: Build, Test and deploy Dommern
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+    - name: Build and test dommern project
+      uses : ./github/actions/gradle-build
+
+    - name: Deploy to Pi using Tailscale
+      uses: ./github/actions/tailscale-deploy
+
