@@ -4,11 +4,11 @@ import lombok.Getter;
 
 @Getter
 public enum LydType {
-    DEFAULT("bane%drundelyd.mp3"),
-    RECORD("bane%drekordlyd.mp3"),
-    RACE_COUNTDOWN("nedtelling%dlyd.mp3"),
-    RACE_START("startlyd.mp3"),
-    RACE_FALSE_START("tjuvstartlyd.mp3");
+    DEFAULT("bane%drundelyd.wav"),
+    RECORD("bane%drekordlyd.wav"),
+    RACE_COUNTDOWN("nedtelling%dlyd.wav"),
+    RACE_START("startlyd.wav"),
+    RACE_FALSE_START("tjuvstartlyd.wav");
 
     private final String name;
     LydType(String name) {
