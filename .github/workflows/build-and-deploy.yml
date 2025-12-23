@@ -1,8 +1,9 @@
 name: Build, Test and deploy Dommern
 
 on:
-  release:
-    types: [created]
+  push:
+    branches:
+      - feat/ci-cd-raspberry-pi
 
 jobs:
   build-and-deploy:
@@ -12,6 +13,9 @@ jobs:
       packages: write
 
     steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
+
     - name: Build and test dommern project
       uses : ./github/actions/gradle-build
 
