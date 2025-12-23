@@ -17,8 +17,8 @@ jobs:
       uses: actions/checkout@v4
 
     - name: Build and test dommern project
-      uses : ./github/actions/gradle-build
+      uses : .github/actions/gradle-build/action.yml
 
     - name: Deploy to Pi using Tailscale
-      uses: ./github/actions/tailscale-deploy
+      uses: .github/actions/gradle-build/action.yml
 
