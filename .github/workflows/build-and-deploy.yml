@@ -20,7 +20,7 @@ jobs:
       uses : ./.github/actions/gradle-build
 
     - name: Deploy to Pi using Tailscale
-      uses: ./.github/actions/gradle-build
+      uses: ./.github/actions/tailscale-deploy
       with:
         oauth-client-id: ${{ secrets.TAILSCALE_CLIENT_ID }}
         oauth-secret: ${{ secrets.TAILSCALE_CLIENT_SECRET }}
