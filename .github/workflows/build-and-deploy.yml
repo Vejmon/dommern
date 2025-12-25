@@ -19,6 +19,20 @@ jobs:
     - name: Build and test dommern project
       uses : ./.github/actions/gradle-build
 
+    - name: Build and push Dommern-db image to GHCR
+      uses: ./.github/actions/docker-build
+      with:
+        service: dommern-db
+        local_image: dommern-db
+        ghcr_image: dommern/dommern-db
+
+    - name: Build and push Dommern image to GHCR
+      uses: ./.github/actions/docker-build
+      with:
+        service: dommern
+        local_image: dommern
+        ghcr_image: dommern/dommern
+
     - name: Deploy to Pi using Tailscale
       uses: ./.github/actions/tailscale-deploy
       with:
