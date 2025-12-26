@@ -1,17 +1,25 @@
+x-app: &baseapp
+  platform: linux/arm64
+  restart: unless-stopped
+  network_mode: host
+  depends_on:
+    dommern-db:
+      condition: service_healthy
+  environment:
+    SPRING_PROFILES_ACTIVE: production
+    SPRING_MAIL_USERNAME: ${EMAIL-USER}
+    SPRING_MAIL_PASSWORD: ${EMAIL-PW}
+
 services:
-  dommern:
-    container_name: dommern
-    platform: linux/arm64
+  app:
+    <<: *baseapp
+    container_name: app
     build: .
-    restart: unless-stopped
-    network_mode: host
-    depends_on:
-      dommern-db:
-        condition: service_healthy
-    environment:
-      SPRING_PROFILES_ACTIVE: production
-      SPRING_MAIL_USERNAME: ${EMAIL-USER}
-      SPRING_MAIL_PASSWORD: ${EMAIL-PW}
+
+  dommern:
+    <<: *baseapp
+    container_name: dommern
+    image: ghcr.io/vejmon/dommern:latest
 
   db: &basedb
     container_name: dommern-db
