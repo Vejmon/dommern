@@ -16,6 +16,7 @@ runs:
       with:
         oauth-client-id: ${{ inputs.oauth-client-id }}
         oauth-secret: ${{ inputs.oauth-secret }}
+        tags: tag:dommern
 
     - name: Pull repo and restart dommern
       shell: bash
