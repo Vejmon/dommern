@@ -23,7 +23,7 @@ runs:
     - name: Pull repo and restart dommern
       shell: bash
       run: |
-        tailscale ssh ${{ inputs.ssh-user }}@${{ inputs.ssh-host }} << 'EOF'
+        tailscale ssh -o StrictHostKeyChecking=accept-new ${{ inputs.ssh-user }}@${{ inputs.ssh-host }} << 'EOF'
           set -e
           cd ${{ inputs.app-path }}
           git pull --rebase
