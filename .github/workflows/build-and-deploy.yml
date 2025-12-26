@@ -26,5 +26,5 @@ jobs:
         oauth-secret: ${{ secrets.TAILSCALE_CLIENT_SECRET }}
         ssh-user: vemu
         ssh-host: ${{ secrets.TAILSCALE_PI_HOST }}
-        app-path: ~/Dommern
+        app-path: ~/Dommern/dommern
 
