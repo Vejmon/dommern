@@ -19,6 +19,7 @@ services:
     <<: *baseapp
     pull_policy: always
     platform: linux/arm64
+    privileged: true
     container_name: dommern
     image: ghcr.io/vejmon/dommern:latest
     depends_on:
