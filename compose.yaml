@@ -3,8 +3,8 @@ x-app: &baseapp
   network_mode: host
   environment:
     SPRING_PROFILES_ACTIVE: production
-    SPRING_MAIL_USERNAME: ${EMAIL-USER}
-    SPRING_MAIL_PASSWORD: ${EMAIL-PW}
+    SPRING_MAIL_USERNAME: ${EMAIL_USER}
+    SPRING_MAIL_PASSWORD: ${EMAIL_PW}
 
 services:
   app:
