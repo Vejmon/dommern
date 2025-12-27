@@ -14,21 +14,13 @@ runs:
         username: ${{ github.actor }}
         password: ${{ github.token }}
 
-    - name: Build image with docker-compose
+    - name: Build and push multi-platform image
       shell: bash
       run: |
-        docker compose build app
+        docker buildx build \
+          --platform linux/amd64,linux/arm64 \
+          -t ghcr.io/vejmon/dommern:${GITHUB_SHA} \
+          -t ghcr.io/vejmon/dommern:latest \
+          --push \
+          .
 
-    - name: Tag image
-      shell: bash
-      run: |
-        docker tag dommern-app:latest \
-          ghcr.io/vejmon/dommern:${GITHUB_SHA}
-
-        docker tag dommern-app:latest \
-          ghcr.io/vejmon/dommern:latest
-
-    - name: Push images
-      shell: bash
-      run: |
-        docker push ghcr.io/vejmon/dommern --all-tags

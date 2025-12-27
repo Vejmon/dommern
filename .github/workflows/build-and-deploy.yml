@@ -1,9 +1,9 @@
 name: Build, Test and deploy Dommern
 
 on:
-  release:
-    types:
-      - released
+  push:
+    branches:
+      - master
 
 jobs:
   build-and-deploy:

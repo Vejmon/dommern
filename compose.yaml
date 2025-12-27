@@ -15,12 +15,6 @@ services:
       db:
         condition: service_healthy
 
-  prod:
-    <<: *baseapp
-    container_name: app
-    build: .
-    platform: linux/arm64
-
   dommern:
     <<: *baseapp
     pull_policy: always
