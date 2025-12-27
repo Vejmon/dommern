@@ -22,10 +22,10 @@ runs:
     - name: Tag image
       shell: bash
       run: |
-        docker tag dommern:latest \
+        docker tag dommern-app:latest \
           ghcr.io/vejmon/dommern:${GITHUB_SHA}
 
-        docker tag dommern:latest \
+        docker tag dommern-app:latest \
           ghcr.io/vejmon/dommern:latest
 
     - name: Push images
