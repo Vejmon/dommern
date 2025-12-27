@@ -32,3 +32,14 @@ spring:
           starttls:
             enable: true
             required: true
+
+logging:
+  file:
+    name: logs/app.log
+  logback:
+    rollingpolicy:
+      max-file-size: 2MB
+      max-history: 5
+      file-name-pattern: logs/app-%d{yyyy-MM-dd}.%i.log
+  level:
+    root: INFO
