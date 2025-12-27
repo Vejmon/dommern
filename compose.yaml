@@ -1,10 +1,6 @@
 x-app: &baseapp
-  platform: linux/arm64
   restart: unless-stopped
   network_mode: host
-  depends_on:
-    dommern-db:
-      condition: service_healthy
   environment:
     SPRING_PROFILES_ACTIVE: production
     SPRING_MAIL_USERNAME: ${EMAIL-USER}
@@ -13,16 +9,25 @@ x-app: &baseapp
 services:
   app:
     <<: *baseapp
+    platform: linux/amd64
     container_name: app
     build: .
+    depends_on:
+      db:
+        condition: service_healthy
 
   dommern:
     <<: *baseapp
+    platform: linux/arm64
     container_name: dommern
     image: ghcr.io/vejmon/dommern:latest
+    depends_on:
+      dommern-db:
+        condition: service_healthy
 
   db: &basedb
     container_name: dommern-db
+    platform: linux/amd64
     image: 'postgres:17.4'
     environment:
       - 'POSTGRES_DB=dommern'
