@@ -1,9 +1,9 @@
 name: Build, Test and deploy Dommern
 
 on:
-  push:
-    branches:
-      - feat/ci-cd-raspberry-pi
+  release:
+    types:
+      - released
 
 jobs:
   build-and-deploy:
