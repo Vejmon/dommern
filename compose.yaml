@@ -9,15 +9,21 @@ x-app: &baseapp
 services:
   app:
     <<: *baseapp
-    platform: linux/amd64
     container_name: app
     build: .
     depends_on:
       db:
         condition: service_healthy
 
+  prod:
+    <<: *baseapp
+    container_name: app
+    build: .
+    platform: linux/arm64
+
   dommern:
     <<: *baseapp
+    pull_policy: always
     platform: linux/arm64
     container_name: dommern
     image: ghcr.io/vejmon/dommern:latest
