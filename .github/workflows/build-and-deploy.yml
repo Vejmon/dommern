@@ -2,7 +2,8 @@ name: Build, Test and deploy Dommern
 
 on:
   release:
-    types: [created]
+    types:
+      - released
 
 jobs:
   build-and-deploy:
@@ -12,9 +13,21 @@ jobs:
       packages: write
 
     steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
+
     - name: Build and test dommern project
-      uses : ./github/actions/gradle-build
+      uses : ./.github/actions/gradle-build
+
+    - name: Build and push Docker image to GHCR
+      uses: ./.github/actions/docker-build
 
     - name: Deploy to Pi using Tailscale
-      uses: ./github/actions/tailscale-deploy
+      uses: ./.github/actions/tailscale-deploy
+      with:
+        oauth-client-id: ${{ secrets.TAILSCALE_CLIENT_ID }}
+        oauth-secret: ${{ secrets.TAILSCALE_CLIENT_SECRET }}
+        ssh-user: vemu
+        ssh-host: ${{ secrets.TAILSCALE_PI_HOST }}
+        app-path: ~/Dommern/dommern
 

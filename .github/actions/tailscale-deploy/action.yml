@@ -1,0 +1,32 @@
+name: Tailscale deploy Dommern
+description: 'Connects the runner to a Tailscale network using OAuth credentials'
+inputs:
+  oauth-client-id:
+    description: 'Tailscale OAuth Client ID'
+    required: true
+  oauth-secret:
+    description: 'Tailscale OAuth Client Secret'
+    required: true
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Login to tailscale
+      uses: tailscale/github-action@v4
+      env:
+        TS_NO_SUDO: 'true'
+      with:
+        oauth-client-id: ${{ inputs.oauth-client-id }}
+        oauth-secret: ${{ inputs.oauth-secret }}
+        tags: tag:dommern
+
+    - name: Pull repo and restart dommern
+      shell: bash
+      run: |
+        tailscale ssh ${{ inputs.ssh-user }}@${{ inputs.ssh-host }} << 'EOF'
+          set -e
+          cd ${{ inputs.app-path }}
+          git pull --rebase
+          docker compose pull dommern
+          docker compose up -d dommern
+        EOF
