@@ -17,7 +17,7 @@ runs:
     - name: Build image with docker-compose
       shell: bash
       run: |
-        docker compose build
+        docker compose build app
 
     - name: Tag image
       shell: bash

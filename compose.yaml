@@ -13,7 +13,7 @@ x-app: &baseapp
 services:
   app:
     <<: *baseapp
-    container_name: app
+    container_name: dommern
     build: .
 
   dommern:
