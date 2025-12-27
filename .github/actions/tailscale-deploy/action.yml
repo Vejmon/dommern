@@ -35,6 +35,7 @@ runs:
         tailscale ssh ${{ inputs.ssh-user }}@${{ inputs.ssh-host }} << 'EOF'
           set -e
           cd ${{ inputs.app-path }}
+          git restore .
           git pull --rebase
           docker compose down
           docker image prune -fa
