@@ -7,6 +7,15 @@ inputs:
   oauth-secret:
     description: 'Tailscale OAuth Client Secret'
     required: true
+  ssh-user:
+    description: 'SSH user to connect to the target host'
+    required: true
+  ssh-host:
+    description: 'SSH host (Tailscale IP or hostname) to connect to'
+    required: true
+  app-path:
+    description: 'Path to the Dommern application on the target host'
+    required: true
 
 runs:
   using: 'composite'
@@ -27,6 +36,9 @@ runs:
           set -e
           cd ${{ inputs.app-path }}
           git pull --rebase
+          docker compose down
+          docker image prune -a
           docker compose pull dommern
           docker compose up -d dommern
+          curl --fail http://localhost:8080/actuator/health
         EOF
