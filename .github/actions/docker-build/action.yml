@@ -1,20 +1,6 @@
 name: "Build and Push Docker Image to GHCR (Compose)"
 description: "Build with docker-compose, tag with commit SHA and latest, push to GHCR"
 
-inputs:
-  service:
-    description: "docker-compose service name"
-    required: true
-
-  local_image:
-    description: "Local image name produced by docker-compose"
-    required: true
-
-  ghcr_image:
-    description: "GHCR image name (without registry)"
-    required: true
-
-
 runs:
   using: "composite"
   steps:

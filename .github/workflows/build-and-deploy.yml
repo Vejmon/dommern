@@ -16,8 +16,11 @@ jobs:
     - name: Checkout Code
       uses: actions/checkout@v4
 
-#    - name: Build and test dommern project
-#      uses : ./.github/actions/gradle-build
+    - name: Build and test dommern project
+      uses : ./.github/actions/gradle-build
+
+    - name: Build and push Docker image to GHCR
+      uses: ./.github/actions/docker-build
 
     - name: Deploy to Pi using Tailscale
       uses: ./.github/actions/tailscale-deploy
