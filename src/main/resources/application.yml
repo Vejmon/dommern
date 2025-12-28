@@ -38,8 +38,8 @@ logging:
     name: logs/app.log
   logback:
     rollingpolicy:
-      max-file-size: 2MB
-      max-history: 5
-      file-name-pattern: logs/app-%d{yyyy-MM-dd}.%i.log
+      max-file-size: 10MB
+      total-size-cap: 50MB
+      clean-history-on-start: true
   level:
     root: INFO
