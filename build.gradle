@@ -8,10 +8,35 @@ group = 'no.vejmon'
 version = '0.0.1-SNAPSHOT'
 description = 'dommern'
 
+
+def uiDir = file("$projectDir/ui")
+def staticDir = file("$projectDir/src/main/resources/static")
+
+tasks.register('uiNpmInstall', Exec) {
+    workingDir uiDir
+    commandLine 'npm', 'install'
+}
+
+tasks.register('uiBuild', Exec) {
+    workingDir uiDir
+    commandLine 'npm', 'run', 'build'
+
+    inputs.dir("$uiDir/src")
+    inputs.files("$uiDir/package.json", "$uiDir/package-lock.json")
+    outputs.dir(staticDir)
+
+    dependsOn 'uiNpmInstall'
+}
+
+
 java {
     toolchain {
         languageVersion = JavaLanguageVersion.of(21)
     }
+}
+
+tasks.named('processResources') {
+    dependsOn 'uiBuild'
 }
 
 configurations {
