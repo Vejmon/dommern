@@ -7,5 +7,14 @@
 </head>
 <body>
     <h1>Økseskaft</h1>
+    <div>
+        <strong>Active kusker</strong>
+        <table>
+            <tr th:each="kusk : ${kusker}">
+                <td th:text="${kusk.name}">First</td>
+                <td th:text="${kusk.currentBane}">Last</td>
+            </tr>
+        </table>
+    </div>
 </body>
 </html>
