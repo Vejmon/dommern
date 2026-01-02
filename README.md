@@ -11,4 +11,4 @@ any thrown exception will be sent to the configured email address in production 
 
 ## GPIO pinout
 
-![gpio.png](src/main/resources/static/img/gpio.png)
+![gpio.png](src/main/resources/public/img/gpio.png)

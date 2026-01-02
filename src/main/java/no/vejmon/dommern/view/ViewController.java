@@ -17,6 +17,6 @@ public class ViewController {
     @GetMapping({"/", "/index", ""})
     public String index(Model model) {
         model.addAttribute("kusker", linjeDommer.getKusker());
-        return "index";
+        return "dist/index";
     }
 }

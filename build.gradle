@@ -2,6 +2,7 @@ plugins {
     id 'java'
     id 'org.springframework.boot' version '3.5.8'
     id 'io.spring.dependency-management' version '1.1.7'
+    id 'com.github.node-gradle.node' version('7.1.0')
 }
 
 group = 'no.vejmon'
@@ -52,5 +53,26 @@ tasks {
         jvmArgs += "-javaagent:${configurations.mockitoAgent.asPath}"
         useJUnitPlatform()
     }
+}
+
+tasks.register('npmDoInstall', NpmTask) {
+    workingDir = file("${projectDir}/ui")
+    args = ['install']
+}
+
+tasks.register('npmBuild', NpmTask) {
+    dependsOn npmDoInstall
+    workingDir = file("${projectDir}/ui")
+    args = ['run', 'build']
+}
+
+tasks.register('copyVueBuild', Copy) {
+    dependsOn npmBuild
+    from "${projectDir}/ui/dist/*"
+    into "${projectDir}/src/main/resources/static"
+}
+
+processResources {
+    dependsOn rootProject.tasks.copyVueBuild
 }
 
