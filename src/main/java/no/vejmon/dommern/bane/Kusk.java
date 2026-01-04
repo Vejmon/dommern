@@ -1,5 +1,6 @@
 package no.vejmon.dommern.bane;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -27,12 +28,15 @@ public class Kusk {
     private Bil currentBil;
 
     @OneToMany(mappedBy = "kusk", fetch = FetchType.LAZY, orphanRemoval = true)
+    @JsonIgnore
     private List<Bil> bil;
 
     @ManyToOne(fetch = FetchType.LAZY)
+    @JsonIgnore
     private Laup laup;
 
     @OneToMany(mappedBy = "kusk", orphanRemoval = true, fetch = FetchType.LAZY)
+    @JsonIgnore
     private List<Runde> runder = new ArrayList<>();
 
     public Kusk(String name, @NonNull BaneType currentBane) {
@@ -45,7 +49,7 @@ public class Kusk {
 
     public boolean setPersonalBest(Runde personalBest) {
         if (personalBest == null || personalBest.getTid() == null) return false;
-        if (this.personalBest == null || (this.personalBest.getTid().toEpochMilli() > personalBest.getTid().toEpochMilli())){
+        if (this.personalBest == null || (this.personalBest.getTid() > personalBest.getTid())){
             this.personalBest = personalBest;
             return true;
         }

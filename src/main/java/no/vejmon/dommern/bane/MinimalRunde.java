@@ -26,11 +26,11 @@ public class MinimalRunde {
     private BaneType baneType;
 
     @Transient
-    private Instant tid;
+    private Long tid;
 
-    public Instant getTid(){
-        if (stop == null) return Instant.ofEpochMilli(start.toEpochMilli() - Instant.EPOCH.toEpochMilli());
-        return Instant.ofEpochMilli(stop.toEpochMilli() - start.toEpochMilli());
+    public Long getTid(){
+        if (stop == null) return start.toEpochMilli() - Instant.EPOCH.toEpochMilli();
+        return stop.toEpochMilli() - start.toEpochMilli();
     }
 
 
