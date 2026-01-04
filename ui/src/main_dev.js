@@ -14,7 +14,7 @@ async function prepareApp() {
 
 
 }
-prepareApp()
+await prepareApp()
 
 const app = createApp(App)
 app.mount('#app')
