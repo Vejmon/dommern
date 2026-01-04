@@ -45,10 +45,10 @@ public class LydLytter {
                 List.of(LydType.RECORD, LydType.DEFAULT);
 
         if (baneLydTyper.contains(lyd.getLydType())) {
-            return "/static/lyd/" + lyd.hentLydNavn(baneMapLyd);
+            return "/public/lyd/" + lyd.hentLydNavn(baneMapLyd);
         }
 
-        return "/static/lyd/" + lyd.getLydType().getName();
+        return "/public/lyd/" + lyd.getLydType().getName();
     }
 
     private void playSound(String lydPath) {
