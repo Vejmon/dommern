@@ -5,14 +5,6 @@
 > We went car racing
 > - Michael Masi
 
-
-## Error tracking
-any thrown exception will be sent to the configured email address in production mode
-
-## GPIO pinout
-
-![gpio.png](src/main/resources/public/img/gpio.png)
-
 ## Development
 
 ### UI
@@ -25,3 +17,11 @@ npm run dev
 The UI will be available at `http://localhost:5173/local` as default.
 The production build is performed when running the gradle process `processResources`.
 the msw (mock service worker) is only enabled when running in development.
+
+## Error tracking
+any thrown exception will be sent to the configured email address in production mode
+
+## GPIO pinout
+
+![gpio.png](src/main/resources/public/img/gpio.png)
+
