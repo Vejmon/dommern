@@ -6,11 +6,9 @@ defineProps({
   },
 })
 
-fetch('actuator/health')
+fetch('linje')
     .then(res => res.text())
-    .then(data => {
-      console.log('body:', data);
-    })
+    .then(data => console.log('res:', data))
     .catch(err => console.log('err', err));
 
 </script>
