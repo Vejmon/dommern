@@ -24,6 +24,11 @@ export default defineConfig(({ mode }) => {
           ? { main: 'index.html' }
           : { main: 'local.html' }
       }
+    },
+    server: {
+      proxy: {
+        '/api': 'http://localhost:8080'
+      }
     }
   }
 });
