@@ -2,9 +2,11 @@ package no.vejmon.dommern.bane;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EntityListeners;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.ManyToOne;
 import lombok.*;
+import no.vejmon.dommern.lyttere.RaceEntityListener;
 
 @ToString
 @RequiredArgsConstructor
@@ -12,6 +14,7 @@ import lombok.*;
 @Getter
 @Setter
 @Entity
+@EntityListeners({RaceEntityListener.class})
 public class Runde extends MinimalRunde {
 
     @NonNull

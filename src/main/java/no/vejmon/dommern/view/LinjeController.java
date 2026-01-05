@@ -26,7 +26,6 @@ public class LinjeController {
     @Autowired
     public LinjeController(LinjeDommer linjeDommer) {
         this.linjeDommer = linjeDommer;
-        this.emitter = registerEmitter();
     }
 
 
@@ -36,23 +35,23 @@ public class LinjeController {
     }
 
     @GetMapping(value = "/init", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
-    public SseEmitter streamKusks() throws IOException {
+    public synchronized SseEmitter streamKusks() throws IOException {
         registerEmitter();
         emitToCurrent();
         return emitter;
     }
 
-    public synchronized void emitToCurrent() throws IOException {
+    public void emitToCurrent() throws IOException {
         if (emitter == null) return;
         emitter.send(SseEmitter.event().data(linjeDommer.getKusker()));
     }
 
-    public synchronized void emitToCurrent(List<Kusk> kusker) throws IOException {
+    public void emitToCurrent(List<Kusk> kusker) throws IOException {
         if (emitter == null) return;
         emitter.send(SseEmitter.event().data(kusker));
     }
 
-    private synchronized SseEmitter registerEmitter() {
+    private synchronized void registerEmitter() {
         // Close the previous emitter if it exists
         if (emitter != null) {
             emitter.complete();
@@ -61,13 +60,15 @@ public class LinjeController {
         emitter.onCompletion(() -> this.emitter = null);
         emitter.onTimeout(() -> this.emitter = null);
         emitter.onError(e -> this.emitter = null);
-        return emitter;
     }
 
     @EventListener
     @Async
     public void handleKuskerChangedEvent(OnKuskerChangedEvent event) throws IOException {
-        emitToCurrent(event.getKusker());
+        if (event.getKusker() == null)
+            emitToCurrent();
+        else
+            emitToCurrent(event.getKusker());
     }
 
 }

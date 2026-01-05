@@ -60,7 +60,6 @@ public class LinjeDommer {
         laps.add(lap);
         kuskService.saveLaps(laps);
         publishLydEvent(newPB, runde.getBaneType());
-        notifyKuskerChanged();
 
     }
 
@@ -73,7 +72,6 @@ public class LinjeDommer {
         oldKusk.setCurrentBane(BaneType.I_DEPO);
         kuskService.saveKusk(oldKusk);
         kusker.add(newKuskEvent.getKusk());
-        notifyKuskerChanged();
     }
 
     @EventListener
@@ -89,10 +87,6 @@ public class LinjeDommer {
         LydType lydType = newPB ? LydType.RECORD : LydType.DEFAULT;
         NyLydEvent lydEvent = new NyLydEvent(this, new Lyd(baneType, lydType));
         publisher.publishEvent(lydEvent);
-    }
-
-    private void notifyKuskerChanged() {
-        publisher.publishEvent(new OnKuskerChangedEvent(this, List.copyOf(kusker)));
     }
 
 }

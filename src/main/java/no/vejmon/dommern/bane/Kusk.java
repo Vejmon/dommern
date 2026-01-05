@@ -3,6 +3,7 @@ package no.vejmon.dommern.bane;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
+import no.vejmon.dommern.lyttere.RaceEntityListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,6 +14,7 @@ import java.util.UUID;
 @Getter
 @Setter
 @Entity
+@EntityListeners({RaceEntityListener.class})
 public class Kusk {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
