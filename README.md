@@ -18,12 +18,11 @@ Timekeeping is then permitted on the keyboard, using the following keys:
 
 The backend will be available at `http://localhost:8080` as default.
 
-The backend can also be started with Docker using the provided `compose.yaml` file.
+The backend can also be started with Docker using the provided `compose.yaml` file, 
+as seen in the `compose.yaml` the application depends on a running instance of a PostgreSQL database.
 ```bash
 docker compose up app
 ```
-The application depends on a running instance of a PostgreSQL database also found in the `compose.yaml` file.
-
 
 ### UI
 The UI is built with Vite, Vue 3 and TailwindCSS.
