@@ -1,15 +1,16 @@
 # Dommern
 
-"The judge" is a timekeeping application for four individual racers around a circuit.
+"Dommern", roughly translates to "The judge", is a timekeeping application for four individual racers around a circuit.
 
 > We went car racing
 > - Michael Masi
 
 ## Development
+> Running this project on a Raspberry Pi requires giving the Docker instance privileged status, also persists the database data at `pgdata`.
 
 ### Backend
 The backend is built with Spring Boot 3 and Java, using Gradle as build tool.
-To start the development server, run:
+To start the development server locally, run:
 ```bash
 ./gradlew bootRun --args='--spring.profiles.active=local'
 ```
@@ -18,11 +19,14 @@ Timekeeping is then permitted on the keyboard, using the following keys:
 
 The backend will be available at `http://localhost:8080` as default.
 
-The backend can also be started with Docker using the provided `compose.yaml` file, 
+The backend in production mode can also be started with Docker using the provided `compose.yaml` file, 
 as seen in the `compose.yaml` the application depends on a running instance of a PostgreSQL database.
 ```bash
 docker compose up app
 ```
+Timekeeping is then performed on the GPIO pins of the Raspberry Pi, using the folliwing pins:
+`19`, `21`, `24`, `26` for lap times of racers 1 to 4 respectively.
+Each pin should be connected to optical sensors for each racer.
 
 ### UI
 The UI is built with Vite, Vue 3 and TailwindCSS.
