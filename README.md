@@ -7,6 +7,24 @@
 
 ## Development
 
+### Backend
+The backend is built with Spring Boot 3 and Java, using Gradle as build tool.
+To start the development server, run:
+```bash
+./gradlew bootRun --args='--spring.profiles.active=local'
+```
+Timekeeping is then permitted on the keyboard, using the following keys:
+`H`, `J`, `K`, `L` for lap times of racers 1 to 4 respectively.
+
+The backend will be available at `http://localhost:8080` as default.
+
+The backend can also be started with Docker using the provided `compose.yaml` file.
+```bash
+docker compose up app
+```
+The application depends on a running instance of a PostgreSQL database also found in the `compose.yaml` file.
+
+
 ### UI
 The UI is built with Vite, Vue 3 and TailwindCSS.
 To start the development server, run:
