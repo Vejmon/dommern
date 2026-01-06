@@ -1,9 +1,7 @@
 package no.vejmon.dommern.bane;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 import lombok.*;
 
 @ToString
@@ -12,6 +10,10 @@ import lombok.*;
 @Getter
 @Setter
 @Entity
+@Table(indexes = {
+        @Index(columnList = "kusk_id, start"),
+        @Index(columnList = "kusk_id, stop")
+})
 public class Runde extends MinimalRunde {
 
     @NonNull

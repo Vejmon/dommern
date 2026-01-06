@@ -54,6 +54,7 @@ public class LinjeDommer {
         if (!laps.isEmpty()) {
             laps.getLast().setStop(runde.getStart());
             newPB = kusk.setPersonalBest(laps.getLast());
+            kusk.setLatest(laps.getLast());
             kuskService.saveKusk(kusk);
         }
         Runde lap = new Runde(kusk, runde.getBaneType());
