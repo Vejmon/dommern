@@ -17,13 +17,13 @@ evtSrc.onerror = (err) => {
 
 <template>
   <main>
-    <ul>
-      <li v-for="rider in riders" :key="rider.id">
+    <div>
+      <div v-for="rider in riders" :key="rider.id">
         <Round :name="rider.name" :bane="rider.currentBane" :pb="rider.personalBest?.tid" :tid="rider.latest?.tid" />
-      </li>
-    </ul>
+      </div>
+    </div>
   </main>
 </template>
 
 <style scoped>
-</style>1
+</style>

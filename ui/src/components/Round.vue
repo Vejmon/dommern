@@ -21,12 +21,12 @@ defineProps({
 </script>
 
 <template>
-  <ul>
-    <li>Navn: {{ name }}</li>
-    <li>Bane: {{ bane }}</li>
-    <li>Tid: {{ tid }}</li>
-    <li>PB: {{ pb }}</li>
-  </ul>
+  <div>
+    <div class="text-lg p-16 font-semibold text-blue-600">{{ name }} </div>
+    <div class="text-yellow-600">Bane: {{ bane }}</div>
+    <div>Tid: {{ tid }}</div>
+    <div>PB: {{ pb }}</div>
+  </div>
 </template>
 
 <style scoped>
