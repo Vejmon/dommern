@@ -38,8 +38,10 @@ const buildStream = () => {
           controller.close();
           return;
         }
-
-        sse_active[2].personalBest.tid += 11;
+        sse_active[2].latest.tid = Math.floor(Math.random() * (5500 - 1200 + 1)) + 1200
+        if (sse_active[2].latest.tid < sse_active[2].personalBest.tid) {
+            sse_active[2].personalBest.tid = sse_active[2].latest.tid;
+        }
 
         controller.enqueue(
             new TextEncoder().encode(
