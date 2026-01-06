@@ -1,38 +1,50 @@
 [
   {
-    "id": "a1cf57f0-901e-40f9-996e-90a736e26a95",
+    "id": "4b56a15b-708b-498f-b24d-8452ea2d4e15",
     "name": "KORTESTE_VEIEN",
     "currentBane": "KORTESTE_VEIEN",
     "currentBil": null,
+    "latest": null,
     "personalBest": null
   },
   {
-    "id": "a8f2aa1a-59a2-41b7-8bda-8ccc3d022702",
+    "id": "e06ae7ed-1b2f-4da4-886b-7eafe38f05b0",
     "name": "FRODE_SPESIAL",
     "currentBane": "FRODE_SPESIAL",
     "currentBil": null,
+    "latest": null,
     "personalBest": null
   },
   {
-    "id": "3b08850d-9a3e-42c9-a337-e1225e16b919",
+    "id": "f71ff4ce-a4c1-407f-b3e6-adb1a1ec55eb",
     "name": "UTEN_NAVN",
     "currentBane": "UTEN_NAVN",
     "currentBil": null,
-    "personalBest": {
-      "id": "ecebba69-10ed-48e2-b615-dcc75694c8fc",
-      "start": "2026-01-04T22:25:21.828944Z",
-      "stop": "2026-01-04T22:25:30.037981Z",
+    "latest": {
+      "id": "3d4b6665-156d-4df7-a557-748b89cb54bf",
+      "start": "2026-01-06T21:33:42.178111Z",
+      "stop": "2026-01-06T21:33:43.084269243Z",
       "baneType": "UTEN_NAVN",
-      "tid": 8209,
+      "tid": 8888,
+      "bil": null,
+      "laup": null
+    },
+    "personalBest": {
+      "id": "7a36388e-e292-4bbe-80b5-3ff12d93f62a",
+      "start": "2026-01-06T21:33:42.178111Z",
+      "stop": "2026-01-06T21:33:43.084269243Z",
+      "baneType": "UTEN_NAVN",
+      "tid": 1509,
       "bil": null,
       "laup": null
     }
   },
   {
-    "id": "872f8a53-7917-46e9-a450-c1f95c9c3524",
+    "id": "49404a10-dd9b-43d8-935e-9558e1f7701f",
     "name": "BESTEFAR_BANEN",
     "currentBane": "BESTEFAR_BANEN",
     "currentBil": null,
+    "latest": null,
     "personalBest": null
   }
 ]

@@ -35,7 +35,7 @@ public class LinjeController {
         return linjeDommer.getKusker();
     }
 
-    @GetMapping(value = "/init", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
+    @GetMapping(value = "/sse", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
     public SseEmitter streamKusks() throws IOException {
         registerEmitter();
         emitToCurrent();

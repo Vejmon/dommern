@@ -1,20 +1,32 @@
 <script setup>
 defineProps({
-  msg: {
+  name: {
     type: String,
+    required: true,
+  },
+  bane: {
+    type: String,
+    required: true,
+  },
+  tid: {
+    type: Number,
     required: false,
   },
-})
-
-fetch('linje')
-    .then(res => res.text())
-    .then(data => console.log('res:', data))
-    .catch(err => console.log('err', err));
+  pb: {
+    type: Number,
+    required: false,
+  }
+});
 
 </script>
 
 <template>
-    <strong>yiha</strong>
+  <ul>
+    <li>Navn: {{ name }}</li>
+    <li>Bane: {{ bane }}</li>
+    <li>Tid: {{ tid }}</li>
+    <li>PB: {{ pb }}</li>
+  </ul>
 </template>
 
 <style scoped>
