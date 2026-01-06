@@ -1,11 +1,12 @@
-<script setup>
+<script setup lang="ts">
 import Round from './components/Round.vue'
+import { ref } from 'vue';
+import type { Kusk } from './types/Kusk.ts';
 
-let riders = [];
+const riders = ref<Kusk[]>([]);
 const evtSrc = new EventSource('linje/sse');
 evtSrc.onmessage = (event) => {
-  riders = JSON.parse(event.data);
-  console.log(riders);
+  riders.value = JSON.parse(event.data) as Kusk[];
 };
 
 evtSrc.onerror = (err) => {
@@ -18,7 +19,7 @@ evtSrc.onerror = (err) => {
   <main>
     <ul>
       <li v-for="rider in riders" :key="rider.id">
-        <Round name="rider.name" bane="rider.currentBane" pb="personalBest.tid" />
+        <Round :name="rider.name" :bane="rider.currentBane" :pb="rider.personalBest?.tid" :tid="rider.latest?.tid" />
       </li>
     </ul>
   </main>
