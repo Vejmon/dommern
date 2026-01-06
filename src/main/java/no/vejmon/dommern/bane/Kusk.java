@@ -44,6 +44,12 @@ public class Kusk {
         this.currentBane = currentBane;
     }
 
+/* todo: add latest Runde
+
+    @OneToOne
+    private Runde latest;
+*/
+
     @OneToOne
     private Runde personalBest;
 
