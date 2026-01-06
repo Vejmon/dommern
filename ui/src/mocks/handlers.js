@@ -14,14 +14,7 @@ export const handlers = [
     return HttpResponse.json(active)
   }),
   http.get('/linje/sse', ({ request }) => {
-    sse_active[2].personalBest.tid += 11;
-    const stream = new ReadableStream({
-      start(controller) {
-        controller.enqueue(new TextEncoder()
-            .encode(`data: ${JSON.stringify(sse_active)}\n\n`));
-      },
-    })
-
+    const stream = buildStream()
     return new Response(stream, {
       headers: {
         connection: 'keep-alive',
@@ -31,3 +24,31 @@ export const handlers = [
     })
   }),
 ]
+
+
+
+const buildStream = () => {
+  return new ReadableStream({
+    start(controller) {
+      let count = 0;
+
+      const interval = setInterval(() => {
+        if (count >= 20) {
+          clearInterval(interval);
+          controller.close();
+          return;
+        }
+
+        sse_active[2].personalBest.tid += 11;
+
+        controller.enqueue(
+            new TextEncoder().encode(
+                `data: ${JSON.stringify(sse_active)}\n\n`
+            )
+        );
+
+        count++;
+      }, 500);
+    },
+  });
+}
