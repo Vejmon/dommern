@@ -1,0 +1,32 @@
+@layer components {
+    /* base: apply to .bane-card and every per-bane class so they inherit the base spacing/shape */
+    .bane-card,
+    .bane-BESTEFAR_BANEN,
+    .bane-FRODE_SPESIAL,
+    .bane-UTEN_NAVN,
+    .bane-KORTESTE_VEIEN,
+    .bane-other,
+    .bane-I_DEPO {
+        @apply p-4 m-2 rounded-lg;
+    }
+
+    .bane-BESTEFAR_BANEN {
+        @apply bg-red-600 text-white border border-red-700 ring-2 ring-red-300;
+    }
+
+    .bane-FRODE_SPESIAL {
+        @apply bg-green-600 text-white border border-green-700 ring-2 ring-green-300;
+    }
+
+    .bane-UTEN_NAVN {
+        @apply bg-blue-600 text-white border border-gray-800 ring-2 ring-gray-500;
+    }
+
+    .bane-KORTESTE_VEIEN {
+        @apply bg-yellow-400 text-black border border-yellow-500 ring-2 ring-yellow-200;
+    }
+
+    .bane-other {
+        @apply bg-gray-600 text-white border border-gray-700 ring-2 ring-gray-500;
+    }
+}

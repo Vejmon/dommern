@@ -1,25 +1,37 @@
 <script setup lang="ts">
 import Round from './components/Round.vue'
-import { ref } from 'vue';
+import { onMounted, onUnmounted, ref } from 'vue';
 import type { Kusk } from './types/Kusk.ts';
 
-const riders = ref<Kusk[]>([]);
-const evtSrc = new EventSource('linje/sse');
-evtSrc.onmessage = (event) => {
-  riders.value = JSON.parse(event.data) as Kusk[];
-};
+const kusks = ref<Kusk[]>([]);
 
-evtSrc.onerror = (err) => {
-  console.error('EventSource error:', err);
-};
+onMounted(() => {
+  const evtSrc = new EventSource('linje/sse');
+  evtSrc.onmessage = (event) => {
+    kusks.value = JSON.parse(event.data) as Kusk[];
+  };
+
+  evtSrc.onerror = (err) => {
+    console.error('EventSource error:', err);
+  };
+});
+
+onUnmounted(() => {
+  if (evtSrc) {
+    evtSrc.close();
+    evtSrc = null;
+  }
+});
 
 </script>
 
 <template>
   <main>
     <div>
-      <div v-for="rider in riders" :key="rider.id">
-        <Round :name="rider.name" :bane="rider.currentBane" :pb="rider.personalBest?.tid" :tid="rider.latest?.tid" />
+      <div v-for="kusk in kusks" :key="kusk.id">
+        <div>
+          <Round :kusk="kusk"/>
+        </div>
       </div>
     </div>
   </main>

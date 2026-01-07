@@ -1,31 +1,19 @@
-<script setup>
-defineProps({
-  name: {
-    type: String,
-    required: true,
-  },
-  bane: {
-    type: String,
-    required: true,
-  },
-  tid: {
-    type: Number,
-    required: false,
-  },
-  pb: {
-    type: Number,
-    required: false,
-  }
-});
+<script setup lang="ts">
+import type { Kusk }  from '../types/Kusk.ts';
+import { BANE_COLOR_MAP } from '../types/BaneType.ts'
+
+const props = defineProps<{ kusk: Kusk }>();
+
+
+// watch( async)
 
 </script>
 
 <template>
-  <div>
-    <div class="text-lg p-16 font-semibold text-blue-600">{{ name }} </div>
-    <div class="text-yellow-600">Bane: {{ bane }}</div>
-    <div>Tid: {{ tid }}</div>
-    <div>PB: {{ pb }}</div>
+  <div :class="`bane-${props.kusk.currentBane}`">
+    <div> {{ kusk.name }} </div>
+    <div>Tid: {{ kusk.latest?.tid }}</div>
+    <div>PB: {{ kusk.personalBest?.tid }}</div>
   </div>
 </template>
 

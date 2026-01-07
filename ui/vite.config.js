@@ -24,14 +24,20 @@ export default defineConfig(({ mode }) => {
     build: {
       rollupOptions: {
         input: isProduction
-          ? { main: 'index.html' }
-          : { main: 'local.html' }
+            ? { main: 'index.html' }
+            : { main: 'local.html' }
       }
     },
     server: {
       proxy: {
         '/api': 'http://localhost:8080'
       }
-    }
+    },
+    safelist: [
+      { pattern: /bg-(red|green|gray|yellow)-\d{3}/},
+      { pattern: /border-(red|green|gray|yellow)-\d{3}/},
+      { pattern: /text-(white|black)/},
+      { pattern: /(m|p)-\d{3}/},
+    ]
   }
 });
