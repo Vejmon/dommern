@@ -21,12 +21,12 @@ import java.util.List;
 public class LinjeController {
 
     private final LinjeDommer linjeDommer;
-    private SseEmitter emitter;
+    private static SseEmitter emitter;
 
     @Autowired
     public LinjeController(LinjeDommer linjeDommer) {
         this.linjeDommer = linjeDommer;
-        this.emitter = registerEmitter();
+        registerEmitter();
     }
 
 
@@ -52,16 +52,11 @@ public class LinjeController {
         emitter.send(SseEmitter.event().data(kusker));
     }
 
-    private synchronized SseEmitter registerEmitter() {
-        // Close the previous emitter if it exists
+    private synchronized void registerEmitter() {
         if (emitter != null) {
             emitter.complete();
         }
         emitter = new SseEmitter(Long.MAX_VALUE);
-        emitter.onCompletion(() -> this.emitter = null);
-        emitter.onTimeout(() -> this.emitter = null);
-        emitter.onError(e -> this.emitter = null);
-        return emitter;
     }
 
     @EventListener
