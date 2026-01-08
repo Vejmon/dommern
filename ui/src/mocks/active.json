@@ -1,50 +1,98 @@
 [
   {
-    "id": "4b56a15b-708b-498f-b24d-8452ea2d4e15",
-    "name": "KORTESTE_VEIEN",
+    "id": "3b77771d-f643-4922-abd1-d5a5d279a8db",
+    "name": "aa",
     "currentBane": "KORTESTE_VEIEN",
     "currentBil": null,
-    "latest": null,
-    "personalBest": null
-  },
-  {
-    "id": "e06ae7ed-1b2f-4da4-886b-7eafe38f05b0",
-    "name": "FRODE_SPESIAL",
-    "currentBane": "FRODE_SPESIAL",
-    "currentBil": null,
-    "latest": null,
-    "personalBest": null
-  },
-  {
-    "id": "f71ff4ce-a4c1-407f-b3e6-adb1a1ec55eb",
-    "name": "UTEN_NAVN",
-    "currentBane": "UTEN_NAVN",
-    "currentBil": null,
     "latest": {
-      "id": "3d4b6665-156d-4df7-a557-748b89cb54bf",
-      "start": "2026-01-06T21:33:42.178111Z",
-      "stop": "2026-01-06T21:33:43.084269243Z",
-      "baneType": "UTEN_NAVN",
-      "tid": 8888,
+      "id": "2ab98d4b-56db-45fb-ae2b-0338afc80084",
+      "start": "2026-01-08T15:34:27.864071Z",
+      "stop": "2026-01-08T15:34:29.922919364Z",
+      "baneType": "KORTESTE_VEIEN",
+      "tid": 2058,
       "bil": null,
       "laup": null
     },
     "personalBest": {
-      "id": "7a36388e-e292-4bbe-80b5-3ff12d93f62a",
-      "start": "2026-01-06T21:33:42.178111Z",
-      "stop": "2026-01-06T21:33:43.084269243Z",
-      "baneType": "UTEN_NAVN",
-      "tid": 1509,
+      "id": "2ab98d4b-56db-45fb-ae2b-0338afc80084",
+      "start": "2026-01-08T15:34:27.864071Z",
+      "stop": "2026-01-08T15:34:29.922919364Z",
+      "baneType": "KORTESTE_VEIEN",
+      "tid": 2058,
       "bil": null,
       "laup": null
     }
   },
   {
-    "id": "49404a10-dd9b-43d8-935e-9558e1f7701f",
-    "name": "BESTEFAR_BANEN",
+    "id": "8a3f43c6-8a0f-4c5f-b6e2-d6aa3418ed5f",
+    "name": "geir",
+    "currentBane": "FRODE_SPESIAL",
+    "currentBil": null,
+    "latest": {
+      "id": "62f7b934-8500-43e9-b9b3-231994317114",
+      "start": "2026-01-08T15:34:22.482718Z",
+      "stop": "2026-01-08T15:34:24.690915698Z",
+      "baneType": "FRODE_SPESIAL",
+      "tid": 2208,
+      "bil": null,
+      "laup": null
+    },
+    "personalBest": {
+      "id": "62f7b934-8500-43e9-b9b3-231994317114",
+      "start": "2026-01-08T15:34:22.482718Z",
+      "stop": "2026-01-08T15:34:24.690915698Z",
+      "baneType": "FRODE_SPESIAL",
+      "tid": 2208,
+      "bil": null,
+      "laup": null
+    }
+  },
+  {
+    "id": "04b60da0-c325-4946-aef0-2398bcd6f3bc",
+    "name": "veldig langt navn på en bruker",
+    "currentBane": "UTEN_NAVN",
+    "currentBil": null,
+    "latest": {
+      "id": "c11c7d90-e031-4024-9561-9d691ba43401",
+      "start": "2026-01-08T15:34:18.831628Z",
+      "stop": "2026-01-08T15:34:21.210813711Z",
+      "baneType": "UTEN_NAVN",
+      "tid": 2379,
+      "bil": null,
+      "laup": null
+    },
+    "personalBest": {
+      "id": "c11c7d90-e031-4024-9561-9d691ba43401",
+      "start": "2026-01-08T15:34:18.831628Z",
+      "stop": "2026-01-08T15:34:21.210813711Z",
+      "baneType": "UTEN_NAVN",
+      "tid": 2379,
+      "bil": null,
+      "laup": null
+    }
+  },
+  {
+    "id": "d76becf9-8cbb-4f31-999b-00abbca32aec",
+    "name": "a",
     "currentBane": "BESTEFAR_BANEN",
     "currentBil": null,
-    "latest": null,
-    "personalBest": null
+    "latest": {
+      "id": "4fce40a1-b243-4e64-b8e7-51754e4a8078",
+      "start": "2026-01-08T15:34:25.597896Z",
+      "stop": "2026-01-08T15:34:26.930678388Z",
+      "baneType": "BESTEFAR_BANEN",
+      "tid": 1333,
+      "bil": null,
+      "laup": null
+    },
+    "personalBest": {
+      "id": "4fce40a1-b243-4e64-b8e7-51754e4a8078",
+      "start": "2026-01-08T15:34:25.597896Z",
+      "stop": "2026-01-08T15:34:26.930678388Z",
+      "baneType": "BESTEFAR_BANEN",
+      "tid": 1333,
+      "bil": null,
+      "laup": null
+    }
   }
 ]
