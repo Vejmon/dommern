@@ -19,14 +19,14 @@ const formatMs = (ms) => {
 </script>
 
 <template>
-  <div :class="`bane-${props.kusk.currentBane}`">
-    <div class="flex flex-row gap-7 justify-between items-center mb-4">
-      <div class="text-5xl w-3/5 overflow-hidden"> {{ kusk.name }} </div>
-      <div class="text-3xl w-2/5">Bane: {{ kusk.currentBane }}</div>
+  <div :class="`bane-${props.kusk.currentBane} text-3xl`">
+    <div class="flex lg:flex-row flex-col lg:gap-7 lg:justify-between lg:items-center lg:mb-4">
+      <div class="lg:text-5xl lg:w-3/5 truncate lg:min-h-13"> {{ kusk.name }} </div>
+      <div class="lg:w-2/5">Bane: {{ kusk.currentBane }}</div>
     </div>
-    <div class="flex flex-row gap-7 justify-between items-end min-h-25">
-      <div class="text-8xl w-3/5 overflow-hidden">Tid: {{ formatMs(kusk.latest?.tid) }}</div>
-      <div v-if="kusk.personalBest?.tid" class="text-7xl w-2/5 overflow-hidden">PB: {{ formatMs(kusk.personalBest?.tid) }}</div>
+    <div class="flex lg:flex-row flex-col lg:gap-7 lg:justify-between lg:items-end lg:min-h-25">
+      <div class="lg:text-8xl lg:w-3/5">Tid: {{ formatMs(kusk.latest?.tid) }}</div>
+      <div v-if="kusk.personalBest?.tid" class="lg:text-7xl lg:w-2/5">PB: {{ formatMs(kusk.personalBest?.tid) }}</div>
     </div>
   </div>
 </template>

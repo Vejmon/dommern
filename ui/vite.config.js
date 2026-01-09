@@ -21,13 +21,6 @@ export default defineConfig(({ mode }) => {
         '@': fileURLToPath(new URL('./src', import.meta.url))
       }
     },
-    build: {
-      rollupOptions: {
-        input: isProduction
-            ? { main: 'index.html' }
-            : { main: 'local.html' }
-      }
-    },
     server: {
       proxy: {
         '/api': 'http://localhost:8080'

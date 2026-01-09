@@ -26,8 +26,8 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <main>
-    <div class="flex flex-col gap-4 p-4 m-auto min-w-6xl">
+  <main class="">
+    <div class="xl:min-w-7xl min-w-sm flex flex-col">
       <div v-for="kusk in kusks" :key="kusk.id">
         <Round :kusk="kusk"/>
       </div>
