@@ -21,12 +21,21 @@ const formatMs = (ms) => {
 <template>
   <div :class="`bane-${props.kusk.currentBane} text-3xl`">
     <div class="flex lg:flex-row flex-col lg:gap-7 lg:justify-between lg:items-center lg:mb-4">
-      <div class="lg:text-5xl lg:w-3/5 truncate lg:min-h-13"> {{ kusk.name }} </div>
-      <div class="lg:w-2/5">Bane: {{ kusk.currentBane }}</div>
+      <div class="lg:text-5xl lg:w-3/5 truncate lg:min-h-13 self-center"> {{ kusk.name }} </div>
+      <div class="flex flex-row gap-2 lg:w-2/5 justify-between lg:justify-start">
+        <div>Bane: </div>
+        <div>{{ kusk.currentBane }}</div>
+      </div>
     </div>
-    <div class="flex lg:flex-row flex-col lg:gap-7 lg:justify-between lg:items-end lg:min-h-25">
-      <div class="lg:text-8xl lg:w-3/5">Tid: {{ formatMs(kusk.latest?.tid) }}</div>
-      <div v-if="kusk.personalBest?.tid" class="lg:text-7xl lg:w-2/5">PB: {{ formatMs(kusk.personalBest?.tid) }}</div>
+    <div class="flex lg:flex-row flex-col lg:gap-7 justify-between lg:items-end lg:min-h-25">
+      <div class="flex flex-row gap-6 justify-between lg:justify-start lg:text-8xl lg:w-3/5">
+        <div>Tid: </div>
+        <div>{{ formatMs(kusk.latest?.tid) }} </div>
+      </div>
+      <div v-if="kusk.personalBest?.tid" class="flex flex-row gap-6 justify-between lg:justify-start lg:text-7xl lg:w-2/5">
+        <div>PB: </div>
+        <div>{{ formatMs(kusk.personalBest?.tid) }}</div>
+      </div>
     </div>
   </div>
 </template>
