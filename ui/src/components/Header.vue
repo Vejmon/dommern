@@ -9,7 +9,7 @@
         <img src="../../public/img/android-chrome-512x512.png" class="max-w-15" />
       </a>
     </div>
-    <a href="/kusk">
+    <a href="/kusk.html">
       <div class="ring-2 rounded-lg p-2 text-4xl">Kusk +</div>
     </a>
   </div>

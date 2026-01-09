@@ -4,7 +4,7 @@ import type {Kusk} from '../types/Kusk.ts';
 const props = defineProps<{ kusk: Kusk }>();
 
 
-// watch( async)
+// watch( async) todo: pulse change to PB
 
 const formatMs = (ms) => {
   if (ms == null || ms === '') return '---';
