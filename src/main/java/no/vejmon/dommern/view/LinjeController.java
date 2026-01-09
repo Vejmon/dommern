@@ -11,6 +11,7 @@ import org.springframework.scheduling.annotation.Async;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.context.request.async.AsyncRequestNotUsableException;
 import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
 
 import java.io.IOException;
@@ -36,7 +37,7 @@ public class LinjeController {
     }
 
     @GetMapping(value = "/sse", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
-    public SseEmitter streamKusks() throws IOException {
+    public synchronized SseEmitter streamKusks() throws IOException {
         registerEmitter();
         emitToCurrent();
         return emitter;
@@ -44,12 +45,20 @@ public class LinjeController {
 
     public synchronized void emitToCurrent() throws IOException {
         if (emitter == null) return;
-        emitter.send(SseEmitter.event().data(linjeDommer.getKusker()));
+        try {
+            emitter.send(SseEmitter.event().data(linjeDommer.getKusker()));
+        } catch (AsyncRequestNotUsableException e) {
+            emitter = null;
+        }
     }
 
     public synchronized void emitToCurrent(List<Kusk> kusker) throws IOException {
         if (emitter == null) return;
-        emitter.send(SseEmitter.event().data(kusker));
+        try {
+            emitter.send(SseEmitter.event().data(kusker));
+        } catch (AsyncRequestNotUsableException e) {
+            emitter = null;
+        }
     }
 
     private synchronized void registerEmitter() {
@@ -57,6 +66,8 @@ public class LinjeController {
             emitter.complete();
         }
         emitter = new SseEmitter(Long.MAX_VALUE);
+        emitter.onError(e -> emitter = null);
+        emitter.onTimeout(() -> emitter = null);
     }
 
     @EventListener
