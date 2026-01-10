@@ -14,8 +14,8 @@ import java.util.List;
 @Setter
 public class GpioProperties {
     private List<Integer> pins = List.of(
-            NativeKeyEvent.VC_H,
-            NativeKeyEvent.VC_J,
-            NativeKeyEvent.VC_K,
-            NativeKeyEvent.VC_L);
+            NativeKeyEvent.VC_Y,
+            NativeKeyEvent.VC_U,
+            NativeKeyEvent.VC_I,
+            NativeKeyEvent.VC_O);
 }
