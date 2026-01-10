@@ -28,17 +28,16 @@ runs:
         oauth-client-id: ${{ inputs.oauth-client-id }}
         oauth-secret: ${{ inputs.oauth-secret }}
         tags: tag:dommern
-
-    - name: Pull repo and restart dommern
+    - name: Pull repo and restart dommern and firefix
       shell: bash
-      run: |
+      run: | # note: firefix.service performs health check of Dommern at ExecStartPre.
         tailscale ssh ${{ inputs.ssh-user }}@${{ inputs.ssh-host }} << 'EOF'
           set -e
           cd ${{ inputs.app-path }}
           git restore .
           git pull --rebase
-          docker compose down
+          docker compose down 
           docker image prune -f
           systemctl --user restart dommern
-          curl --fail --retry 20 --retry-delay 10 --retry-connrefused http://localhost:8080/actuator/health
+          systemctl --user restart firefix
         EOF
