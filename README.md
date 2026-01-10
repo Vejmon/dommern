@@ -50,10 +50,9 @@ And also deployed to a Raspberry Pi running in on our local racetrack.
 any thrown exception will be sent to the configured email address in production mode
 
 ## GPIO wiring
-> the rightmost circuit shows the wiring of an optional indicator LED, which lights up when a lap is recorded.
 ![wiring.png](src/main/resources/public/img/wiring.png)
+*the rightmost circuit shows the wiring of an optional indicator LED, which lights up when a lap is recorded.*
 
 ## GPIO pinout
-
 ![gpio.png](src/main/resources/public/img/gpio.png)
-
+*The different numbers and names for the GPIO pins on a raspberry pi5*
