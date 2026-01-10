@@ -28,7 +28,7 @@ const formatMs = (ms) => {
       </div>
     </div>
     <div class="flex lg:flex-row flex-col lg:gap-7 justify-between lg:items-end lg:min-h-25">
-      <div class="flex flex-row gap-6 justify-between lg:justify-start lg:text-8xl lg:w-3/5">
+      <div class="flex flex-row gap-6 truncate justify-between lg:justify-start lg:text-8xl lg:w-3/5">
         <div>Tid: </div>
         <div>{{ formatMs(kusk.latest?.tid) }} </div>
       </div>
