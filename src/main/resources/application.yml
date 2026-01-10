@@ -52,4 +52,4 @@ spring:
   config.activate.on-profile: production
   pi4j:
     gpio:
-      pins: [ 7, 11, 18, 22 ]
+      pins: [ 4, 17, 24, 25 ]

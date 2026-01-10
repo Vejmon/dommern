@@ -15,9 +15,14 @@ To start the development server locally, run:
 ./gradlew bootRun --args='--spring.profiles.active=local'
 ```
 Timekeeping is then permitted on the keyboard, using the following keys:
-`[Y, U, I, O]` for lap times of racers 1 to 4 respectively.
-corresponding to the GPIO pins `[21, 22, 23, 24]`.
-
+>for lap times of racers 1 to 4 respectively.
+>- keyboard:
+>  - `[Y, U, I, O]` 
+>- GPIO pins:
+>  - `[40, 15, 16, 18]`
+>- BCM identifiers:
+>  - `[21, 22, 23, 24]`
+>
 The backend will be available at `http://localhost:8080` as default.
 
 The backend in production mode can also be started with Docker using the provided `compose.yaml` file, 
@@ -25,8 +30,13 @@ as seen in the `compose.yaml` the application depends on a running instance of a
 ```bash
 docker compose up app
 ```
-Timekeeping is then performed on the GPIO pins of the Raspberry Pi, using the following pins: `[7, 11, 18, 22]` for lap times of racers 1 to 4 respectively.
-Each pin should be connected to optical sensors for each racer.
+Timekeeping is then performed on the GPIO pins of the Raspberry Pi, using the following pins: 
+>- GPIO pins:
+>  - `[7, 11, 18, 22]`
+>- BCIM identifiers:
+>  - `[4, 17, 24, 25]`
+
+*Each pin should be connected to optical sensors for each racer.*
 
 
 ### UI
