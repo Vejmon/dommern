@@ -6,7 +6,7 @@
   <div class="flex flex-row justify-between p-2">
     <div class="flex flex-col items-center">
       <a href="/">
-        <img src="../../public/img/android-chrome-512x512.png" class="max-w-15" />
+        <img src="/img/android-chrome-512x512.png" class="max-w-15" />
       </a>
     </div>
     <a href="/kusk.html">

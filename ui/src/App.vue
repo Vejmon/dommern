@@ -28,7 +28,7 @@ onUnmounted(() => {
 
 <template>
   <header>
-    <Header class="absolute top-0 left-0 position min-h-10 bg-stone-950 ring-2 ring-stone-700 rounded-b-lg w-full"/>
+    <Header class="app-header"/>
   </header>
   <main class="flex justify-center pt-24">
     <div class="xl:min-w-7xl min-w-sm flex flex-col gap-4">

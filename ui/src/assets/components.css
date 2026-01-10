@@ -29,4 +29,7 @@
     .bane-other {
         @apply bg-gray-600;
     }
+    .app-header {
+        @apply absolute top-0 left-0 min-h-10 bg-stone-950 ring-2 ring-stone-700 rounded-b-lg w-full;
+    }
 }
