@@ -46,3 +46,10 @@ logging:
       clean-history-on-start: true
   level:
     root: INFO
+
+---
+spring:
+  config.activate.on-profile: production
+  pi4j:
+    gpio:
+      pins: [ 19, 21, 24, 26]
