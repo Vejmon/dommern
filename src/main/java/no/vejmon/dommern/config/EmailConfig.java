@@ -39,7 +39,7 @@ public class EmailConfig {
             pointcut = "execution(* no.vejmon..*(..))  && !within(no.vejmon.dommern.config.EmailConfig)",
             throwing = "ex"
     )
-    public void sendEmail(Throwable ex){
+    private void sendThrownEmail(Throwable ex){
         if (counter > 15) return;
 
         SimpleMailMessage message = new SimpleMailMessage();

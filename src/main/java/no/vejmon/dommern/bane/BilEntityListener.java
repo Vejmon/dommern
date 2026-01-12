@@ -33,7 +33,7 @@ public class BilEntityListener extends AbstractRepositoryEventListener<Bil> {
         }
         log.info("Ny bil '{}' er registrert for kusk '{}', sender epost til {}", bil.getId(), bil.getKusk().getName(), email);
         try {
-            emailConfig.sendNewBilImage(bil, toByteArrayResource(barcodeGen.qrCode(bil.getId().toString())));
+            emailConfig.sendNewBilImage(bil, toByteArrayResource(barcodeGen.qrCode(bil.getId().toString(), bil.getInitials())));
         } catch (MessagingException|IOException e) {
             log.error("Kunne ikke sende epost for bil id '{}'", bil.getId(), e);
         }
