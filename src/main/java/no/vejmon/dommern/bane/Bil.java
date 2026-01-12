@@ -2,6 +2,7 @@ package no.vejmon.dommern.bane;
 
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotEmpty;
 import lombok.*;
 
 import java.util.List;
@@ -26,11 +27,9 @@ public class Bil {
     @ManyToOne(optional = false, fetch = FetchType.EAGER)
     private Kusk kusk;
 
-    @NonNull
+    @NotEmpty
     private String name;
-    @NonNull
     private String make;
-    @NonNull
     private String model;
 
     private Float gPrCmTorque;
@@ -38,5 +37,22 @@ public class Bil {
 
     private String basedMake;
     private String basedModel;
+
+    public String getInitials() {
+
+        String[] parts = name.trim().split("\\s+");
+        StringBuilder initials = new StringBuilder();
+        for (String part : parts) {
+            if (!part.isEmpty()) {
+                initials.append(Character.toUpperCase(part.charAt(0)));
+            }
+        }
+        if (initials.length() == 1 && parts[0].length() >= 3) {
+            initials.append(Character.toLowerCase(parts[0].charAt(1)));
+            initials.append(Character.toLowerCase(parts[0].charAt(2)));
+        }
+
+        return initials.toString();
+    }
 
 }

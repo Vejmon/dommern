@@ -5,9 +5,9 @@ import {onMounted, onUnmounted, ref} from 'vue';
 import type {Kusk} from './types/Kusk.ts';
 
 const kusks = ref<Kusk[]>([]);
+const evtSrc = new EventSource('linje/sse');
 
 onMounted(() => {
-  const evtSrc = new EventSource('linje/sse');
   evtSrc.onmessage = (event) => {
     kusks.value = JSON.parse(event.data) as Kusk[];
   };
@@ -20,7 +20,6 @@ onMounted(() => {
 onUnmounted(() => {
   if (evtSrc) {
     evtSrc.close();
-    evtSrc = null;
   }
 });
 

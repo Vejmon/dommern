@@ -2,6 +2,7 @@ package no.vejmon.dommern.bane;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
 import lombok.*;
 
 import java.util.ArrayList;
@@ -20,6 +21,9 @@ public class Kusk {
 
     @Column(unique = true)
     private String name =  "ukjent";
+
+    @Email
+    private String email;
 
     @NonNull
     private BaneType currentBane;

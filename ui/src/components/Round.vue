@@ -16,6 +16,10 @@ const formatMs = (ms) => {
   return `${seconds}:${String(remainderMs).padStart(3, '0')}`;
 }
 
+const baneInitials = (bane: string) => {
+  return bane.split("_").map(word => word.charAt(0).toUpperCase()).join("");
+}
+
 </script>
 
 <template>
@@ -24,7 +28,7 @@ const formatMs = (ms) => {
       <div class="lg:text-5xl lg:w-3/5 truncate lg:min-h-13 self-center"> {{ kusk.name }} </div>
       <div class="flex flex-row gap-2 lg:w-2/5 justify-between lg:justify-start">
         <div>Bane: </div>
-        <div>{{ kusk.currentBane }}</div>
+        <div>{{ baneInitials(kusk.currentBane) }}</div>
       </div>
     </div>
     <div class="flex lg:flex-row flex-col lg:gap-7 justify-between lg:items-end lg:min-h-25">

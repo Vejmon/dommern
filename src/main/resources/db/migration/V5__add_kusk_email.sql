@@ -1,0 +1,1 @@
+alter table kusk add email VARCHAR(255);
