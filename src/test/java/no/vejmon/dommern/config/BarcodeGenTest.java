@@ -22,7 +22,7 @@ class BarcodeGenTest {
 
         assertNotNull(qrCodeImage);
         assertEquals(BufferedImage.TYPE_BYTE_GRAY, qrCodeImage.getType());
-        // image should be square
+
         assertEquals(qrCodeImage.getWidth() + textHeight, qrCodeImage.getHeight());
         assertTrue(qrCodeImage.getWidth() > 10);
     }
