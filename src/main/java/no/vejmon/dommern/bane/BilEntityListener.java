@@ -4,6 +4,7 @@ import jakarta.mail.MessagingException;
 import lombok.extern.slf4j.Slf4j;
 import no.vejmon.dommern.config.BarcodeGen;
 import no.vejmon.dommern.config.EmailConfig;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnExpression;
 import org.springframework.data.rest.core.event.AbstractRepositoryEventListener;
 import org.springframework.stereotype.Component;
 
@@ -13,6 +14,9 @@ import static no.vejmon.dommern.config.BarcodeGen.toByteArrayResource;
 
 @Slf4j
 @Component
+@ConditionalOnExpression(
+        "T(org.springframework.util.StringUtils).hasText('${spring.mail.username:}')"
+)
 public class BilEntityListener extends AbstractRepositoryEventListener<Bil> {
 
     private final EmailConfig emailConfig;

@@ -48,8 +48,9 @@ public class Bil {
                 initials.append(Character.toUpperCase(part.charAt(0)));
             }
         }
-        if (initials.length() == 1 && parts[0].length() >= 2) {
+        if (initials.length() == 1 && parts[0].length() >= 3) {
             initials.append(Character.toUpperCase(parts[0].charAt(1)));
+            initials.append(Character.toUpperCase(parts[0].charAt(2)));
         }
 
         return initials.toString();
