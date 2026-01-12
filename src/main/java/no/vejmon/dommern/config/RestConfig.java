@@ -1,5 +1,6 @@
 package no.vejmon.dommern.config;
 
+import no.vejmon.dommern.bane.Bil;
 import no.vejmon.dommern.bane.Kusk;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
@@ -13,6 +14,7 @@ public class RestConfig implements RepositoryRestConfigurer {
     public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config, CorsRegistry cors) {
         config.setReturnBodyOnDelete(false);
         config.exposeIdsFor(Kusk.class);
+        config.exposeIdsFor(Bil.class);
         config.setDefaultPageSize(20);
     }
 }

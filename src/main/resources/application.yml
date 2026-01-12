@@ -52,4 +52,4 @@ spring:
   config.activate.on-profile: production
   pi4j:
     gpio:
-      pins: [ 4, 17, 24, 25 ]
+      pins: [ 4, 17, 24, 25 ] # BCM pin identifiers

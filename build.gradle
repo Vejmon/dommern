@@ -32,6 +32,7 @@ dependencies {
     implementation libs.bundles.pi4j
 
     implementation 'com.github.kwhat:jnativehook:2.2.2'
+    implementation 'uk.org.okapibarcode:okapibarcode:0.5.2'
     implementation 'javazoom:jlayer:1.0.1'
 
     compileOnly 'org.projectlombok:lombok'
