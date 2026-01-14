@@ -27,6 +27,8 @@ public class GPIOLytter implements Lytter {
     private final Context pi4j;
     @Value("${spring.pi4j.gpio.pull:OFF}")
     private String pull;
+    @Value("${spring.pi4j.gpio.debounce:4000000}")
+    private Long debounce;
 
     public GPIOLytter(ApplicationEventPublisher publisher,
                       Map<BaneType, Integer> baneMap,
@@ -44,7 +46,7 @@ public class GPIOLytter implements Lytter {
                     .name(baneMapEntry.getKey().name())
                     .address(baneMapEntry.getValue())
                     .pull(PullResistance.parse(pull))
-                    .debounce(4_000_000L);
+                    .debounce(debounce);
             DigitalInput button = pi4j.create(buttonConfig);
             log.info("Created button: {}", button.getName());
 
