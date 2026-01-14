@@ -1,10 +1,11 @@
 <script setup lang="ts">
-import {ref} from "vue";
+import {ref, watch} from "vue";
 import {postData} from "@/utils/api.js";
 import {BaneType} from "@/types/BaneType";
 
 const formRef = ref<HTMLFormElement | null>(null);
-const currentBane = ref<BaneType | null>(null);
+const currentBane = ref<BaneType | null>(BaneType.I_DEPO);
+const submittedName = ref(null);
 const selectableBanes: BaneType[] = [
     BaneType.KORTESTE_VEIEN,
     BaneType.FRODE_SPESIAL,
@@ -13,18 +14,27 @@ const selectableBanes: BaneType[] = [
 ];
 
 const submitForm = async () => {
-  console.log('ref.value', formRef.value);
   if (!formRef.value) return;
   const formData = new FormData(formRef.value);
   const data = Object.fromEntries(formData.entries());
   await postData('/kusks', data)
     .then(response => {
-      console.log('Form submitted successfully:', response);
+      submittedName.value = response.name;
     })
     .catch(error => {
       console.error('Error submitting form:', error);
     });
 }
+watch(submittedName, async (newValue) => {
+  if (!newValue) return
+
+  if (formRef.value) formRef.value.reset()
+  currentBane.value = null
+
+  await new Promise(resolve => setTimeout(resolve, 1000))
+  submittedName.value = false
+  currentBane.value = BaneType.I_DEPO;
+})
 
 </script>
 
@@ -42,7 +52,7 @@ const submitForm = async () => {
       <div class="input-group">
         <label for="currentBane">Bane:</label>
         <select id="currentBane" name="currentBane" v-model="currentBane" class="input-text">
-          <option :value="null"></option>
+          <option :value="BaneType.I_DEPO">{{BaneType.I_DEPO}}</option>
           <option
               v-for="bane in selectableBanes"
               :key="bane"
@@ -52,7 +62,13 @@ const submitForm = async () => {
           </option>
         </select>
       </div>
-      <button class="w-full input-text hover:cursor-pointer" type="button" @click="submitForm">Submit</button>
+      <div class="justify-between input-group flex-row">
+        <div v-if="!submittedName" class="opacity-0"> hidden </div>
+        <div v-else class="pl-5"> {{submittedName}} Lagret! </div>
+        <button class="w-2/5 input-text hover:cursor-pointer active:bg-green-600" type="button" @click="submitForm">
+          Lagre
+        </button>
+      </div>
     </form>
   </div>
 </template>

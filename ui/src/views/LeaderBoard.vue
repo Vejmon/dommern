@@ -38,8 +38,8 @@ const baneInitials = (bane: string) => {
 </script>
 
 <template>
-  <div flex="flex flex-col">
-    <div class="flex justify-center pt-24">
+  <div>
+    <div class="flex flex-col xl:flex-row justify-center pt-24">
       <div class="xl:min-w-7xl min-w-sm flex flex-col gap-4">
         <div v-for="kusk in kusks" :key="kusk.id">
           <router-link :to="`/kusk/${kusk.id}`" class="no-underline">
@@ -65,9 +65,7 @@ const baneInitials = (bane: string) => {
           </router-link>
         </div>
       </div>
-    </div>
-    <div>
-      <router-view />
+        <router-view />
     </div>
   </div>
 </template>
