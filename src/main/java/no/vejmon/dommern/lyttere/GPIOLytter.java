@@ -11,6 +11,7 @@ import lombok.extern.slf4j.Slf4j;
 import no.vejmon.dommern.bane.BaneType;
 import no.vejmon.dommern.bane.MinimalRunde;
 import no.vejmon.dommern.judge.NyRundeEvent;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Component;
 
@@ -24,6 +25,8 @@ public class GPIOLytter implements Lytter {
     private final ApplicationEventPublisher publisher;
     private final Map<BaneType, Integer> baneMap;
     private final Context pi4j;
+    @Value("${spring.pi4j.gpio.pull:OFF}")
+    private String pull;
 
     public GPIOLytter(ApplicationEventPublisher publisher,
                       Map<BaneType, Integer> baneMap,
@@ -40,7 +43,7 @@ public class GPIOLytter implements Lytter {
                     .id(UUID.randomUUID().toString())
                     .name(baneMapEntry.getKey().name())
                     .address(baneMapEntry.getValue())
-                    .pull(PullResistance.PULL_DOWN)
+                    .pull(PullResistance.parse(pull))
                     .debounce(4_000_000L);
             DigitalInput button = pi4j.create(buttonConfig);
             log.info("Created button: {}", button.getName());
