@@ -53,4 +53,4 @@ spring:
   pi4j:
     gpio:
       pins: [ 4, 17, 24, 25 ] # BCM pin identifiers
-      pull: down # off, up or down
+      pull: off # off, up or down
