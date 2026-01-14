@@ -2,7 +2,7 @@
 import type {Kusk} from '@/types/Kusk.ts';
 import {onMounted, onUnmounted, ref} from "vue";
 
-const evtSrc = new EventSource('linje/sse');
+const evtSrc = new EventSource('/linje/sse');
 const kusks = ref<Kusk[]>([]);
 
 onMounted(() => {
