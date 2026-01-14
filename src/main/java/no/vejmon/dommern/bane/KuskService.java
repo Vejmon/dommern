@@ -25,10 +25,19 @@ public class KuskService {
         return rundeRepository.findTopByKuskOrderByStartDesc(kusk);
     }
 
+    public void placeAllKusksInDepo(){
+        List<Kusk> allKusks = kuskRepository.findAll();
+        allKusks.forEach(kusk -> {
+            kusk.setCurrentBane(BaneType.I_DEPO);
+        });
+        kuskRepository.saveAll(allKusks);
+    }
+
     public Kusk initKusk(BaneType baneType){
         Kusk kusk =  kuskRepository.findByName(baneType.name()).orElseGet(() ->
             new Kusk(baneType.name(), baneType)
         );
+        kusk.setCurrentBane(baneType);
         return kuskRepository.save(kusk);
     }
 

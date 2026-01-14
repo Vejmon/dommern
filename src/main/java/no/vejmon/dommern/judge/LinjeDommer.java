@@ -35,6 +35,7 @@ public class LinjeDommer {
 
     @PostConstruct
     public void init() {
+        kuskService.placeAllKusksInDepo();
         kusker.add(kuskService.initKusk(BaneType.KORTESTE_VEIEN));
         kusker.add(kuskService.initKusk(BaneType.FRODE_SPESIAL));
         kusker.add(kuskService.initKusk(BaneType.UTEN_NAVN));
@@ -70,10 +71,9 @@ public class LinjeDommer {
     public void handleNewKusk(NyKuskEvent newKuskEvent){
         Kusk oldKusk = kusker.stream().filter(k ->
                 k.getCurrentBane().equals(newKuskEvent.getKusk().getCurrentBane())).findFirst().orElseThrow();
-        kusker.remove(oldKusk);
+        kusker.set(kusker.indexOf(oldKusk), newKuskEvent.getKusk());
         oldKusk.setCurrentBane(BaneType.I_DEPO);
         kuskService.saveKusk(oldKusk);
-        kusker.add(newKuskEvent.getKusk());
         notifyKuskerChanged();
     }
 
