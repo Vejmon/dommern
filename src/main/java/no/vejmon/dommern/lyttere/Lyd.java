@@ -22,7 +22,7 @@ public class Lyd {
                 .filter(entry -> entry.getKey() == this.bane)
                 .findFirst()
                 .map(Map.Entry::getValue)
-                .orElse(1);
+                .orElse(0);
         return lydType.getName().formatted(baneId);
     }
 
