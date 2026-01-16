@@ -1,0 +1,26 @@
+name: Build and test Dommern
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - src/**
+      - ui/**
+      - .github/actions/gradle-build/**
+      - build.gradle
+      - settings.gradle
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
+
+    - name: Build and test dommern project
+      uses : ./.github/actions/gradle-build
