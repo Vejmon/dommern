@@ -32,4 +32,13 @@
     .app-header {
         @apply absolute top-0 left-0 min-h-10 bg-stone-950 ring-2 ring-stone-700 rounded-b-lg w-full;
     }
+    .input-form {
+        @apply flex flex-col gap-4 p-4 xl:absolute
+    }
+    .input-group {
+        @apply text-xl flex flex-row xl:flex-col gap-4 xl:gap-1 text-white justify-between xl:w-full
+    }
+    .input-text {
+        @apply bg-black ring-2 ring-white rounded-lg w-4/5 xl:w-full p-1 pl-2
+    }
 }

@@ -14,6 +14,7 @@ import java.util.UUID;
 @Getter
 @Setter
 @Entity
+@EntityListeners({KuskEntityListener.class})
 public class Kusk {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)

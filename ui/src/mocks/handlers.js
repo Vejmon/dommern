@@ -5,6 +5,11 @@ let sse_active = active;
 
 export const handlers = [
   // Intercepts requests to the backend
+  http.post('/kusks', async ({request}) => {
+    const data = await request.json();
+    return HttpResponse.json(data);
+  }),
+
   http.get('/actuator/health', () => {
     return HttpResponse.json({
       status: 'UP'

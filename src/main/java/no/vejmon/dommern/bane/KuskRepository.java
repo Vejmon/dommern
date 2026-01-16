@@ -14,4 +14,7 @@ public interface KuskRepository extends JpaRepository<Kusk, UUID> {
     @RestResource(exported = false)
     Optional<Kusk> findByName(String name);
 
+    @RestResource(exported = false)
+    Optional<Kusk> findByCurrentBane(BaneType baneType);
+
 }

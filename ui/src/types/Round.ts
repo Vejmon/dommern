@@ -1,6 +1,6 @@
-import BaneType from './BaneType';
+import {BaneType} from './BaneType';
 
-interface Round {
+export interface Round {
     id: string;
     start: string; // ISO date string
     stop: string;  // ISO date string

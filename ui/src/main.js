@@ -1,6 +1,7 @@
 import './assets/main.css'
 
 import {createApp} from 'vue'
+import router from "@/router/index.ts";
 
 export async function prepareApp() {
     if (import.meta.env.DEV) {
@@ -17,5 +18,7 @@ export async function prepareApp() {
 // Boot the app after prepareApp finishes
 export async function bootstrap(app){
     await prepareApp()
-    createApp(app).mount('#app')
+    createApp(app)
+        .use(router)
+        .mount('#app')
 }

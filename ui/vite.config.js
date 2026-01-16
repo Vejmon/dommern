@@ -31,15 +31,6 @@ export default defineConfig(({ mode }) => {
       { pattern: /border-(red|green|gray|yellow|orange|slate)-\d{3}/},
       { pattern: /text-(white|black)/},
       { pattern: /(m|p)-\d{3}/},
-    ],
-    build: {
-      // Multi-page / multiple HTML entry points
-      rollupOptions: {
-        input: {
-          main: fileURLToPath(new URL('./index.html', import.meta.url)),
-          kusk: fileURLToPath(new URL('./kusk.html', import.meta.url))
-        }
-      }
-    }
+    ]
   }
 });

@@ -1,10 +1,12 @@
-import Round from './Runde.ts';
-import BaneType from './BaneType.ts';
+import type {Round} from './Round.ts';
+import type {BaneType} from './BaneType.ts';
 
-interface Kusk {
+export interface Kusk {
     id: string;
     name: string;
+    email: string;
     currentBane: BaneType;
+    latest: Round | null;
     currentBil: string | null;
     personalBest: Round | null;
 }
