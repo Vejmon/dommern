@@ -26,13 +26,12 @@ const submitForm = async () => {
     });
 }
 watch(submittedName, async (newValue) => {
-  if (!newValue) return
+  if (!newValue) return;
 
-  if (formRef.value) formRef.value.reset()
-  currentBane.value = null
+  formRef.value.reset();
 
-  await new Promise(resolve => setTimeout(resolve, 1000))
-  submittedName.value = false
+  await new Promise(resolve => setTimeout(resolve, 1000));
+  submittedName.value = null;
   currentBane.value = BaneType.I_DEPO;
 })
 
@@ -40,14 +39,14 @@ watch(submittedName, async (newValue) => {
 
 <template>
   <div>
-    <form id="kuskForm" ref="formRef" class="input-form pb-32 max-w-2xl">
+    <form id="kuskForm" ref="formRef" class="input-form pb-32 max-w-2xl" @submit.prevent="">
       <div class="input-group">
         <label for="name">Navn:</label>
         <input class="input-text" type="text" id="name" name="name" />
       </div>
       <div class="input-group">
         <label for="email">Epost:</label>
-        <input class="input-text" type="text" id="email" name="email" />
+        <input class="input-text" type="email" id="email" name="email" />
       </div>
       <div class="input-group">
         <label for="currentBane">Bane:</label>

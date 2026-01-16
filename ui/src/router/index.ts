@@ -13,12 +13,12 @@ const router = createRouter({
             children: [
                 {
                     path: 'kusk',
-                    name: 'new-Kusk',
+                    name: 'newKusk',
                     component: Form,
                 },
                 {
                     path: 'kusk/:id',
-                    name: 'view-Kusk',
+                    name: 'viewKusk',
                     component: View
                 }
             ]
