@@ -62,8 +62,22 @@ any thrown exception will be sent to the configured email address in production 
 
 ## GPIO wiring
 ![wiring.png](src/main/resources/public/img/wiring.png)
+
 *the rightmost circuit shows the wiring of an optional indicator LED, which lights up when a lap is recorded.*
 
 ## GPIO pinout
 ![gpio.png](src/main/resources/public/img/gpio.png)
+
 *The different numbers and names for the GPIO pins on a raspberry pi5*
+
+## Useful Aliases
+
+```bash
+alias dom="cd /path/to/dommern"
+alias doc="sudo docker compose -f /path/to/dommern/compose.yaml"
+alias g="gradle -p /path/to/dommern"
+alias domnpm="npm --prefix /path/to/dommern/ui"
+alias dompoe="poetry -C /path/to/dommern/dom"
+alias dom-cli="dompoe run dom-cli"
+alias dev="domnpm run build; domnpm run dev"
+```
