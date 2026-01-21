@@ -38,6 +38,9 @@ watch(submittedName, async (newValue) => {
 </script>
 
 <template>
+  <div class="xl:hidden text-4xl pl-24 pt-5">
+    --- Kusk form ---
+  </div>
   <div>
     <form id="kuskForm" ref="formRef" class="input-form pb-32 max-w-2xl" @submit.prevent="">
       <div class="input-group">

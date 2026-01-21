@@ -1,5 +1,6 @@
 import {http, HttpResponse} from 'msw'
 import active from './active.json'
+import kusk_page from './kusks_page.json'
 
 let sse_active = active;
 
@@ -27,6 +28,9 @@ export const handlers = [
         'cache-control': 'no-cache',
       },
     })
+  }),
+  http.get('/kusks', async () => {
+    return HttpResponse.json(kusk_page)
   }),
 ]
 
