@@ -19,9 +19,6 @@ const selectedKusk = ref(null);
 const selectBane = ref(null);
 const loading = ref(false);
 const error = ref(null);
-const show = ref(false);
-const highlighted = ref(-1);
-const wrapper = ref(null);
 
 const fetchBils = async () => {
   loading.value = true;
@@ -53,26 +50,12 @@ const fetchKusks = async () => {
 
 onMounted(async () => {
   await fetchKusks();
-  document.addEventListener('click', onDocClick);
-});
-
-onBeforeUnmount(() => {
-  document.removeEventListener('click', onDocClick);
-});
-
-watch(search, () => {
-  show.value = true;
-  highlighted.value = 0;
 });
 
 watch(selectedKusk, () => {
   router.push({name: 'userView', params: {id: selectedKusk.value.id}});
 })
 
-function onDocClick(e) {
-  if (!wrapper.value) return;
-  if (!wrapper.value.contains(e.target)) close();
-}
 </script>
 
 <template>
@@ -106,7 +89,7 @@ function onDocClick(e) {
         <div class="input-group">
           <label for="bane-select">Velg Bane:</label>
           <select
-              id="kusk-select"
+              id="bane-select"
               v-model="selectBane"
               class="input-text border p-2 rounded"
           >

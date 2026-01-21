@@ -5,16 +5,15 @@ export const postData = async (url = '', data = {}) => {
         .then(response => response.data)
         .catch(e => {
             console.error("Error in postData:", e);
-                throw e;
+            throw e;
         });
 }
 
-export const getData = async (url = '', size = 20, data = {}) => {
+export const getData = async (url = '', size = 20) => {
     return await axios.get(url, {
         params: {
             size: size
         },
-        method: 'GET',
         headers: {
             'Content-Type': 'application/json'
         },

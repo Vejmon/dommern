@@ -15,7 +15,7 @@ const router = createRouter({
             component: LBHome,
             children: [
                 {
-                    path: '/lb',
+                    path: '',
                     name: 'leaderBoard',
                     component: LeaderBoard,
                     children: [
