@@ -39,10 +39,10 @@ const baneInitials = (bane: string) => {
 
 <template>
   <div>
-    <div class="flex flex-col xl:flex-row justify-center pt-24">
+    <div class="flex flex-col xl:flex-row justify-center">
       <div class="xl:min-w-7xl min-w-sm flex flex-col gap-4">
         <div v-for="kusk in kusks" :key="kusk.id">
-          <router-link :to="`/kusk/${kusk.id}`" class="no-underline">
+          <router-link :to="{name: 'viewKusk', params:{id: kusk.id}}" class="no-underline">
             <div :class="`bane-${kusk.currentBane} text-3xl`">
               <div class="flex lg:flex-row flex-col lg:gap-7 lg:justify-between lg:items-center lg:mb-4">
                 <div class="lg:text-5xl lg:w-3/5 truncate lg:min-h-13 self-center"> {{ kusk.name }} </div>

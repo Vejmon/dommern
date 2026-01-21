@@ -60,6 +60,10 @@
   font-weight: normal;
 }
 
+main {
+  padding-top: 6rem;
+}
+
 body {
   min-height: 100vh;
   color: var(--color-text);
