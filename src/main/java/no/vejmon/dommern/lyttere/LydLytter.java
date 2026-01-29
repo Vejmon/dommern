@@ -3,7 +3,6 @@ package no.vejmon.dommern.lyttere;
 import lombok.extern.slf4j.Slf4j;
 import no.vejmon.dommern.bane.BaneType;
 import no.vejmon.dommern.judge.NyLydEvent;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.event.EventListener;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
@@ -13,16 +12,15 @@ import javax.sound.sampled.Clip;
 import javax.sound.sampled.LineEvent;
 import java.io.InputStream;
 import java.util.List;
-import java.util.Map;
 
 @Slf4j
 @Component
 public class LydLytter {
 
-    private final Map<BaneType, Integer> baneMapLyd;
+    private final List<BaneType> baneList;
 
-    public LydLytter(@Qualifier("baneMapLyd") Map<BaneType, Integer> baneMapLyd) {
-        this.baneMapLyd = baneMapLyd;
+    public LydLytter(List<BaneType> baneList) {
+        this.baneList = baneList;
     }
 
     @EventListener
@@ -45,7 +43,7 @@ public class LydLytter {
                 List.of(LydType.RECORD, LydType.DEFAULT);
 
         if (baneLydTyper.contains(lyd.getLydType())) {
-            return "/public/lyd/" + lyd.hentLydNavn(baneMapLyd);
+            return "/public/lyd/" + lyd.hentLydNavn(baneList);
         }
 
         return "/public/lyd/" + lyd.getLydType().getName();

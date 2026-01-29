@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.Instant;
-import java.util.Map;
+import java.util.List;
 import java.util.UUID;
 
 import static no.vejmon.dommern.bane.BaneType.UTENFOR_BANEN;
@@ -34,12 +34,10 @@ public class MinimalRunde {
     }
 
 
-    public static BaneType hentBaneType(int keyCode, Map<BaneType, Integer> baneMap) {
-        return baneMap.entrySet()
-                .stream()
-                .filter(entry -> entry.getValue() == keyCode)
+    public static BaneType hentBaneType(int keyCode, List<BaneType> baneList) {
+        return baneList.stream()
+                .filter(baneType -> baneType.getGpioPin() == keyCode)
                 .findFirst()
-                .map(Map.Entry::getKey)
                 .orElse(UTENFOR_BANEN);
     }
 }

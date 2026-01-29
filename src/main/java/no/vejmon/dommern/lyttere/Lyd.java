@@ -5,7 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 import no.vejmon.dommern.bane.BaneType;
 
-import java.util.Map;
+import java.util.List;
 
 @Getter
 @Setter
@@ -16,12 +16,12 @@ public class Lyd {
 
     private LydType lydType;
 
-    public String hentLydNavn(Map<BaneType, Integer> baneLydMap) {
-        Integer baneId = baneLydMap.entrySet()
+    public String hentLydNavn(List<BaneType> baneList) {
+        Integer baneId = baneList
                 .stream()
-                .filter(entry -> entry.getKey() == this.bane)
+                .filter(bane -> bane == this.bane)
                 .findFirst()
-                .map(Map.Entry::getValue)
+                .map(BaneType::getSoundNumber)
                 .orElse(0);
         return lydType.getName().formatted(baneId);
     }

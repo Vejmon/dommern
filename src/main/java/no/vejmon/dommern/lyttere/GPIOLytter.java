@@ -15,7 +15,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Component;
 
-import java.util.Map;
+import java.util.List;
 import java.util.UUID;
 
 @Component
@@ -23,7 +23,7 @@ import java.util.UUID;
 public class GPIOLytter implements Lytter {
 
     private final ApplicationEventPublisher publisher;
-    private final Map<BaneType, Integer> baneMap;
+    private final List<BaneType> baneList;
     private final Context pi4j;
     @Value("${spring.pi4j.gpio.pull:OFF}")
     private String pull;
@@ -31,20 +31,20 @@ public class GPIOLytter implements Lytter {
     private Long debounce;
 
     public GPIOLytter(ApplicationEventPublisher publisher,
-                      Map<BaneType, Integer> baneMap,
+                      List<BaneType> baneList,
                       Context pi4j) {
         this.publisher = publisher;
-        this.baneMap = baneMap;
+        this.baneList = baneList;
         this.pi4j = pi4j;
     }
 
     @PostConstruct
     void init(){
-        baneMap.entrySet().forEach( baneMapEntry -> {
+        baneList.forEach( baneType -> {
             DigitalInputConfigBuilder buttonConfig = DigitalInput.newConfigBuilder(pi4j)
                     .id(UUID.randomUUID().toString())
-                    .name(baneMapEntry.getKey().name())
-                    .address(baneMapEntry.getValue())
+                    .name(baneType.name())
+                    .address(baneType.getGpioPin())
                     .pull(PullResistance.parse(pull))
                     .debounce(debounce);
             DigitalInput button = pi4j.create(buttonConfig);
@@ -52,7 +52,7 @@ public class GPIOLytter implements Lytter {
 
             button.addListener(event -> {
                 if (event.state() == DigitalState.LOW){
-                    MinimalRunde runde = new MinimalRunde(baneMapEntry.getKey());
+                    MinimalRunde runde = new MinimalRunde(baneType);
                     publisher.publishEvent(new NyRundeEvent(this, runde));
                 }
             });
