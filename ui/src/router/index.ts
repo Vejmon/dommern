@@ -49,7 +49,11 @@ const router = createRouter({
                     component: KuskForm,
                 }
             ]
-        }
+        },
+        {
+            path: '/:pathMatch(.*)*',
+            redirect: '/',
+        },
     ],
 })
 
