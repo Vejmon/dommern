@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "Dommern's CLI tool"
 authors = ["Vejmon"]
 readme = "README.md"
-packages = [{ include = "dom-cli" }]
+packages = [{ include = "dom_cli" }]
 
 
 [tool.poetry.dependencies]
@@ -14,4 +14,4 @@ requests = "^2.32.5"
 pygithub = "^2.8.1"
 
 [tool.poetry.scripts]
-dom-cli = "dom-cli.cli:main"
+dom-cli = "dom_cli.cli:main"
