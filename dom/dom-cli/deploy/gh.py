@@ -1,4 +1,3 @@
-import logging
 import typer
 
 from os import environ
@@ -24,7 +23,7 @@ def deploy(tag_msg: str, name: str, tag:str = "", release_msg:str = ""):
         type="commit",
         object=get_latest_commit()
     )
-    print(f"Release and tag created succesfully")
+    print(f"Release and tag created successfully")
     g.close()
 
 if __name__ == "__main__":
