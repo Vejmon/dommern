@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "dom-cli"
+version = "0.1.0"
+description = "Dommern's CLI tool"
+authors = ["Vejmon"]
+readme = "README.md"
+packages = [{ include = "dom_cli" }]
+
+
+[tool.poetry.dependencies]
+python = "^3.13"
+typer = { version = "^0.21.1", extras = ["all"] }
+requests = "^2.32.5"
+pygithub = "^2.8.1"
+
+[tool.poetry.scripts]
+dom-cli = "dom_cli.cli:main"
