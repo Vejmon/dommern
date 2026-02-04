@@ -7,7 +7,7 @@ app = typer.Typer()
 repo_name = "dommern"
 
 @app.command()
-def deploy(tag_msg: str, name: str, tag:str = "", release_msg:str = ""):
+def deploy(tag_msg: str, name: str, tag: str = "", release_msg: str = ""):
     g, repo = initialize()
 
     release_msg = release_msg if release_msg else tag_msg
