@@ -11,6 +11,7 @@ packages = [{ include = "dom-cli" }]
 python = "^3.13"
 typer = { version = "^0.21.1", extras = ["all"] }
 requests = "^2.32.5"
+pygithub = "^2.8.1"
 
 [tool.poetry.scripts]
 dom-cli = "dom-cli.cli:main"
