@@ -14,10 +14,10 @@ public class KuskProcessor implements RepresentationModelProcessor<EntityModel<K
         public EntityModel<Kusk> process(EntityModel<Kusk> model) {
             Links newlinks = Links.NONE;
             for (Link link: model.getLinks()){
-                if (link.getName() == "rundes"){
-                    newlinks.and(linkTo(methodOn(RundeRepository.class)))
+                if (link.getName() == "rundes"){ // todo: implement get rundes for kusk and link to that
+                    newlinks.and(linkTo(methodOn(RundeRepository.class).findTopByKuskOrderByStartDesc(model.getContent())).withRel("rundes"));
                 }
-
+                newlinks.and(link);
             }
             model.removeLinks();
             model.add(newlinks);
