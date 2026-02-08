@@ -27,7 +27,7 @@ const router = createRouter({
                         {
                             path: 'kusk/:id',
                             name: 'viewKusk',
-                            component: KuskView
+                            component: KuskView,
                         }
                     ]
                 }
