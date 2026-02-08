@@ -16,5 +16,6 @@ public class RestConfig implements RepositoryRestConfigurer {
         config.exposeIdsFor(Kusk.class);
         config.exposeIdsFor(Bil.class);
         config.setDefaultPageSize(20);
+        config.setMaxPageSize(20);
     }
 }
