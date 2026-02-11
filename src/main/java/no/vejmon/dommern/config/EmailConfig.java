@@ -40,7 +40,6 @@ public class EmailConfig {
             throwing = "ex"
     )
     private void sendThrownEmail(Throwable ex){
-        log.error(ex.getMessage());
         if (counter > 15) return;
 
         SimpleMailMessage message = new SimpleMailMessage();
