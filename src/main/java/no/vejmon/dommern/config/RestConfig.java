@@ -2,6 +2,8 @@ package no.vejmon.dommern.config;
 
 import no.vejmon.dommern.bane.Bil;
 import no.vejmon.dommern.bane.Kusk;
+import no.vejmon.dommern.bane.Laup;
+import no.vejmon.dommern.bane.Runde;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
@@ -15,6 +17,8 @@ public class RestConfig implements RepositoryRestConfigurer {
         config.setReturnBodyOnDelete(false);
         config.exposeIdsFor(Kusk.class);
         config.exposeIdsFor(Bil.class);
+        config.exposeIdsFor(Runde.class);
+        config.exposeIdsFor(Laup.class);
         config.setDefaultPageSize(20);
         config.setMaxPageSize(20);
     }

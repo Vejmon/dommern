@@ -1,5 +1,7 @@
 package no.vejmon.dommern.bane;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.rest.core.annotation.RestResource;
 import org.springframework.stereotype.Repository;
@@ -12,5 +14,8 @@ public interface RundeRepository  extends JpaRepository<Runde, UUID> {
 
     @RestResource(exported = false)
     List<Runde> findTopByKuskOrderByStartDesc(Kusk kusk);
+
+    @RestResource(rel = "runder_by_kusk")
+    Page<Runde> findByKusk_IdOrderByStartDesc(UUID kuskId, Pageable pageable);
 
 }
