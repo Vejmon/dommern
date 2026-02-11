@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import lombok.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -41,7 +42,7 @@ public class Kusk {
 
     @OneToMany(mappedBy = "kusk", orphanRemoval = true, fetch = FetchType.LAZY)
     @JsonIgnore
-    private List<Runde> runder;
+    private List<Runde> runder = new ArrayList<>();
 
     public Kusk(String name, @NonNull BaneType currentBane) {
         this.name = name;
