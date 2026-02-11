@@ -40,6 +40,7 @@ public class Kusk {
     private Laup laup;
 
     @OneToMany(mappedBy = "kusk", orphanRemoval = true, fetch = FetchType.LAZY)
+    @JsonIgnore
     private List<Runde> runder;
 
     public Kusk(String name, @NonNull BaneType currentBane) {
