@@ -13,13 +13,15 @@ const props = defineProps({
   }
 });
 
+const devString = document.getElementById('title').innerHTML === "Vite Dommern"? "dev-": "";
+
 </script>
 
 <template>
   <div class="flex flex-row justify-between p-2">
     <div class="flex flex-col items-center">
       <a :href="to">
-        <img src="/img/android-chrome-512x512.png" class="max-w-15" />
+        <img :src="`/img/${devString}android-chrome-512x512.png`" alt="logo for Hansen Racing" class="max-w-15" />
       </a>
     </div>
     <router-link :to="{name: linkName}">
