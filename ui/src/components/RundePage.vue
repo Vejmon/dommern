@@ -35,7 +35,7 @@ const deleteRunde = async (id) => {
   <div v-for="runde in rundePage?._embedded?.rundes" :key="runde.id">
     <div :class="`bane-${runde.baneType} text-3xl w-full justify-between flex flex-row gap-6`">
       <div>
-        tid: {{formatMs(runde .tid)}}
+        tid: {{formatMs(runde.tid)}}
       </div>
         <button class="ring-2 ring-round hover:cursor-pointer" @click.prevent="deleteRunde(runde.id)">X</button>
     </div>
