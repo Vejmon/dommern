@@ -2,245 +2,122 @@
   "_embedded": {
     "kusks": [
       {
-        "id": "c3b01b8d-9677-42e3-87ee-31ed91e25d44",
-        "name": "yungVemund",
-        "email": "vemundhell@gmail.com",
-        "currentBane": "I_DEPO",
-        "latest": null,
-        "_links": {
-          "self": {
-            "href": "http://localhost:8080/kusks/c3b01b8d-9677-42e3-87ee-31ed91e25d44"
-          },
-          "kusk": {
-            "href": "http://localhost:8080/kusks/c3b01b8d-9677-42e3-87ee-31ed91e25d44"
-          },
-          "runder": {
-            "href": "http://localhost:8080/kusks/c3b01b8d-9677-42e3-87ee-31ed91e25d44/runder"
-          },
-          "personalBest": {
-            "href": "http://localhost:8080/kusks/c3b01b8d-9677-42e3-87ee-31ed91e25d44/personalBest"
-          },
-          "currentBil": {
-            "href": "http://localhost:8080/kusks/c3b01b8d-9677-42e3-87ee-31ed91e25d44/currentBil"
-          },
-          "bil": {
-            "href": "http://localhost:8080/kusks/c3b01b8d-9677-42e3-87ee-31ed91e25d44/bil"
-          }
-        }
-      },
-      {
-        "id": "a634b916-7060-46ac-857e-9e500c3e50e0",
-        "name": "denne boien",
-        "email": "vemund@post.no",
-        "currentBane": "I_DEPO",
-        "latest": null,
-        "_links": {
-          "self": {
-            "href": "http://localhost:8080/kusks/a634b916-7060-46ac-857e-9e500c3e50e0"
-          },
-          "kusk": {
-            "href": "http://localhost:8080/kusks/a634b916-7060-46ac-857e-9e500c3e50e0"
-          },
-          "runder": {
-            "href": "http://localhost:8080/kusks/a634b916-7060-46ac-857e-9e500c3e50e0/runder"
-          },
-          "personalBest": {
-            "href": "http://localhost:8080/kusks/a634b916-7060-46ac-857e-9e500c3e50e0/personalBest"
-          },
-          "currentBil": {
-            "href": "http://localhost:8080/kusks/a634b916-7060-46ac-857e-9e500c3e50e0/currentBil"
-          },
-          "bil": {
-            "href": "http://localhost:8080/kusks/a634b916-7060-46ac-857e-9e500c3e50e0/bil"
-          }
-        }
-      },
-      {
-        "id": "bbfb27e0-573a-4d85-ae64-278806db654e",
-        "name": "aa",
-        "email": "vemundhell@gmail.com",
-        "currentBane": "I_DEPO",
-        "latest": null,
-        "_links": {
-          "self": {
-            "href": "http://localhost:8080/kusks/bbfb27e0-573a-4d85-ae64-278806db654e"
-          },
-          "kusk": {
-            "href": "http://localhost:8080/kusks/bbfb27e0-573a-4d85-ae64-278806db654e"
-          },
-          "runder": {
-            "href": "http://localhost:8080/kusks/bbfb27e0-573a-4d85-ae64-278806db654e/runder"
-          },
-          "personalBest": {
-            "href": "http://localhost:8080/kusks/bbfb27e0-573a-4d85-ae64-278806db654e/personalBest"
-          },
-          "currentBil": {
-            "href": "http://localhost:8080/kusks/bbfb27e0-573a-4d85-ae64-278806db654e/currentBil"
-          },
-          "bil": {
-            "href": "http://localhost:8080/kusks/bbfb27e0-573a-4d85-ae64-278806db654e/bil"
-          }
-        }
-      },
-      {
-        "id": "a27fb0b8-c37f-4d76-b8ee-b7b96dd4d0b4",
-        "name": "ss",
-        "email": "vemundhell@gmail.com",
-        "currentBane": "I_DEPO",
-        "latest": null,
-        "_links": {
-          "self": {
-            "href": "http://localhost:8080/kusks/a27fb0b8-c37f-4d76-b8ee-b7b96dd4d0b4"
-          },
-          "kusk": {
-            "href": "http://localhost:8080/kusks/a27fb0b8-c37f-4d76-b8ee-b7b96dd4d0b4"
-          },
-          "runder": {
-            "href": "http://localhost:8080/kusks/a27fb0b8-c37f-4d76-b8ee-b7b96dd4d0b4/runder"
-          },
-          "personalBest": {
-            "href": "http://localhost:8080/kusks/a27fb0b8-c37f-4d76-b8ee-b7b96dd4d0b4/personalBest"
-          },
-          "currentBil": {
-            "href": "http://localhost:8080/kusks/a27fb0b8-c37f-4d76-b8ee-b7b96dd4d0b4/currentBil"
-          },
-          "bil": {
-            "href": "http://localhost:8080/kusks/a27fb0b8-c37f-4d76-b8ee-b7b96dd4d0b4/bil"
-          }
-        }
-      },
-      {
-        "id": "fdb8e0b8-c4b8-4315-b2dd-52c5cda260a6",
+        "id": "ba4a35bf-a526-4a51-8b83-ebb4fe79d1fb",
         "name": "KORTESTE_VEIEN",
         "email": null,
         "currentBane": "KORTESTE_VEIEN",
         "latest": null,
         "_links": {
           "self": {
-            "href": "http://localhost:8080/kusks/fdb8e0b8-c4b8-4315-b2dd-52c5cda260a6"
+            "href": "/kusks/ba4a35bf-a526-4a51-8b83-ebb4fe79d1fb"
           },
           "kusk": {
-            "href": "http://localhost:8080/kusks/fdb8e0b8-c4b8-4315-b2dd-52c5cda260a6"
+            "href": "/kusks/ba4a35bf-a526-4a51-8b83-ebb4fe79d1fb"
           },
-          "runder": {
-            "href": "http://localhost:8080/kusks/fdb8e0b8-c4b8-4315-b2dd-52c5cda260a6/runder"
-          },
-          "personalBest": {
-            "href": "http://localhost:8080/kusks/fdb8e0b8-c4b8-4315-b2dd-52c5cda260a6/personalBest"
+          "paged-runder": {
+            "href": "/rundes/search/findByKusk_IdOrderByStartDesc?kuskId=ba4a35bf-a526-4a51-8b83-ebb4fe79d1fb"
           },
           "currentBil": {
-            "href": "http://localhost:8080/kusks/fdb8e0b8-c4b8-4315-b2dd-52c5cda260a6/currentBil"
+            "href": "/kusks/ba4a35bf-a526-4a51-8b83-ebb4fe79d1fb/currentBil"
           },
           "bil": {
-            "href": "http://localhost:8080/kusks/fdb8e0b8-c4b8-4315-b2dd-52c5cda260a6/bil"
+            "href": "/kusks/ba4a35bf-a526-4a51-8b83-ebb4fe79d1fb/bil"
+          },
+          "runder": {
+            "href": "/kusks/ba4a35bf-a526-4a51-8b83-ebb4fe79d1fb/runder"
+          },
+          "personalBest": {
+            "href": "/kusks/ba4a35bf-a526-4a51-8b83-ebb4fe79d1fb/personalBest"
           }
         }
       },
       {
-        "id": "e6c056d8-df9f-49ab-ad06-36e08210ddb9",
+        "id": "6c1c3394-5ce6-4fb7-aa12-65e0dffa0cfd",
         "name": "FRODE_SPESIAL",
         "email": null,
         "currentBane": "FRODE_SPESIAL",
         "latest": null,
         "_links": {
           "self": {
-            "href": "http://localhost:8080/kusks/e6c056d8-df9f-49ab-ad06-36e08210ddb9"
+            "href": "/kusks/6c1c3394-5ce6-4fb7-aa12-65e0dffa0cfd"
           },
           "kusk": {
-            "href": "http://localhost:8080/kusks/e6c056d8-df9f-49ab-ad06-36e08210ddb9"
+            "href": "/kusks/6c1c3394-5ce6-4fb7-aa12-65e0dffa0cfd"
           },
-          "runder": {
-            "href": "http://localhost:8080/kusks/e6c056d8-df9f-49ab-ad06-36e08210ddb9/runder"
-          },
-          "personalBest": {
-            "href": "http://localhost:8080/kusks/e6c056d8-df9f-49ab-ad06-36e08210ddb9/personalBest"
+          "paged-runder": {
+            "href": "/rundes/search/findByKusk_IdOrderByStartDesc?kuskId=6c1c3394-5ce6-4fb7-aa12-65e0dffa0cfd"
           },
           "currentBil": {
-            "href": "http://localhost:8080/kusks/e6c056d8-df9f-49ab-ad06-36e08210ddb9/currentBil"
+            "href": "/kusks/6c1c3394-5ce6-4fb7-aa12-65e0dffa0cfd/currentBil"
           },
           "bil": {
-            "href": "http://localhost:8080/kusks/e6c056d8-df9f-49ab-ad06-36e08210ddb9/bil"
+            "href": "/kusks/6c1c3394-5ce6-4fb7-aa12-65e0dffa0cfd/bil"
+          },
+          "runder": {
+            "href": "/kusks/6c1c3394-5ce6-4fb7-aa12-65e0dffa0cfd/runder"
+          },
+          "personalBest": {
+            "href": "/kusks/6c1c3394-5ce6-4fb7-aa12-65e0dffa0cfd/personalBest"
           }
         }
       },
       {
-        "id": "e30c6dca-2d6d-44cc-8aff-5c98cf5c1760",
+        "id": "9802d4c9-1cb3-40ef-b80d-f96da59bddef",
         "name": "UTEN_NAVN",
         "email": null,
         "currentBane": "UTEN_NAVN",
         "latest": null,
         "_links": {
           "self": {
-            "href": "http://localhost:8080/kusks/e30c6dca-2d6d-44cc-8aff-5c98cf5c1760"
+            "href": "/kusks/9802d4c9-1cb3-40ef-b80d-f96da59bddef"
           },
           "kusk": {
-            "href": "http://localhost:8080/kusks/e30c6dca-2d6d-44cc-8aff-5c98cf5c1760"
+            "href": "/kusks/9802d4c9-1cb3-40ef-b80d-f96da59bddef"
           },
-          "runder": {
-            "href": "http://localhost:8080/kusks/e30c6dca-2d6d-44cc-8aff-5c98cf5c1760/runder"
-          },
-          "personalBest": {
-            "href": "http://localhost:8080/kusks/e30c6dca-2d6d-44cc-8aff-5c98cf5c1760/personalBest"
+          "paged-runder": {
+            "href": "/rundes/search/findByKusk_IdOrderByStartDesc?kuskId=9802d4c9-1cb3-40ef-b80d-f96da59bddef"
           },
           "currentBil": {
-            "href": "http://localhost:8080/kusks/e30c6dca-2d6d-44cc-8aff-5c98cf5c1760/currentBil"
+            "href": "/kusks/9802d4c9-1cb3-40ef-b80d-f96da59bddef/currentBil"
           },
           "bil": {
-            "href": "http://localhost:8080/kusks/e30c6dca-2d6d-44cc-8aff-5c98cf5c1760/bil"
+            "href": "/kusks/9802d4c9-1cb3-40ef-b80d-f96da59bddef/bil"
+          },
+          "runder": {
+            "href": "/kusks/9802d4c9-1cb3-40ef-b80d-f96da59bddef/runder"
+          },
+          "personalBest": {
+            "href": "/kusks/9802d4c9-1cb3-40ef-b80d-f96da59bddef/personalBest"
           }
         }
       },
       {
-        "id": "becd277a-38f6-4914-ac82-302599fecf94",
+        "id": "514aeae0-511a-4e03-99d9-b3cbefa55b46",
         "name": "BESTEFAR_BANEN",
         "email": null,
         "currentBane": "BESTEFAR_BANEN",
         "latest": null,
         "_links": {
           "self": {
-            "href": "http://localhost:8080/kusks/becd277a-38f6-4914-ac82-302599fecf94"
+            "href": "/kusks/514aeae0-511a-4e03-99d9-b3cbefa55b46"
           },
           "kusk": {
-            "href": "http://localhost:8080/kusks/becd277a-38f6-4914-ac82-302599fecf94"
+            "href": "/kusks/514aeae0-511a-4e03-99d9-b3cbefa55b46"
           },
-          "runder": {
-            "href": "http://localhost:8080/kusks/becd277a-38f6-4914-ac82-302599fecf94/runder"
-          },
-          "personalBest": {
-            "href": "http://localhost:8080/kusks/becd277a-38f6-4914-ac82-302599fecf94/personalBest"
+          "paged-runder": {
+            "href": "/rundes/search/findByKusk_IdOrderByStartDesc?kuskId=514aeae0-511a-4e03-99d9-b3cbefa55b46"
           },
           "currentBil": {
-            "href": "http://localhost:8080/kusks/becd277a-38f6-4914-ac82-302599fecf94/currentBil"
+            "href": "/kusks/514aeae0-511a-4e03-99d9-b3cbefa55b46/currentBil"
           },
           "bil": {
-            "href": "http://localhost:8080/kusks/becd277a-38f6-4914-ac82-302599fecf94/bil"
-          }
-        }
-      },
-      {
-        "id": "33efdacd-a26b-49be-b11f-045ccd1a9d27",
-        "name": "yungVemunds",
-        "email": "vemundhell@gmail.com",
-        "currentBane": "I_DEPO",
-        "latest": null,
-        "_links": {
-          "self": {
-            "href": "http://localhost:8080/kusks/33efdacd-a26b-49be-b11f-045ccd1a9d27"
-          },
-          "kusk": {
-            "href": "http://localhost:8080/kusks/33efdacd-a26b-49be-b11f-045ccd1a9d27"
+            "href": "/kusks/514aeae0-511a-4e03-99d9-b3cbefa55b46/bil"
           },
           "runder": {
-            "href": "http://localhost:8080/kusks/33efdacd-a26b-49be-b11f-045ccd1a9d27/runder"
+            "href": "/kusks/514aeae0-511a-4e03-99d9-b3cbefa55b46/runder"
           },
           "personalBest": {
-            "href": "http://localhost:8080/kusks/33efdacd-a26b-49be-b11f-045ccd1a9d27/personalBest"
-          },
-          "currentBil": {
-            "href": "http://localhost:8080/kusks/33efdacd-a26b-49be-b11f-045ccd1a9d27/currentBil"
-          },
-          "bil": {
-            "href": "http://localhost:8080/kusks/33efdacd-a26b-49be-b11f-045ccd1a9d27/bil"
+            "href": "/kusks/514aeae0-511a-4e03-99d9-b3cbefa55b46/personalBest"
           }
         }
       }
@@ -248,15 +125,15 @@
   },
   "_links": {
     "self": {
-      "href": "http://localhost:8080/kusks?page=0&size=20"
+      "href": "/kusks?page=0&size=20"
     },
     "profile": {
-      "href": "http://localhost:8080/profile/kusks"
+      "href": "/profile/kusks"
     }
   },
   "page": {
     "size": 20,
-    "totalElements": 9,
+    "totalElements": 4,
     "totalPages": 1,
     "number": 0
   }

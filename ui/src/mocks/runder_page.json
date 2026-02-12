@@ -10,16 +10,16 @@
                 "laup": null,
                 "_links": {
                     "self": {
-                        "href": "http://localhost:8080/rundes/d1e53a5c-bcee-4ee5-853b-1bf1cc0e8c34"
+                        "href": "/rundes/d1e53a5c-bcee-4ee5-853b-1bf1cc0e8c34"
                     },
                     "runde": {
-                        "href": "http://localhost:8080/rundes/d1e53a5c-bcee-4ee5-853b-1bf1cc0e8c34"
+                        "href": "/rundes/d1e53a5c-bcee-4ee5-853b-1bf1cc0e8c34"
                     },
                     "bil": {
-                        "href": "http://localhost:8080/rundes/d1e53a5c-bcee-4ee5-853b-1bf1cc0e8c34/bil"
+                        "href": "/rundes/d1e53a5c-bcee-4ee5-853b-1bf1cc0e8c34/bil"
                     },
                     "kusk": {
-                        "href": "http://localhost:8080/rundes/d1e53a5c-bcee-4ee5-853b-1bf1cc0e8c34/kusk"
+                        "href": "/rundes/d1e53a5c-bcee-4ee5-853b-1bf1cc0e8c34/kusk"
                     }
                 }
             },
@@ -32,16 +32,16 @@
                 "laup": null,
                 "_links": {
                     "self": {
-                        "href": "http://localhost:8080/rundes/764bf0e1-e34e-48ff-8411-27e990d5a427"
+                        "href": "/rundes/764bf0e1-e34e-48ff-8411-27e990d5a427"
                     },
                     "runde": {
-                        "href": "http://localhost:8080/rundes/764bf0e1-e34e-48ff-8411-27e990d5a427"
+                        "href": "/rundes/764bf0e1-e34e-48ff-8411-27e990d5a427"
                     },
                     "bil": {
-                        "href": "http://localhost:8080/rundes/764bf0e1-e34e-48ff-8411-27e990d5a427/bil"
+                        "href": "/rundes/764bf0e1-e34e-48ff-8411-27e990d5a427/bil"
                     },
                     "kusk": {
-                        "href": "http://localhost:8080/rundes/764bf0e1-e34e-48ff-8411-27e990d5a427/kusk"
+                        "href": "/rundes/764bf0e1-e34e-48ff-8411-27e990d5a427/kusk"
                     }
                 }
             },
@@ -54,16 +54,16 @@
                 "laup": null,
                 "_links": {
                     "self": {
-                        "href": "http://localhost:8080/rundes/16241ece-638b-4721-b411-201e5478a45e"
+                        "href": "/rundes/16241ece-638b-4721-b411-201e5478a45e"
                     },
                     "runde": {
-                        "href": "http://localhost:8080/rundes/16241ece-638b-4721-b411-201e5478a45e"
+                        "href": "/rundes/16241ece-638b-4721-b411-201e5478a45e"
                     },
                     "bil": {
-                        "href": "http://localhost:8080/rundes/16241ece-638b-4721-b411-201e5478a45e/bil"
+                        "href": "/rundes/16241ece-638b-4721-b411-201e5478a45e/bil"
                     },
                     "kusk": {
-                        "href": "http://localhost:8080/rundes/16241ece-638b-4721-b411-201e5478a45e/kusk"
+                        "href": "/rundes/16241ece-638b-4721-b411-201e5478a45e/kusk"
                     }
                 }
             },
@@ -76,16 +76,16 @@
                 "laup": null,
                 "_links": {
                     "self": {
-                        "href": "http://localhost:8080/rundes/5c7b72af-e2ac-4037-9f90-1ccdba106388"
+                        "href": "/rundes/5c7b72af-e2ac-4037-9f90-1ccdba106388"
                     },
                     "runde": {
-                        "href": "http://localhost:8080/rundes/5c7b72af-e2ac-4037-9f90-1ccdba106388"
+                        "href": "/rundes/5c7b72af-e2ac-4037-9f90-1ccdba106388"
                     },
                     "bil": {
-                        "href": "http://localhost:8080/rundes/5c7b72af-e2ac-4037-9f90-1ccdba106388/bil"
+                        "href": "/rundes/5c7b72af-e2ac-4037-9f90-1ccdba106388/bil"
                     },
                     "kusk": {
-                        "href": "http://localhost:8080/rundes/5c7b72af-e2ac-4037-9f90-1ccdba106388/kusk"
+                        "href": "/rundes/5c7b72af-e2ac-4037-9f90-1ccdba106388/kusk"
                     }
                 }
             },
@@ -98,16 +98,16 @@
                 "laup": null,
                 "_links": {
                     "self": {
-                        "href": "http://localhost:8080/rundes/03f47f0d-e2bd-4392-b36d-8b7fb1003325"
+                        "href": "/rundes/03f47f0d-e2bd-4392-b36d-8b7fb1003325"
                     },
                     "runde": {
-                        "href": "http://localhost:8080/rundes/03f47f0d-e2bd-4392-b36d-8b7fb1003325"
+                        "href": "/rundes/03f47f0d-e2bd-4392-b36d-8b7fb1003325"
                     },
                     "bil": {
-                        "href": "http://localhost:8080/rundes/03f47f0d-e2bd-4392-b36d-8b7fb1003325/bil"
+                        "href": "/rundes/03f47f0d-e2bd-4392-b36d-8b7fb1003325/bil"
                     },
                     "kusk": {
-                        "href": "http://localhost:8080/rundes/03f47f0d-e2bd-4392-b36d-8b7fb1003325/kusk"
+                        "href": "/rundes/03f47f0d-e2bd-4392-b36d-8b7fb1003325/kusk"
                     }
                 }
             },
@@ -120,16 +120,16 @@
                 "laup": null,
                 "_links": {
                     "self": {
-                        "href": "http://localhost:8080/rundes/fdb39676-5767-4a34-bfb9-96e35411991e"
+                        "href": "/rundes/fdb39676-5767-4a34-bfb9-96e35411991e"
                     },
                     "runde": {
-                        "href": "http://localhost:8080/rundes/fdb39676-5767-4a34-bfb9-96e35411991e"
+                        "href": "/rundes/fdb39676-5767-4a34-bfb9-96e35411991e"
                     },
                     "bil": {
-                        "href": "http://localhost:8080/rundes/fdb39676-5767-4a34-bfb9-96e35411991e/bil"
+                        "href": "/rundes/fdb39676-5767-4a34-bfb9-96e35411991e/bil"
                     },
                     "kusk": {
-                        "href": "http://localhost:8080/rundes/fdb39676-5767-4a34-bfb9-96e35411991e/kusk"
+                        "href": "/rundes/fdb39676-5767-4a34-bfb9-96e35411991e/kusk"
                     }
                 }
             },
@@ -142,16 +142,16 @@
                 "laup": null,
                 "_links": {
                     "self": {
-                        "href": "http://localhost:8080/rundes/f101e851-9e43-4f10-ae43-a4fa6a0f9fac"
+                        "href": "/rundes/f101e851-9e43-4f10-ae43-a4fa6a0f9fac"
                     },
                     "runde": {
-                        "href": "http://localhost:8080/rundes/f101e851-9e43-4f10-ae43-a4fa6a0f9fac"
+                        "href": "/rundes/f101e851-9e43-4f10-ae43-a4fa6a0f9fac"
                     },
                     "bil": {
-                        "href": "http://localhost:8080/rundes/f101e851-9e43-4f10-ae43-a4fa6a0f9fac/bil"
+                        "href": "/rundes/f101e851-9e43-4f10-ae43-a4fa6a0f9fac/bil"
                     },
                     "kusk": {
-                        "href": "http://localhost:8080/rundes/f101e851-9e43-4f10-ae43-a4fa6a0f9fac/kusk"
+                        "href": "/rundes/f101e851-9e43-4f10-ae43-a4fa6a0f9fac/kusk"
                     }
                 }
             },
@@ -164,16 +164,16 @@
                 "laup": null,
                 "_links": {
                     "self": {
-                        "href": "http://localhost:8080/rundes/86ec6b41-a321-4b6b-b8e4-58e878ebde3d"
+                        "href": "/rundes/86ec6b41-a321-4b6b-b8e4-58e878ebde3d"
                     },
                     "runde": {
-                        "href": "http://localhost:8080/rundes/86ec6b41-a321-4b6b-b8e4-58e878ebde3d"
+                        "href": "/rundes/86ec6b41-a321-4b6b-b8e4-58e878ebde3d"
                     },
                     "bil": {
-                        "href": "http://localhost:8080/rundes/86ec6b41-a321-4b6b-b8e4-58e878ebde3d/bil"
+                        "href": "/rundes/86ec6b41-a321-4b6b-b8e4-58e878ebde3d/bil"
                     },
                     "kusk": {
-                        "href": "http://localhost:8080/rundes/86ec6b41-a321-4b6b-b8e4-58e878ebde3d/kusk"
+                        "href": "/rundes/86ec6b41-a321-4b6b-b8e4-58e878ebde3d/kusk"
                     }
                 }
             },
@@ -186,16 +186,16 @@
                 "laup": null,
                 "_links": {
                     "self": {
-                        "href": "http://localhost:8080/rundes/e39962f9-66ca-48e4-a012-cf210592b3cf"
+                        "href": "/rundes/e39962f9-66ca-48e4-a012-cf210592b3cf"
                     },
                     "runde": {
-                        "href": "http://localhost:8080/rundes/e39962f9-66ca-48e4-a012-cf210592b3cf"
+                        "href": "/rundes/e39962f9-66ca-48e4-a012-cf210592b3cf"
                     },
                     "bil": {
-                        "href": "http://localhost:8080/rundes/e39962f9-66ca-48e4-a012-cf210592b3cf/bil"
+                        "href": "/rundes/e39962f9-66ca-48e4-a012-cf210592b3cf/bil"
                     },
                     "kusk": {
-                        "href": "http://localhost:8080/rundes/e39962f9-66ca-48e4-a012-cf210592b3cf/kusk"
+                        "href": "/rundes/e39962f9-66ca-48e4-a012-cf210592b3cf/kusk"
                     }
                 }
             },
@@ -208,16 +208,16 @@
                 "laup": null,
                 "_links": {
                     "self": {
-                        "href": "http://localhost:8080/rundes/ab15ab68-ad7f-4f27-a6ad-ffcc0b26c1ff"
+                        "href": "/rundes/ab15ab68-ad7f-4f27-a6ad-ffcc0b26c1ff"
                     },
                     "runde": {
-                        "href": "http://localhost:8080/rundes/ab15ab68-ad7f-4f27-a6ad-ffcc0b26c1ff"
+                        "href": "/rundes/ab15ab68-ad7f-4f27-a6ad-ffcc0b26c1ff"
                     },
                     "bil": {
-                        "href": "http://localhost:8080/rundes/ab15ab68-ad7f-4f27-a6ad-ffcc0b26c1ff/bil"
+                        "href": "/rundes/ab15ab68-ad7f-4f27-a6ad-ffcc0b26c1ff/bil"
                     },
                     "kusk": {
-                        "href": "http://localhost:8080/rundes/ab15ab68-ad7f-4f27-a6ad-ffcc0b26c1ff/kusk"
+                        "href": "/rundes/ab15ab68-ad7f-4f27-a6ad-ffcc0b26c1ff/kusk"
                     }
                 }
             },
@@ -230,16 +230,16 @@
                 "laup": null,
                 "_links": {
                     "self": {
-                        "href": "http://localhost:8080/rundes/0c40045c-bd31-4126-8d4a-d45e408ff316"
+                        "href": "/rundes/0c40045c-bd31-4126-8d4a-d45e408ff316"
                     },
                     "runde": {
-                        "href": "http://localhost:8080/rundes/0c40045c-bd31-4126-8d4a-d45e408ff316"
+                        "href": "/rundes/0c40045c-bd31-4126-8d4a-d45e408ff316"
                     },
                     "bil": {
-                        "href": "http://localhost:8080/rundes/0c40045c-bd31-4126-8d4a-d45e408ff316/bil"
+                        "href": "/rundes/0c40045c-bd31-4126-8d4a-d45e408ff316/bil"
                     },
                     "kusk": {
-                        "href": "http://localhost:8080/rundes/0c40045c-bd31-4126-8d4a-d45e408ff316/kusk"
+                        "href": "/rundes/0c40045c-bd31-4126-8d4a-d45e408ff316/kusk"
                     }
                 }
             },
@@ -252,16 +252,16 @@
                 "laup": null,
                 "_links": {
                     "self": {
-                        "href": "http://localhost:8080/rundes/8def7502-fdde-4530-921a-bb7e677d7d22"
+                        "href": "/rundes/8def7502-fdde-4530-921a-bb7e677d7d22"
                     },
                     "runde": {
-                        "href": "http://localhost:8080/rundes/8def7502-fdde-4530-921a-bb7e677d7d22"
+                        "href": "/rundes/8def7502-fdde-4530-921a-bb7e677d7d22"
                     },
                     "bil": {
-                        "href": "http://localhost:8080/rundes/8def7502-fdde-4530-921a-bb7e677d7d22/bil"
+                        "href": "/rundes/8def7502-fdde-4530-921a-bb7e677d7d22/bil"
                     },
                     "kusk": {
-                        "href": "http://localhost:8080/rundes/8def7502-fdde-4530-921a-bb7e677d7d22/kusk"
+                        "href": "/rundes/8def7502-fdde-4530-921a-bb7e677d7d22/kusk"
                     }
                 }
             },
@@ -274,16 +274,16 @@
                 "laup": null,
                 "_links": {
                     "self": {
-                        "href": "http://localhost:8080/rundes/1693265f-fd7d-4d53-9531-c1df30e2f0b9"
+                        "href": "/rundes/1693265f-fd7d-4d53-9531-c1df30e2f0b9"
                     },
                     "runde": {
-                        "href": "http://localhost:8080/rundes/1693265f-fd7d-4d53-9531-c1df30e2f0b9"
+                        "href": "/rundes/1693265f-fd7d-4d53-9531-c1df30e2f0b9"
                     },
                     "bil": {
-                        "href": "http://localhost:8080/rundes/1693265f-fd7d-4d53-9531-c1df30e2f0b9/bil"
+                        "href": "/rundes/1693265f-fd7d-4d53-9531-c1df30e2f0b9/bil"
                     },
                     "kusk": {
-                        "href": "http://localhost:8080/rundes/1693265f-fd7d-4d53-9531-c1df30e2f0b9/kusk"
+                        "href": "/rundes/1693265f-fd7d-4d53-9531-c1df30e2f0b9/kusk"
                     }
                 }
             },
@@ -296,16 +296,16 @@
                 "laup": null,
                 "_links": {
                     "self": {
-                        "href": "http://localhost:8080/rundes/9d4b63bb-f0c1-4f47-bac9-eae7773ecc2a"
+                        "href": "/rundes/9d4b63bb-f0c1-4f47-bac9-eae7773ecc2a"
                     },
                     "runde": {
-                        "href": "http://localhost:8080/rundes/9d4b63bb-f0c1-4f47-bac9-eae7773ecc2a"
+                        "href": "/rundes/9d4b63bb-f0c1-4f47-bac9-eae7773ecc2a"
                     },
                     "bil": {
-                        "href": "http://localhost:8080/rundes/9d4b63bb-f0c1-4f47-bac9-eae7773ecc2a/bil"
+                        "href": "/rundes/9d4b63bb-f0c1-4f47-bac9-eae7773ecc2a/bil"
                     },
                     "kusk": {
-                        "href": "http://localhost:8080/rundes/9d4b63bb-f0c1-4f47-bac9-eae7773ecc2a/kusk"
+                        "href": "/rundes/9d4b63bb-f0c1-4f47-bac9-eae7773ecc2a/kusk"
                     }
                 }
             },
@@ -318,16 +318,16 @@
                 "laup": null,
                 "_links": {
                     "self": {
-                        "href": "http://localhost:8080/rundes/16380fa9-8917-4de3-970c-bb8338f3a09c"
+                        "href": "/rundes/16380fa9-8917-4de3-970c-bb8338f3a09c"
                     },
                     "runde": {
-                        "href": "http://localhost:8080/rundes/16380fa9-8917-4de3-970c-bb8338f3a09c"
+                        "href": "/rundes/16380fa9-8917-4de3-970c-bb8338f3a09c"
                     },
                     "bil": {
-                        "href": "http://localhost:8080/rundes/16380fa9-8917-4de3-970c-bb8338f3a09c/bil"
+                        "href": "/rundes/16380fa9-8917-4de3-970c-bb8338f3a09c/bil"
                     },
                     "kusk": {
-                        "href": "http://localhost:8080/rundes/16380fa9-8917-4de3-970c-bb8338f3a09c/kusk"
+                        "href": "/rundes/16380fa9-8917-4de3-970c-bb8338f3a09c/kusk"
                     }
                 }
             },
@@ -340,16 +340,16 @@
                 "laup": null,
                 "_links": {
                     "self": {
-                        "href": "http://localhost:8080/rundes/0ef553f8-3d04-4e3d-bd4d-1a06e0b2dcff"
+                        "href": "/rundes/0ef553f8-3d04-4e3d-bd4d-1a06e0b2dcff"
                     },
                     "runde": {
-                        "href": "http://localhost:8080/rundes/0ef553f8-3d04-4e3d-bd4d-1a06e0b2dcff"
+                        "href": "/rundes/0ef553f8-3d04-4e3d-bd4d-1a06e0b2dcff"
                     },
                     "bil": {
-                        "href": "http://localhost:8080/rundes/0ef553f8-3d04-4e3d-bd4d-1a06e0b2dcff/bil"
+                        "href": "/rundes/0ef553f8-3d04-4e3d-bd4d-1a06e0b2dcff/bil"
                     },
                     "kusk": {
-                        "href": "http://localhost:8080/rundes/0ef553f8-3d04-4e3d-bd4d-1a06e0b2dcff/kusk"
+                        "href": "/rundes/0ef553f8-3d04-4e3d-bd4d-1a06e0b2dcff/kusk"
                     }
                 }
             },
@@ -362,16 +362,16 @@
                 "laup": null,
                 "_links": {
                     "self": {
-                        "href": "http://localhost:8080/rundes/54490c41-1283-485e-9346-d0b2f9237472"
+                        "href": "/rundes/54490c41-1283-485e-9346-d0b2f9237472"
                     },
                     "runde": {
-                        "href": "http://localhost:8080/rundes/54490c41-1283-485e-9346-d0b2f9237472"
+                        "href": "/rundes/54490c41-1283-485e-9346-d0b2f9237472"
                     },
                     "bil": {
-                        "href": "http://localhost:8080/rundes/54490c41-1283-485e-9346-d0b2f9237472/bil"
+                        "href": "/rundes/54490c41-1283-485e-9346-d0b2f9237472/bil"
                     },
                     "kusk": {
-                        "href": "http://localhost:8080/rundes/54490c41-1283-485e-9346-d0b2f9237472/kusk"
+                        "href": "/rundes/54490c41-1283-485e-9346-d0b2f9237472/kusk"
                     }
                 }
             },
@@ -384,16 +384,16 @@
                 "laup": null,
                 "_links": {
                     "self": {
-                        "href": "http://localhost:8080/rundes/2c9e950f-3abc-49e8-a55d-24c9e7a412aa"
+                        "href": "/rundes/2c9e950f-3abc-49e8-a55d-24c9e7a412aa"
                     },
                     "runde": {
-                        "href": "http://localhost:8080/rundes/2c9e950f-3abc-49e8-a55d-24c9e7a412aa"
+                        "href": "/rundes/2c9e950f-3abc-49e8-a55d-24c9e7a412aa"
                     },
                     "bil": {
-                        "href": "http://localhost:8080/rundes/2c9e950f-3abc-49e8-a55d-24c9e7a412aa/bil"
+                        "href": "/rundes/2c9e950f-3abc-49e8-a55d-24c9e7a412aa/bil"
                     },
                     "kusk": {
-                        "href": "http://localhost:8080/rundes/2c9e950f-3abc-49e8-a55d-24c9e7a412aa/kusk"
+                        "href": "/rundes/2c9e950f-3abc-49e8-a55d-24c9e7a412aa/kusk"
                     }
                 }
             },
@@ -406,16 +406,16 @@
                 "laup": null,
                 "_links": {
                     "self": {
-                        "href": "http://localhost:8080/rundes/248d0eaf-d75d-4ebc-922e-fd9c9480a261"
+                        "href": "/rundes/248d0eaf-d75d-4ebc-922e-fd9c9480a261"
                     },
                     "runde": {
-                        "href": "http://localhost:8080/rundes/248d0eaf-d75d-4ebc-922e-fd9c9480a261"
+                        "href": "/rundes/248d0eaf-d75d-4ebc-922e-fd9c9480a261"
                     },
                     "bil": {
-                        "href": "http://localhost:8080/rundes/248d0eaf-d75d-4ebc-922e-fd9c9480a261/bil"
+                        "href": "/rundes/248d0eaf-d75d-4ebc-922e-fd9c9480a261/bil"
                     },
                     "kusk": {
-                        "href": "http://localhost:8080/rundes/248d0eaf-d75d-4ebc-922e-fd9c9480a261/kusk"
+                        "href": "/rundes/248d0eaf-d75d-4ebc-922e-fd9c9480a261/kusk"
                     }
                 }
             },
@@ -428,16 +428,16 @@
                 "laup": null,
                 "_links": {
                     "self": {
-                        "href": "http://localhost:8080/rundes/13594e0a-0e1f-4557-8a31-770db476e5c6"
+                        "href": "/rundes/13594e0a-0e1f-4557-8a31-770db476e5c6"
                     },
                     "runde": {
-                        "href": "http://localhost:8080/rundes/13594e0a-0e1f-4557-8a31-770db476e5c6"
+                        "href": "/rundes/13594e0a-0e1f-4557-8a31-770db476e5c6"
                     },
                     "bil": {
-                        "href": "http://localhost:8080/rundes/13594e0a-0e1f-4557-8a31-770db476e5c6/bil"
+                        "href": "/rundes/13594e0a-0e1f-4557-8a31-770db476e5c6/bil"
                     },
                     "kusk": {
-                        "href": "http://localhost:8080/rundes/13594e0a-0e1f-4557-8a31-770db476e5c6/kusk"
+                        "href": "/rundes/13594e0a-0e1f-4557-8a31-770db476e5c6/kusk"
                     }
                 }
             }
@@ -445,16 +445,16 @@
     },
     "_links": {
         "first": {
-            "href": "http://localhost:8080/rundes/search/findByKusk_IdOrderByStartDesc?kuskId=ba4a35bf-a526-4a51-8b83-ebb4fe79d1fb&page=0&size=20"
+            "href": "/rundes/search/findByKusk_IdOrderByStartDesc?kuskId=ba4a35bf-a526-4a51-8b83-ebb4fe79d1fb&page=0&size=20"
         },
         "self": {
-            "href": "http://localhost:8080/rundes/search/findByKusk_IdOrderByStartDesc?kuskId=ba4a35bf-a526-4a51-8b83-ebb4fe79d1fb&page=0&size=20"
+            "href": "/rundes/search/findByKusk_IdOrderByStartDesc?kuskId=ba4a35bf-a526-4a51-8b83-ebb4fe79d1fb&page=0&size=20"
         },
         "next": {
-            "href": "http://localhost:8080/rundes/search/findByKusk_IdOrderByStartDesc?kuskId=ba4a35bf-a526-4a51-8b83-ebb4fe79d1fb&page=1&size=20"
+            "href": "/rundes/search/findByKusk_IdOrderByStartDesc?kuskId=ba4a35bf-a526-4a51-8b83-ebb4fe79d1fb&page=1&size=20"
         },
         "last": {
-            "href": "http://localhost:8080/rundes/search/findByKusk_IdOrderByStartDesc?kuskId=ba4a35bf-a526-4a51-8b83-ebb4fe79d1fb&page=2&size=20"
+            "href": "/rundes/search/findByKusk_IdOrderByStartDesc?kuskId=ba4a35bf-a526-4a51-8b83-ebb4fe79d1fb&page=2&size=20"
         }
     },
     "page": {

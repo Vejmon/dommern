@@ -1,6 +1,7 @@
 import {http, HttpResponse} from 'msw'
 import active from './active.json'
 import kusk_page from './kusks_page.json'
+import runder_page from './runder_page.json'
 
 let sse_active = active;
 
@@ -32,6 +33,13 @@ export const handlers = [
   http.get('/kusks', async () => {
     return HttpResponse.json(kusk_page)
   }),
+  http.get('/kusks/:id', async ({ params }) => {
+    const activeKusk = active.find(k => k.id === params.id);
+    return HttpResponse.json(kusk_page._embedded.kusks[active.indexOf(activeKusk)]);
+  }),
+  http.get('/rundes/search/findByKusk_IdOrderByStartDesc', async () => {
+    return HttpResponse.json(runder_page);
+  })
 ]
 
 

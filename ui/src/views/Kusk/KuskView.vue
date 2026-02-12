@@ -2,6 +2,7 @@
 
 import { ref, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
+import RundePage from "@/components/RundePage.vue";
 
 const route = useRoute();
 const kusk = ref(null);
@@ -11,9 +12,10 @@ const fetchKuskData = async id => {
     const response = await fetch(`/kusks/${id}`);
     if (!response.ok) throw new Error('Failed to load kusk data');
     kusk.value = await response.json();
-    const rundeResponse = await fetch(kusk.value.links.namedItem("paged-runder")?.href);
+    const rundeResponse = await fetch(kusk.value._links["paged-runder"]?.href);
     if (!rundeResponse.ok) throw new Error('Failed to load runde data');
     rundePage.value = await rundeResponse.json();
+
 }
 
 onMounted(() => {
@@ -25,9 +27,14 @@ onMounted(() => {
 </script>
 
 <template>
+  <div class="flex flex-col gap-4">
+
+  <RundePage v-if="rundePage" :rundes="rundePage"/>
     <div>
-        Kusk View
+        KuskView
     </div>
+  </div>
+
 </template>
 
 <style scoped>
