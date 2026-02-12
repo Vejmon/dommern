@@ -40,7 +40,7 @@ public class Kusk {
     @JsonIgnore
     private Laup laup;
 
-    @OneToMany(mappedBy = "kusk", orphanRemoval = true, fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
+    @OneToMany(mappedBy = "kusk", orphanRemoval = true, fetch = FetchType.LAZY)
     @JsonIgnore
     private List<Runde> runder = new ArrayList<>();
 
@@ -54,6 +54,10 @@ public class Kusk {
 
     @OneToOne
     private Runde personalBest;
+
+    public void declarePersonalBest(Runde runde){
+        this.personalBest = runde;
+    }
 
     public boolean setPersonalBest(Runde personalBest) {
         if (personalBest == null || personalBest.getTid() == null) return false;

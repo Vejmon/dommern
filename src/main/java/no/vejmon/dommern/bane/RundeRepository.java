@@ -16,6 +16,6 @@ public interface RundeRepository  extends JpaRepository<Runde, UUID> {
     List<Runde> findTopByKuskOrderByStartDesc(Kusk kusk);
 
     @RestResource(rel = "runder_by_kusk")
-    Page<Runde> findByKusk_IdOrderByStartDesc(UUID kuskId, Pageable pageable);
+    Page<Runde> findByKusk_IdAndStopIsNotNullOrderByStartDesc(UUID kuskId, Pageable pageable);
 
 }
