@@ -92,8 +92,24 @@ public class LinjeDommer {
         publisher.publishEvent(lydEvent);
     }
 
+    @EventListener
+    @Async
+    public void handleNewKusk(RefreshKusk refreshKusk){
+        kusker.stream()
+                .filter(kusk -> kusk.getId().equals(refreshKusk.getKusk().getId()))
+                .findFirst()
+                .ifPresent(
+                kusk -> {
+                    kusker.set(kusker.indexOf(kusk), refreshKusk.getKusk());
+                    notifyKuskerChanged();
+                }
+        );
+
+    }
+
+
     private void notifyKuskerChanged() {
-        publisher.publishEvent(new OnKuskerChangedEvent(this, List.copyOf(kusker)));
+    publisher.publishEvent(new OnKuskerChangedEvent(this, List.copyOf(kusker)));
     }
 
 }

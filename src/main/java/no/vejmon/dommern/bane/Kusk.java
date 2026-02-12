@@ -40,7 +40,7 @@ public class Kusk {
     @JsonIgnore
     private Laup laup;
 
-    @OneToMany(mappedBy = "kusk", orphanRemoval = true, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "kusk", orphanRemoval = true, fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
     @JsonIgnore
     private List<Runde> runder = new ArrayList<>();
 
