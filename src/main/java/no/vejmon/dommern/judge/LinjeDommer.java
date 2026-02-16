@@ -102,7 +102,7 @@ public class LinjeDommer {
                         .findFirst();
         if (oldKusk.isEmpty())
             return;
-        kusker.set(getKusker().indexOf(oldKusk), refreshedKusk);
+        kusker.set(getKusker().indexOf(oldKusk.get()), refreshedKusk);
         notifyKuskerChanged();
     }
 
