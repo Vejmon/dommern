@@ -1,0 +1,466 @@
+{
+    "_embedded": {
+        "rundes": [
+            {
+                "id": "d1e53a5c-bcee-4ee5-853b-1bf1cc0e8c34",
+                "start": "2026-02-11T19:07:55.484682Z",
+                "stop": null,
+                "baneType": "KORTESTE_VEIEN",
+                "tid": 1770836875484,
+                "laup": null,
+                "_links": {
+                    "self": {
+                        "href": "/rundes/d1e53a5c-bcee-4ee5-853b-1bf1cc0e8c34"
+                    },
+                    "runde": {
+                        "href": "/rundes/d1e53a5c-bcee-4ee5-853b-1bf1cc0e8c34"
+                    },
+                    "bil": {
+                        "href": "/rundes/d1e53a5c-bcee-4ee5-853b-1bf1cc0e8c34/bil"
+                    },
+                    "kusk": {
+                        "href": "/rundes/d1e53a5c-bcee-4ee5-853b-1bf1cc0e8c34/kusk"
+                    }
+                }
+            },
+            {
+                "id": "764bf0e1-e34e-48ff-8411-27e990d5a427",
+                "start": "2026-02-11T19:07:52.542023Z",
+                "stop": "2026-02-11T19:07:55.475185Z",
+                "baneType": "KORTESTE_VEIEN",
+                "tid": 2933,
+                "laup": null,
+                "_links": {
+                    "self": {
+                        "href": "/rundes/764bf0e1-e34e-48ff-8411-27e990d5a427"
+                    },
+                    "runde": {
+                        "href": "/rundes/764bf0e1-e34e-48ff-8411-27e990d5a427"
+                    },
+                    "bil": {
+                        "href": "/rundes/764bf0e1-e34e-48ff-8411-27e990d5a427/bil"
+                    },
+                    "kusk": {
+                        "href": "/rundes/764bf0e1-e34e-48ff-8411-27e990d5a427/kusk"
+                    }
+                }
+            },
+            {
+                "id": "16241ece-638b-4721-b411-201e5478a45e",
+                "start": "2026-02-11T18:51:56.962628Z",
+                "stop": "2026-02-11T19:07:52.492445Z",
+                "baneType": "KORTESTE_VEIEN",
+                "tid": 955530,
+                "laup": null,
+                "_links": {
+                    "self": {
+                        "href": "/rundes/16241ece-638b-4721-b411-201e5478a45e"
+                    },
+                    "runde": {
+                        "href": "/rundes/16241ece-638b-4721-b411-201e5478a45e"
+                    },
+                    "bil": {
+                        "href": "/rundes/16241ece-638b-4721-b411-201e5478a45e/bil"
+                    },
+                    "kusk": {
+                        "href": "/rundes/16241ece-638b-4721-b411-201e5478a45e/kusk"
+                    }
+                }
+            },
+            {
+                "id": "5c7b72af-e2ac-4037-9f90-1ccdba106388",
+                "start": "2026-02-11T18:51:56.535298Z",
+                "stop": "2026-02-11T18:51:56.948906Z",
+                "baneType": "KORTESTE_VEIEN",
+                "tid": 413,
+                "laup": null,
+                "_links": {
+                    "self": {
+                        "href": "/rundes/5c7b72af-e2ac-4037-9f90-1ccdba106388"
+                    },
+                    "runde": {
+                        "href": "/rundes/5c7b72af-e2ac-4037-9f90-1ccdba106388"
+                    },
+                    "bil": {
+                        "href": "/rundes/5c7b72af-e2ac-4037-9f90-1ccdba106388/bil"
+                    },
+                    "kusk": {
+                        "href": "/rundes/5c7b72af-e2ac-4037-9f90-1ccdba106388/kusk"
+                    }
+                }
+            },
+            {
+                "id": "03f47f0d-e2bd-4392-b36d-8b7fb1003325",
+                "start": "2026-02-11T18:51:54.608315Z",
+                "stop": "2026-02-11T18:51:56.522108Z",
+                "baneType": "KORTESTE_VEIEN",
+                "tid": 1914,
+                "laup": null,
+                "_links": {
+                    "self": {
+                        "href": "/rundes/03f47f0d-e2bd-4392-b36d-8b7fb1003325"
+                    },
+                    "runde": {
+                        "href": "/rundes/03f47f0d-e2bd-4392-b36d-8b7fb1003325"
+                    },
+                    "bil": {
+                        "href": "/rundes/03f47f0d-e2bd-4392-b36d-8b7fb1003325/bil"
+                    },
+                    "kusk": {
+                        "href": "/rundes/03f47f0d-e2bd-4392-b36d-8b7fb1003325/kusk"
+                    }
+                }
+            },
+            {
+                "id": "fdb39676-5767-4a34-bfb9-96e35411991e",
+                "start": "2026-02-11T18:51:45.906857Z",
+                "stop": "2026-02-11T18:51:54.595465Z",
+                "baneType": "KORTESTE_VEIEN",
+                "tid": 8689,
+                "laup": null,
+                "_links": {
+                    "self": {
+                        "href": "/rundes/fdb39676-5767-4a34-bfb9-96e35411991e"
+                    },
+                    "runde": {
+                        "href": "/rundes/fdb39676-5767-4a34-bfb9-96e35411991e"
+                    },
+                    "bil": {
+                        "href": "/rundes/fdb39676-5767-4a34-bfb9-96e35411991e/bil"
+                    },
+                    "kusk": {
+                        "href": "/rundes/fdb39676-5767-4a34-bfb9-96e35411991e/kusk"
+                    }
+                }
+            },
+            {
+                "id": "f101e851-9e43-4f10-ae43-a4fa6a0f9fac",
+                "start": "2026-02-11T18:50:30.838101Z",
+                "stop": "2026-02-11T18:51:45.896741Z",
+                "baneType": "KORTESTE_VEIEN",
+                "tid": 75058,
+                "laup": null,
+                "_links": {
+                    "self": {
+                        "href": "/rundes/f101e851-9e43-4f10-ae43-a4fa6a0f9fac"
+                    },
+                    "runde": {
+                        "href": "/rundes/f101e851-9e43-4f10-ae43-a4fa6a0f9fac"
+                    },
+                    "bil": {
+                        "href": "/rundes/f101e851-9e43-4f10-ae43-a4fa6a0f9fac/bil"
+                    },
+                    "kusk": {
+                        "href": "/rundes/f101e851-9e43-4f10-ae43-a4fa6a0f9fac/kusk"
+                    }
+                }
+            },
+            {
+                "id": "86ec6b41-a321-4b6b-b8e4-58e878ebde3d",
+                "start": "2026-02-11T18:50:29.987691Z",
+                "stop": "2026-02-11T18:50:30.827157Z",
+                "baneType": "KORTESTE_VEIEN",
+                "tid": 840,
+                "laup": null,
+                "_links": {
+                    "self": {
+                        "href": "/rundes/86ec6b41-a321-4b6b-b8e4-58e878ebde3d"
+                    },
+                    "runde": {
+                        "href": "/rundes/86ec6b41-a321-4b6b-b8e4-58e878ebde3d"
+                    },
+                    "bil": {
+                        "href": "/rundes/86ec6b41-a321-4b6b-b8e4-58e878ebde3d/bil"
+                    },
+                    "kusk": {
+                        "href": "/rundes/86ec6b41-a321-4b6b-b8e4-58e878ebde3d/kusk"
+                    }
+                }
+            },
+            {
+                "id": "e39962f9-66ca-48e4-a012-cf210592b3cf",
+                "start": "2026-02-11T18:50:29.051929Z",
+                "stop": "2026-02-11T18:50:29.972111Z",
+                "baneType": "KORTESTE_VEIEN",
+                "tid": 921,
+                "laup": null,
+                "_links": {
+                    "self": {
+                        "href": "/rundes/e39962f9-66ca-48e4-a012-cf210592b3cf"
+                    },
+                    "runde": {
+                        "href": "/rundes/e39962f9-66ca-48e4-a012-cf210592b3cf"
+                    },
+                    "bil": {
+                        "href": "/rundes/e39962f9-66ca-48e4-a012-cf210592b3cf/bil"
+                    },
+                    "kusk": {
+                        "href": "/rundes/e39962f9-66ca-48e4-a012-cf210592b3cf/kusk"
+                    }
+                }
+            },
+            {
+                "id": "ab15ab68-ad7f-4f27-a6ad-ffcc0b26c1ff",
+                "start": "2026-02-11T18:49:44.195499Z",
+                "stop": "2026-02-11T18:50:29.021589Z",
+                "baneType": "KORTESTE_VEIEN",
+                "tid": 44826,
+                "laup": null,
+                "_links": {
+                    "self": {
+                        "href": "/rundes/ab15ab68-ad7f-4f27-a6ad-ffcc0b26c1ff"
+                    },
+                    "runde": {
+                        "href": "/rundes/ab15ab68-ad7f-4f27-a6ad-ffcc0b26c1ff"
+                    },
+                    "bil": {
+                        "href": "/rundes/ab15ab68-ad7f-4f27-a6ad-ffcc0b26c1ff/bil"
+                    },
+                    "kusk": {
+                        "href": "/rundes/ab15ab68-ad7f-4f27-a6ad-ffcc0b26c1ff/kusk"
+                    }
+                }
+            },
+            {
+                "id": "0c40045c-bd31-4126-8d4a-d45e408ff316",
+                "start": "2026-02-11T18:40:23.047668Z",
+                "stop": "2026-02-11T18:49:44.145552Z",
+                "baneType": "KORTESTE_VEIEN",
+                "tid": 561098,
+                "laup": null,
+                "_links": {
+                    "self": {
+                        "href": "/rundes/0c40045c-bd31-4126-8d4a-d45e408ff316"
+                    },
+                    "runde": {
+                        "href": "/rundes/0c40045c-bd31-4126-8d4a-d45e408ff316"
+                    },
+                    "bil": {
+                        "href": "/rundes/0c40045c-bd31-4126-8d4a-d45e408ff316/bil"
+                    },
+                    "kusk": {
+                        "href": "/rundes/0c40045c-bd31-4126-8d4a-d45e408ff316/kusk"
+                    }
+                }
+            },
+            {
+                "id": "8def7502-fdde-4530-921a-bb7e677d7d22",
+                "start": "2026-02-11T18:40:19.202654Z",
+                "stop": "2026-02-11T18:40:23.036881Z",
+                "baneType": "KORTESTE_VEIEN",
+                "tid": 3834,
+                "laup": null,
+                "_links": {
+                    "self": {
+                        "href": "/rundes/8def7502-fdde-4530-921a-bb7e677d7d22"
+                    },
+                    "runde": {
+                        "href": "/rundes/8def7502-fdde-4530-921a-bb7e677d7d22"
+                    },
+                    "bil": {
+                        "href": "/rundes/8def7502-fdde-4530-921a-bb7e677d7d22/bil"
+                    },
+                    "kusk": {
+                        "href": "/rundes/8def7502-fdde-4530-921a-bb7e677d7d22/kusk"
+                    }
+                }
+            },
+            {
+                "id": "1693265f-fd7d-4d53-9531-c1df30e2f0b9",
+                "start": "2026-02-11T18:40:16.261370Z",
+                "stop": "2026-02-11T18:40:19.189416Z",
+                "baneType": "KORTESTE_VEIEN",
+                "tid": 2928,
+                "laup": null,
+                "_links": {
+                    "self": {
+                        "href": "/rundes/1693265f-fd7d-4d53-9531-c1df30e2f0b9"
+                    },
+                    "runde": {
+                        "href": "/rundes/1693265f-fd7d-4d53-9531-c1df30e2f0b9"
+                    },
+                    "bil": {
+                        "href": "/rundes/1693265f-fd7d-4d53-9531-c1df30e2f0b9/bil"
+                    },
+                    "kusk": {
+                        "href": "/rundes/1693265f-fd7d-4d53-9531-c1df30e2f0b9/kusk"
+                    }
+                }
+            },
+            {
+                "id": "9d4b63bb-f0c1-4f47-bac9-eae7773ecc2a",
+                "start": "2026-02-11T18:40:12.942027Z",
+                "stop": "2026-02-11T18:40:16.247910Z",
+                "baneType": "KORTESTE_VEIEN",
+                "tid": 3305,
+                "laup": null,
+                "_links": {
+                    "self": {
+                        "href": "/rundes/9d4b63bb-f0c1-4f47-bac9-eae7773ecc2a"
+                    },
+                    "runde": {
+                        "href": "/rundes/9d4b63bb-f0c1-4f47-bac9-eae7773ecc2a"
+                    },
+                    "bil": {
+                        "href": "/rundes/9d4b63bb-f0c1-4f47-bac9-eae7773ecc2a/bil"
+                    },
+                    "kusk": {
+                        "href": "/rundes/9d4b63bb-f0c1-4f47-bac9-eae7773ecc2a/kusk"
+                    }
+                }
+            },
+            {
+                "id": "16380fa9-8917-4de3-970c-bb8338f3a09c",
+                "start": "2026-02-11T18:40:11.157953Z",
+                "stop": "2026-02-11T18:40:12.929458Z",
+                "baneType": "KORTESTE_VEIEN",
+                "tid": 1772,
+                "laup": null,
+                "_links": {
+                    "self": {
+                        "href": "/rundes/16380fa9-8917-4de3-970c-bb8338f3a09c"
+                    },
+                    "runde": {
+                        "href": "/rundes/16380fa9-8917-4de3-970c-bb8338f3a09c"
+                    },
+                    "bil": {
+                        "href": "/rundes/16380fa9-8917-4de3-970c-bb8338f3a09c/bil"
+                    },
+                    "kusk": {
+                        "href": "/rundes/16380fa9-8917-4de3-970c-bb8338f3a09c/kusk"
+                    }
+                }
+            },
+            {
+                "id": "0ef553f8-3d04-4e3d-bd4d-1a06e0b2dcff",
+                "start": "2026-02-11T18:40:09.375993Z",
+                "stop": "2026-02-11T18:40:11.143346Z",
+                "baneType": "KORTESTE_VEIEN",
+                "tid": 1768,
+                "laup": null,
+                "_links": {
+                    "self": {
+                        "href": "/rundes/0ef553f8-3d04-4e3d-bd4d-1a06e0b2dcff"
+                    },
+                    "runde": {
+                        "href": "/rundes/0ef553f8-3d04-4e3d-bd4d-1a06e0b2dcff"
+                    },
+                    "bil": {
+                        "href": "/rundes/0ef553f8-3d04-4e3d-bd4d-1a06e0b2dcff/bil"
+                    },
+                    "kusk": {
+                        "href": "/rundes/0ef553f8-3d04-4e3d-bd4d-1a06e0b2dcff/kusk"
+                    }
+                }
+            },
+            {
+                "id": "54490c41-1283-485e-9346-d0b2f9237472",
+                "start": "2026-02-11T18:40:07.864048Z",
+                "stop": "2026-02-11T18:40:09.362240Z",
+                "baneType": "KORTESTE_VEIEN",
+                "tid": 1498,
+                "laup": null,
+                "_links": {
+                    "self": {
+                        "href": "/rundes/54490c41-1283-485e-9346-d0b2f9237472"
+                    },
+                    "runde": {
+                        "href": "/rundes/54490c41-1283-485e-9346-d0b2f9237472"
+                    },
+                    "bil": {
+                        "href": "/rundes/54490c41-1283-485e-9346-d0b2f9237472/bil"
+                    },
+                    "kusk": {
+                        "href": "/rundes/54490c41-1283-485e-9346-d0b2f9237472/kusk"
+                    }
+                }
+            },
+            {
+                "id": "2c9e950f-3abc-49e8-a55d-24c9e7a412aa",
+                "start": "2026-02-11T18:28:09.011622Z",
+                "stop": "2026-02-11T18:40:07.849634Z",
+                "baneType": "KORTESTE_VEIEN",
+                "tid": 718838,
+                "laup": null,
+                "_links": {
+                    "self": {
+                        "href": "/rundes/2c9e950f-3abc-49e8-a55d-24c9e7a412aa"
+                    },
+                    "runde": {
+                        "href": "/rundes/2c9e950f-3abc-49e8-a55d-24c9e7a412aa"
+                    },
+                    "bil": {
+                        "href": "/rundes/2c9e950f-3abc-49e8-a55d-24c9e7a412aa/bil"
+                    },
+                    "kusk": {
+                        "href": "/rundes/2c9e950f-3abc-49e8-a55d-24c9e7a412aa/kusk"
+                    }
+                }
+            },
+            {
+                "id": "248d0eaf-d75d-4ebc-922e-fd9c9480a261",
+                "start": "2026-02-11T18:26:32.729059Z",
+                "stop": "2026-02-11T18:28:08.975790Z",
+                "baneType": "KORTESTE_VEIEN",
+                "tid": 96246,
+                "laup": null,
+                "_links": {
+                    "self": {
+                        "href": "/rundes/248d0eaf-d75d-4ebc-922e-fd9c9480a261"
+                    },
+                    "runde": {
+                        "href": "/rundes/248d0eaf-d75d-4ebc-922e-fd9c9480a261"
+                    },
+                    "bil": {
+                        "href": "/rundes/248d0eaf-d75d-4ebc-922e-fd9c9480a261/bil"
+                    },
+                    "kusk": {
+                        "href": "/rundes/248d0eaf-d75d-4ebc-922e-fd9c9480a261/kusk"
+                    }
+                }
+            },
+            {
+                "id": "13594e0a-0e1f-4557-8a31-770db476e5c6",
+                "start": "2026-02-11T18:14:07.360640Z",
+                "stop": "2026-02-11T18:26:32.683135Z",
+                "baneType": "KORTESTE_VEIEN",
+                "tid": 745323,
+                "laup": null,
+                "_links": {
+                    "self": {
+                        "href": "/rundes/13594e0a-0e1f-4557-8a31-770db476e5c6"
+                    },
+                    "runde": {
+                        "href": "/rundes/13594e0a-0e1f-4557-8a31-770db476e5c6"
+                    },
+                    "bil": {
+                        "href": "/rundes/13594e0a-0e1f-4557-8a31-770db476e5c6/bil"
+                    },
+                    "kusk": {
+                        "href": "/rundes/13594e0a-0e1f-4557-8a31-770db476e5c6/kusk"
+                    }
+                }
+            }
+        ]
+    },
+    "_links": {
+        "first": {
+            "href": "/rundes/search/findByKusk_IdOrderByStartDesc?kuskId=ba4a35bf-a526-4a51-8b83-ebb4fe79d1fb&page=0&size=20"
+        },
+        "self": {
+            "href": "/rundes/search/findByKusk_IdOrderByStartDesc?kuskId=ba4a35bf-a526-4a51-8b83-ebb4fe79d1fb&page=0&size=20"
+        },
+        "next": {
+            "href": "/rundes/search/findByKusk_IdOrderByStartDesc?kuskId=ba4a35bf-a526-4a51-8b83-ebb4fe79d1fb&page=1&size=20"
+        },
+        "last": {
+            "href": "/rundes/search/findByKusk_IdOrderByStartDesc?kuskId=ba4a35bf-a526-4a51-8b83-ebb4fe79d1fb&page=2&size=20"
+        }
+    },
+    "page": {
+        "size": 20,
+        "totalElements": 45,
+        "totalPages": 3,
+        "number": 0
+    }
+}

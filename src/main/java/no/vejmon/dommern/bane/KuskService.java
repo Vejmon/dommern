@@ -5,6 +5,7 @@ import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class KuskService {
@@ -55,5 +56,8 @@ public class KuskService {
 
     public Kusk findByName(String name){
         return kuskRepository.findByName(name).orElseThrow();
+    }
+    public Kusk findById(UUID id){
+        return kuskRepository.findById(id).orElseThrow();
     }
 }

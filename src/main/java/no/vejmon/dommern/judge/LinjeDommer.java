@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Getter
 @Service
@@ -92,8 +93,22 @@ public class LinjeDommer {
         publisher.publishEvent(lydEvent);
     }
 
+    @EventListener
+    @Async
+    public void handleRefreshKusk(RefreshKusk refreshEvent){
+        Kusk refreshedKusk = kuskService.findById(refreshEvent.getKusk().getId());
+        Optional<Kusk> oldKusk = kusker.stream()
+                .filter(kusk -> kusk.getId().equals(refreshEvent.getKusk().getId()))
+                        .findFirst();
+        if (oldKusk.isEmpty())
+            return;
+        kusker.set(getKusker().indexOf(oldKusk.get()), refreshedKusk);
+        notifyKuskerChanged();
+    }
+
+
     private void notifyKuskerChanged() {
-        publisher.publishEvent(new OnKuskerChangedEvent(this, List.copyOf(kusker)));
+    publisher.publishEvent(new OnKuskerChangedEvent(this, List.copyOf(kusker)));
     }
 
 }

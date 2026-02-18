@@ -55,6 +55,10 @@ public class Kusk {
     @OneToOne
     private Runde personalBest;
 
+    public void declarePersonalBest(Runde runde){
+        this.personalBest = runde;
+    }
+
     public boolean setPersonalBest(Runde personalBest) {
         if (personalBest == null || personalBest.getTid() == null) return false;
         if (this.personalBest == null || (this.personalBest.getTid() > personalBest.getTid())){

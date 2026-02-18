@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type {Kusk} from '@/types/Kusk.ts';
 import {onMounted, onUnmounted, ref} from "vue";
+import {formatMs} from "@/utils/api";
 
 const evtSrc = new EventSource('/linje/sse');
 const kusks = ref<Kusk[]>([]);
@@ -20,16 +21,6 @@ onUnmounted(() => {
     evtSrc.close();
   }
 });
-
-const formatMs = (ms) => {
-  if (ms == null || ms === '') return '---';
-  const n = Number(ms);
-  if (!Number.isFinite(n)) return 'NaN';
-  const totalMs = Math.max(0, Math.floor(n));
-  const seconds = Math.floor(totalMs / 1000);
-  const remainderMs = totalMs % 1000;
-  return `${seconds}:${String(remainderMs).padStart(3, '0')}`;
-}
 
 const baneInitials = (bane: string) => {
   return bane.split("_").map(word => word.charAt(0).toUpperCase()).join("");

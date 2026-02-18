@@ -26,3 +26,13 @@ export const getData = async (url = '', size = 20) => {
             throw e;
         })
 }
+
+export const formatMs = (ms) => {
+    if (ms == null || ms === '') return '---';
+    const n = Number(ms);
+    if (!Number.isFinite(n)) return 'NaN';
+    const totalMs = Math.max(0, Math.floor(n));
+    const seconds = Math.floor(totalMs / 1000);
+    const remainderMs = totalMs % 1000;
+    return `${seconds}:${String(remainderMs).padStart(3, '0')}`;
+}
