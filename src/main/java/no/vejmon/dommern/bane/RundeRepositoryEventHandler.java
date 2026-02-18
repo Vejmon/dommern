@@ -8,6 +8,8 @@ import org.springframework.data.rest.core.annotation.HandleBeforeDelete;
 import org.springframework.data.rest.core.annotation.RepositoryEventHandler;
 import org.springframework.stereotype.Component;
 
+import java.util.Comparator;
+
 @Component
 @RepositoryEventHandler
 public class RundeRepositoryEventHandler {
@@ -27,8 +29,10 @@ public class RundeRepositoryEventHandler {
         if (kusk != null && kusk.getPersonalBest() != null
                 && kusk.getPersonalBest().getId().equals(runde.getId())) {
             kusk.getRunder().stream()
-                    .filter(r -> r.getTid() != null && r.getId() != kusk.getPersonalBest().getId())
-                    .min((r1, r2) -> Long.compare(r1.getTid(), r2.getTid()))
+                    .filter(r ->
+                            r.getTid() != null && !r.getId().equals(kusk.getPersonalBest().getId())
+                    )
+                    .min(Comparator.comparingLong(MinimalRunde::getTid))
                     .ifPresentOrElse(kusk::declarePersonalBest, () -> kusk.declarePersonalBest(null));
             kuskRepository.saveAndFlush(kusk);
         }
