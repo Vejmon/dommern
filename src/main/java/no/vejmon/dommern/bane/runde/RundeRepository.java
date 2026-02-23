@@ -1,5 +1,6 @@
-package no.vejmon.dommern.bane;
+package no.vejmon.dommern.bane.runde;
 
+import no.vejmon.dommern.bane.kusk.Kusk;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

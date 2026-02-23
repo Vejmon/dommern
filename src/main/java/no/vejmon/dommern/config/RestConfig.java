@@ -1,9 +1,9 @@
 package no.vejmon.dommern.config;
 
-import no.vejmon.dommern.bane.Bil;
-import no.vejmon.dommern.bane.Kusk;
-import no.vejmon.dommern.bane.Laup;
-import no.vejmon.dommern.bane.Runde;
+import no.vejmon.dommern.bane.bil.Bil;
+import no.vejmon.dommern.bane.kusk.Kusk;
+import no.vejmon.dommern.bane.laup.Laup;
+import no.vejmon.dommern.bane.runde.Runde;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;

@@ -1,9 +1,11 @@
-package no.vejmon.dommern.bane;
+package no.vejmon.dommern.bane.bil;
 
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.*;
+import no.vejmon.dommern.bane.kusk.Kusk;
+import no.vejmon.dommern.bane.runde.Runde;
 
 import java.util.List;
 import java.util.UUID;

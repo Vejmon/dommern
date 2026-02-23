@@ -1,5 +1,6 @@
-package no.vejmon.dommern.bane;
+package no.vejmon.dommern.bane.kusk;
 
+import no.vejmon.dommern.bane.runde.Runde;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.rest.webmvc.support.RepositoryEntityLinks;
 import org.springframework.hateoas.EntityModel;

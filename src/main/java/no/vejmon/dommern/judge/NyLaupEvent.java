@@ -1,7 +1,7 @@
 package no.vejmon.dommern.judge;
 
 import lombok.Getter;
-import no.vejmon.dommern.bane.Laup;
+import no.vejmon.dommern.bane.laup.Laup;
 import org.springframework.context.ApplicationEvent;
 
 @Getter

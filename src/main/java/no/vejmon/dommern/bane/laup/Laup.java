@@ -1,10 +1,12 @@
-package no.vejmon.dommern.bane;
+package no.vejmon.dommern.bane.laup;
 
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
+import no.vejmon.dommern.bane.kusk.Kusk;
+import no.vejmon.dommern.bane.runde.Runde;
 
 import java.time.Instant;
 import java.util.List;

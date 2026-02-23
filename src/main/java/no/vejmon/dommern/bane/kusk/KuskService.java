@@ -1,5 +1,8 @@
-package no.vejmon.dommern.bane;
+package no.vejmon.dommern.bane.kusk;
 
+import no.vejmon.dommern.bane.BaneType;
+import no.vejmon.dommern.bane.runde.Runde;
+import no.vejmon.dommern.bane.runde.RundeRepository;
 import no.vejmon.dommern.judge.NyKuskEvent;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;

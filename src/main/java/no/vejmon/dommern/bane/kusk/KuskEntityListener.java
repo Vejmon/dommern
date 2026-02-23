@@ -1,4 +1,4 @@
-package no.vejmon.dommern.bane;
+package no.vejmon.dommern.bane.kusk;
 
 import jakarta.persistence.PostPersist;
 import no.vejmon.dommern.judge.NyKuskEvent;

@@ -1,6 +1,8 @@
-package no.vejmon.dommern.bane;
+package no.vejmon.dommern.bane.runde;
 
 import jakarta.transaction.Transactional;
+import no.vejmon.dommern.bane.kusk.Kusk;
+import no.vejmon.dommern.bane.kusk.KuskRepository;
 import no.vejmon.dommern.judge.RefreshKusk;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.data.rest.core.annotation.HandleAfterDelete;

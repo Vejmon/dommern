@@ -1,9 +1,9 @@
 package no.vejmon.dommern.judge;
 
 import no.vejmon.dommern.bane.BaneType;
-import no.vejmon.dommern.bane.Kusk;
-import no.vejmon.dommern.bane.KuskService;
-import no.vejmon.dommern.bane.MinimalRunde;
+import no.vejmon.dommern.bane.kusk.Kusk;
+import no.vejmon.dommern.bane.kusk.KuskService;
+import no.vejmon.dommern.bane.runde.MinimalRunde;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;

@@ -1,4 +1,4 @@
-package no.vejmon.dommern.bane;
+package no.vejmon.dommern.bane.bil;
 
 import jakarta.mail.MessagingException;
 import lombok.extern.slf4j.Slf4j;

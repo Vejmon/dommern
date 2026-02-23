@@ -3,7 +3,7 @@ package no.vejmon.dommern.config;
 import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
 import lombok.extern.slf4j.Slf4j;
-import no.vejmon.dommern.bane.Bil;
+import no.vejmon.dommern.bane.bil.Bil;
 import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Aspect;
 import org.springframework.beans.factory.annotation.Value;

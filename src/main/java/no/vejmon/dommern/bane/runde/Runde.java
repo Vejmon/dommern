@@ -1,8 +1,12 @@
-package no.vejmon.dommern.bane;
+package no.vejmon.dommern.bane.runde;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
+import no.vejmon.dommern.bane.BaneType;
+import no.vejmon.dommern.bane.bil.Bil;
+import no.vejmon.dommern.bane.kusk.Kusk;
+import no.vejmon.dommern.bane.laup.Laup;
 
 @ToString
 @RequiredArgsConstructor

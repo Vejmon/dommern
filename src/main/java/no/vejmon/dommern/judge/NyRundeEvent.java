@@ -1,7 +1,7 @@
 package no.vejmon.dommern.judge;
 
 import lombok.Getter;
-import no.vejmon.dommern.bane.MinimalRunde;
+import no.vejmon.dommern.bane.runde.MinimalRunde;
 import org.springframework.context.ApplicationEvent;
 
 @Getter

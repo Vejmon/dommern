@@ -1,6 +1,7 @@
-package no.vejmon.dommern.bane;
+package no.vejmon.dommern.bane.kusk;
 
 
+import no.vejmon.dommern.bane.BaneType;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.rest.core.annotation.RestResource;
 import org.springframework.stereotype.Repository;

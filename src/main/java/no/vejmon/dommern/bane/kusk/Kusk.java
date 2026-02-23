@@ -1,9 +1,13 @@
-package no.vejmon.dommern.bane;
+package no.vejmon.dommern.bane.kusk;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import lombok.*;
+import no.vejmon.dommern.bane.BaneType;
+import no.vejmon.dommern.bane.bil.Bil;
+import no.vejmon.dommern.bane.laup.Laup;
+import no.vejmon.dommern.bane.runde.Runde;
 
 import java.util.ArrayList;
 import java.util.List;

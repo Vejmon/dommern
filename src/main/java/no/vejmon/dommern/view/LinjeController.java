@@ -1,7 +1,7 @@
 package no.vejmon.dommern.view;
 
 
-import no.vejmon.dommern.bane.Kusk;
+import no.vejmon.dommern.bane.kusk.Kusk;
 import no.vejmon.dommern.judge.LinjeDommer;
 import no.vejmon.dommern.judge.OnKuskerChangedEvent;
 import org.springframework.beans.factory.annotation.Autowired;

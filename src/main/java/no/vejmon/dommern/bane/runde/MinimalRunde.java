@@ -1,7 +1,8 @@
-package no.vejmon.dommern.bane;
+package no.vejmon.dommern.bane.runde;
 
 import jakarta.persistence.*;
 import lombok.*;
+import no.vejmon.dommern.bane.BaneType;
 
 import java.time.Instant;
 import java.util.List;
