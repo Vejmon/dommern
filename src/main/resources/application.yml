@@ -39,7 +39,7 @@ spring:
     ollama:
       chat:
         options:
-          model: lfm2.5-thinking
+          model: smollm
     model:
       chat: ollama
 
