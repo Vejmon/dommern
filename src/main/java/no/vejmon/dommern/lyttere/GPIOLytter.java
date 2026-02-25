@@ -51,8 +51,9 @@ public class GPIOLytter implements Lytter {
             log.info("Created button: {}", button.getName());
 
             button.addListener(event -> {
-                if (event.state() == DigitalState.LOW){
+                if (event.state() == DigitalState.HIGH){
                     MinimalRunde runde = new MinimalRunde(baneType);
+                    log.info("GPIO event detected on pin {}: {}", button.getAddress(), event.state());
                     publisher.publishEvent(new NyRundeEvent(this, runde));
                 }
             });
