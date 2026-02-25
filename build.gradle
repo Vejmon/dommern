@@ -34,6 +34,7 @@ dependencies {
     implementation 'com.github.kwhat:jnativehook:2.2.2'
     implementation 'uk.org.okapibarcode:okapibarcode:0.5.2'
     implementation 'javazoom:jlayer:1.0.1'
+    implementation 'org.springframework.ai:spring-ai-ollama-spring-boot-starter:1.0.0-M5'
 
     compileOnly 'org.projectlombok:lombok'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'

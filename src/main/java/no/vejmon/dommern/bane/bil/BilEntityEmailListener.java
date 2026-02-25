@@ -17,13 +17,13 @@ import static no.vejmon.dommern.config.BarcodeGen.toByteArrayResource;
 @ConditionalOnExpression(
         "T(org.springframework.util.StringUtils).hasText('${spring.mail.username:}')"
 )
-public class BilEntityListener extends AbstractRepositoryEventListener<Bil> {
+public class BilEntityEmailListener extends AbstractRepositoryEventListener<Bil> {
 
     private final EmailConfig emailConfig;
     private final BarcodeGen barcodeGen;
 
-    public BilEntityListener(EmailConfig emailConfig,
-                             BarcodeGen barcodeGen) {
+    public BilEntityEmailListener(EmailConfig emailConfig,
+                                  BarcodeGen barcodeGen) {
         this.emailConfig = emailConfig;
         this.barcodeGen = barcodeGen;
     }
