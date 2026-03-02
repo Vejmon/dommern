@@ -1,6 +1,6 @@
 <script setup lang="ts">
 
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, watch } from 'vue';
 import { useRoute } from 'vue-router';
 import RundePage from "@/components/RundePage.vue";
 
@@ -23,16 +23,18 @@ onMounted(() => {
   fetchKuskData(id);
 });
 
+watch(
+    () => route.params.id,
+    (id) => {
+      if (id != null) fetchKuskData(id);
+    }
+);
 
 </script>
 
 <template>
   <div class="flex flex-col gap-4">
-
-  <RundePage v-if="rundePage" :rundes="rundePage"/>
-    <div>
-        KuskView
-    </div>
+    <RundePage v-if="rundePage" :rundes="rundePage"/>
   </div>
 
 </template>

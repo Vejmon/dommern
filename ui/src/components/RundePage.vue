@@ -2,7 +2,7 @@
 
 
 import {formatMs} from "@/utils/api.js";
-import {ref} from "vue";
+import { toRef } from "vue";
 
 const props = defineProps({
   rundes: {
@@ -11,18 +11,19 @@ const props = defineProps({
   }
 });
 
-const rundePage = ref(props.rundes);
+const rundePage = toRef(props, "rundes");
 
 
-const deleteRunde = async (id) => {
+const deleteRunde = async (runde) => {
   try {
-    const response = await fetch(`/rundes/${id}`, {
+    const response = await fetch(runde._links.self.href, {
       method: 'DELETE'
     });
     if (!response.ok) {
       throw new Error('Failed to delete runde');
     }
-    rundePage.value._embedded.rundes = rundePage.value._embedded.rundes.filter(r => r.id !== id);
+
+    rundePage.value._embedded.rundes = rundePage.value._embedded.rundes.filter(r => r.id !== runde.id);
   } catch (error) {
     console.error('Error deleting runde:', error);
   }
@@ -37,7 +38,7 @@ const deleteRunde = async (id) => {
       <div>
         tid: {{formatMs(runde.tid)}}
       </div>
-        <button class="ring-2 ring-round hover:cursor-pointer" @click.prevent="deleteRunde(runde.id)">X</button>
+        <button class="ring-2 ring-round hover:cursor-pointer" @click.prevent="deleteRunde(runde)">X</button>
     </div>
   </div>
 </div>
