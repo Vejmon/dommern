@@ -30,7 +30,6 @@ const canPrev = computed(() => !!linkHref("prev") && !loading.value);
 const canNext = computed(() => !!linkHref("next") && !loading.value);
 
 const fetchByLink = async (rel) => {
-  console.log(canPrev.value)
   const href = linkHref(rel);
   if (!href) return;
 
