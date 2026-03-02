@@ -39,7 +39,13 @@ export const handlers = [
   }),
   http.get('/rundes/search/findByKusk_IdOrderByStartDesc', async () => {
     return HttpResponse.json(runder_page);
-  })
+  }),
+  http.delete('/kusks/:id', async ({ params }) => {
+    return HttpResponse.json();
+  }),
+  http.delete('/rundes/:id', async ({ params }) => {
+    return HttpResponse.json();
+  }),
 ]
 
 
