@@ -27,7 +27,9 @@ repositories {
 }
 
 dependencies {
+    implementation platform(libs.spring.ai.bom)
     implementation libs.bundles.spring.starters
+    implementation libs.spring.ai.openai.starter
     implementation libs.bundles.db
     implementation libs.bundles.pi4j
 
