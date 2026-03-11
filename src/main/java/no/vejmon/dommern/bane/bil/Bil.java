@@ -16,6 +16,7 @@ import java.util.UUID;
 @RequiredArgsConstructor
 @NoArgsConstructor
 @Entity
+@EntityListeners({BilEntityListener.class})
 public class Bil {
 
     @Id
