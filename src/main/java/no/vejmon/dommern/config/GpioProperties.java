@@ -5,7 +5,6 @@ import lombok.Setter;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
-import java.awt.event.KeyEvent;
 import java.util.List;
 
 @Configuration
@@ -13,9 +12,5 @@ import java.util.List;
 @Getter
 @Setter
 public class GpioProperties {
-    private List<Integer> pins = List.of(
-            KeyEvent.VK_Y,
-            KeyEvent.VK_I,
-            KeyEvent.VK_U,
-            KeyEvent.VK_O);
+private List<Integer> pins = List.of(4, 17, 24, 25);
 }
