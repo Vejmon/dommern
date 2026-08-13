@@ -34,7 +34,16 @@ spring:
           auth: true
           starttls:
             enable: true
-            required: true
+            required: true,
+  ai:
+    ollama:
+      chat:
+        options:
+          model: alibayram/smollm3
+    model:
+      chat: ollama
+
+
 
 logging:
   file:
@@ -54,3 +63,6 @@ spring:
     gpio:
       pins: [ 4, 17, 24, 25 ] # BCM pin identifiers
       pull: down # off, up or down
+  ai:
+    model:
+      chat: none

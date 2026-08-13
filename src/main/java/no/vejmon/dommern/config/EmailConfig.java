@@ -7,7 +7,6 @@ import no.vejmon.dommern.bane.bil.Bil;
 import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Aspect;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnExpression;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.InputStreamSource;
 import org.springframework.mail.SimpleMailMessage;
@@ -21,9 +20,6 @@ import java.io.StringWriter;
 @Slf4j
 @Aspect
 @Configuration
-@ConditionalOnExpression(
-        "T(org.springframework.util.StringUtils).hasText('${spring.mail.username:}')"
-)
 public class EmailConfig {
 
     @Value("${spring.mail.username}")
@@ -40,7 +36,7 @@ public class EmailConfig {
             throwing = "ex"
     )
     private void sendThrownEmail(Throwable ex){
-        if (counter > 15) return;
+        if (counter > 15 || mail == null) return;
 
         SimpleMailMessage message = new SimpleMailMessage();
         message.setFrom(mail);

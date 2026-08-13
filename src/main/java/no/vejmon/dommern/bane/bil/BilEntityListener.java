@@ -1,46 +1,35 @@
 package no.vejmon.dommern.bane.bil;
 
-import jakarta.mail.MessagingException;
+import jakarta.persistence.PostPersist;
 import lombok.extern.slf4j.Slf4j;
-import no.vejmon.dommern.config.BarcodeGen;
-import no.vejmon.dommern.config.EmailConfig;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnExpression;
-import org.springframework.data.rest.core.event.AbstractRepositoryEventListener;
-import org.springframework.stereotype.Component;
-
-import java.io.IOException;
-
-import static no.vejmon.dommern.config.BarcodeGen.toByteArrayResource;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.ApplicationEventPublisher;
+import org.springframework.context.annotation.Configuration;
 
 @Slf4j
-@Component
-@ConditionalOnExpression(
-        "T(org.springframework.util.StringUtils).hasText('${spring.mail.username:}')"
-)
-public class BilEntityListener extends AbstractRepositoryEventListener<Bil> {
+@Configuration
+public class BilEntityListener {
 
-    private final EmailConfig emailConfig;
-    private final BarcodeGen barcodeGen;
+    @Value("#{ '${spring.ai.model.chat:}' == 'ollama' }")
+    private Boolean ollamaEnabled;
+    @Value("#{ T(org.springframework.util.StringUtils).hasText('${spring.mail.username:}') }")
+    private Boolean emailEnabled;
 
-    public BilEntityListener(EmailConfig emailConfig,
-                             BarcodeGen barcodeGen) {
-        this.emailConfig = emailConfig;
-        this.barcodeGen = barcodeGen;
+    private final ApplicationEventPublisher publisher;
+
+    public BilEntityListener(ApplicationEventPublisher publisher) {
+        this.publisher = publisher;
     }
 
-    @Override
+    @PostPersist
     protected void onAfterCreate(Bil bil) {
-        String email = bil.getKusk().getEmail();
-        if (email == null || email.isBlank() || bil.getId() == null) {
-            log.info("Den nye bilen '{}' har ingen epost knyttet til kusken, eller bil id er null, sender ikke epost", bil.getName());
-            return;
-        }
-        log.info("Ny bil '{}' er registrert for kusk '{}', sender epost til {}", bil.getId(), bil.getKusk().getName(), email);
-        try {
-            emailConfig.sendNewBilImage(bil, toByteArrayResource(barcodeGen.qrCode(bil.getId().toString(), bil.getInitials())));
-        } catch (MessagingException|IOException e) {
-            log.error("Kunne ikke sende epost for bil id '{}'", bil.getId(), e);
-        }
+            if (emailEnabled){
+                publisher.publishEvent(new BilRunEmailEvent(this, bil));
+            }
+            if (ollamaEnabled){
+                publisher.publishEvent(new BilRunAiEvent(this, bil));
+            }
+
     }
 
 }
