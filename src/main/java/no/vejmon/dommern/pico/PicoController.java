@@ -21,13 +21,13 @@ public class PicoController {
     }
 
     @GetMapping("/stop")
-    public @ResponseBody String stop() throws IOException {
+    public @ResponseBody String stop() throws IOException, InterruptedException {
         picoService.stop();
         return "stopping";
     }
 
     @GetMapping("/start")
-    public @ResponseBody String start() throws IOException {
+    public @ResponseBody String start() throws IOException, InterruptedException {
         picoService.start();
         return "starting";
     }

@@ -4,9 +4,7 @@ import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,54 +20,25 @@ public class PicoService {
         picotoolForce = new ArrayList<>(List.of(picotoolBin, "reboot", "-f"));
     }
 
-    public void start() throws IOException {
+    public void start() throws IOException, InterruptedException {
         ArrayList<String> command = new ArrayList<>(picotoolForce);
-        command.addLast("-a");
-
+        command.addLast("-a"); // a for application mode
         ProcessBuilder pb = new ProcessBuilder(command);
-        pb.redirectErrorStream(false); // Merge stderr into stdout
-        Process process = pb.start();
-
-        try (BufferedReader reader = new BufferedReader(
-                new InputStreamReader(process.getInputStream()))) {
-            String line;
-            while ((line = reader.readLine()) != null) {
-                System.out.println(line);
-            }
-        }
-
-        try {
-            int exitCode = process.waitFor();
-            System.out.println("Exit code: " + exitCode);
-        }
-        catch (InterruptedException e) {
-            throw new RuntimeException(e);
+        Process p = pb.start();
+        int exit = p.waitFor();
+        if (exit != 0) {
+            throw new IOException("picotool stop failed: " + exit);
         }
     }
 
-    public void stop() throws IOException {
-
+    public void stop() throws IOException, InterruptedException {
         ArrayList<String> command = new ArrayList<>(picotoolForce);
-        command.addLast("-u");
-
+        command.addLast("-u"); // u for USB to BOOTSEL mode
         ProcessBuilder pb = new ProcessBuilder(command);
-        pb.redirectErrorStream(true); // Merge stderr into stdout
-        Process process = pb.start();
-
-        try (BufferedReader reader = new BufferedReader(
-                new InputStreamReader(process.getInputStream()))) {
-            String line;
-            while ((line = reader.readLine()) != null) {
-                System.out.println(line);
-            }
-        }
-
-        try {
-            int exitCode = process.waitFor();
-            System.out.println("Exit code: " + exitCode);
-        }
-        catch (InterruptedException e) {
-            throw new RuntimeException(e);
+        Process p = pb.start();
+        int exit = p.waitFor();
+        if (exit != 0) {
+            throw new IOException("picotool stop failed: " + exit);
         }
     }
 }
