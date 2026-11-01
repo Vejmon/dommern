@@ -15,6 +15,17 @@ services:
       db:
         condition: service_healthy
 
+  pico:
+    <<: *baseapp
+    privileged: true
+    container_name: pico
+    build: .
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      SPRING_PROFILES_ACTIVE: pico
+
   dommern:
     <<: *baseapp
     pull_policy: always

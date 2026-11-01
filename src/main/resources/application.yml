@@ -46,10 +46,20 @@ logging:
       clean-history-on-start: true
   level:
     root: INFO
+pico:
+  picotool: /home/linuxbrew/.linuxbrew/bin/picotool
 
 ---
 spring:
-  config.activate.on-profile: production
+  config.activate.on-profile: pico
+
+pico:
+  picotool: /usr/local/bin/picotool/picotool
+
+---
+
+spring:
+  config.activate.on-profile: pi
   pi4j:
     gpio:
       pins: [ 4, 17, 24, 25 ] # BCM pin identifiers

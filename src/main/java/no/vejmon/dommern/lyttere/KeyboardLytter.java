@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Map;
 
 
-@Profile("local")
+@Profile("local") // used when running locally, using keyboard to emulate racecars
 @Component
 @Slf4j
 public class KeyboardLytter implements Lytter {

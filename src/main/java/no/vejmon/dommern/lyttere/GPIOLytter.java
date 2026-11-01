@@ -13,6 +13,7 @@ import no.vejmon.dommern.bane.runde.MinimalRunde;
 import no.vejmon.dommern.judge.NyRundeEvent;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationEventPublisher;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -20,6 +21,7 @@ import java.util.UUID;
 
 @Component
 @Slf4j
+@Profile("pi") // used when running directly on a raspberry pi with gpio pins
 public class GPIOLytter implements Lytter {
 
     private final ApplicationEventPublisher publisher;
