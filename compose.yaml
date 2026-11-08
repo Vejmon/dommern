@@ -25,6 +25,8 @@ services:
         condition: service_healthy
     environment:
       SPRING_PROFILES_ACTIVE: pico
+    volumes:
+      - /dev/bus/usb:/dev/bus/usb
 
   dommern:
     <<: *baseapp

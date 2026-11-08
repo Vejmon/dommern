@@ -23,8 +23,10 @@ public class PicoService {
     public void start() throws IOException, InterruptedException {
         ArrayList<String> command = new ArrayList<>(picotoolForce);
         command.addLast("-a"); // a for application mode
-        ProcessBuilder pb = new ProcessBuilder(command);
-        Process p = pb.start();
+        Process p = new ProcessBuilder(command)
+                .inheritIO()
+                .start();
+
         int exit = p.waitFor();
         if (exit != 0) {
             throw new IOException("picotool stop failed: " + exit);
@@ -34,8 +36,9 @@ public class PicoService {
     public void stop() throws IOException, InterruptedException {
         ArrayList<String> command = new ArrayList<>(picotoolForce);
         command.addLast("-u"); // u for USB to BOOTSEL mode
-        ProcessBuilder pb = new ProcessBuilder(command);
-        Process p = pb.start();
+        Process p = new ProcessBuilder(command)
+                .inheritIO()
+                .start();
         int exit = p.waitFor();
         if (exit != 0) {
             throw new IOException("picotool stop failed: " + exit);

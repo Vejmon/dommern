@@ -54,7 +54,7 @@ spring:
   config.activate.on-profile: pico
 
 pico:
-  picotool: /usr/local/bin/picotool/picotool
+  picotool: /usr/local/bin/picotool
 
 ---
 
