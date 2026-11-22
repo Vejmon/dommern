@@ -34,7 +34,12 @@ public class PicoController {
     }
 
     @GetMapping("/clock")
-    public @ResponseBody ResponseEntity<PicoService.ClockSetResponse> clock() {
+    public @ResponseBody ResponseEntity<PicoService.ClockSetResponse> clock() throws IOException, InterruptedException {
         return ResponseEntity.ok(picoService.setClock());
+    }
+
+    @GetMapping("/listen")
+    public @ResponseBody void listen() {
+        picoService.listen();
     }
 }

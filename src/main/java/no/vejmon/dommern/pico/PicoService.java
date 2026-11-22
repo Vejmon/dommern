@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -49,22 +48,43 @@ public class PicoService {
         }
     }
 
-    public ClockSetResponse setClock(){
+    public void listen(){
         SerialPort port = findPicoPort();
+        port.setBaudRate(115200);          // Pico default
+        port.setNumDataBits(8);
+        port.setNumStopBits(SerialPort.ONE_STOP_BIT);
+        port.setParity(SerialPort.NO_PARITY);
         port.openPort();
 
-        long epoch = System.currentTimeMillis();
-        byte[] clockBytes = "SET%s".formatted(epoch).getBytes(StandardCharsets.UTF_8);
-        port.writeBytes(clockBytes, clockBytes.length);
-
-
-        byte[] buf = new byte[64];
-        port.readBytes(buf, 1000);
-        log.info("picoResponse: {}", new String(buf).trim());
-
+        // Read continuously
+        byte[] buffer = new byte[1024];
+        while (port.isOpen()) {
+            int available = port.bytesAvailable();
+            if (available > 0) {
+                int read = port.readBytes(buffer, buffer.length);
+                System.out.print(new String(buffer, 0, read));
+            }
+            try { Thread.sleep(10); } catch (InterruptedException ignored) {}
+        }
         port.closePort();
+    }
 
-        return new ClockSetResponse("ok", epoch);
+    public ClockSetResponse setClock() throws IOException, InterruptedException {
+        long epoch = System.currentTimeMillis();
+        ArrayList<String> picotoolSetClock = new ArrayList<>(List.of(
+                picotoolBin, "config", "-s", "current_epoch_millis" , "%d".formatted(epoch)));
+        ArrayList<String> command = new ArrayList<>(picotoolSetClock);
+        command.addLast("-a"); // a for application mode
+
+        Process p = new ProcessBuilder(command)
+                .inheritIO()
+                .start();
+
+        int exit = p.waitFor();
+        if (exit != 0) {
+                throw new IOException("picotool stop failed: " + exit);
+        }
+        return new ClockSetResponse("clock_set", epoch);
     }
 
     SerialPort findPicoPort() {
