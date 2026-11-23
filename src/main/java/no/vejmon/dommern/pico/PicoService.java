@@ -24,6 +24,7 @@ public class PicoService {
     }
 
     public void start() throws IOException, InterruptedException {
+        setClock();
         ArrayList<String> command = new ArrayList<>(picotoolForce);
         command.addLast("-a"); // a for application mode
         Process p = new ProcessBuilder(command)
@@ -69,14 +70,12 @@ public class PicoService {
         port.closePort();
     }
 
-    public ClockSetResponse setClock() throws IOException, InterruptedException {
+    public void setClock() throws IOException, InterruptedException {
         long epoch = System.currentTimeMillis();
         ArrayList<String> picotoolSetClock = new ArrayList<>(List.of(
                 picotoolBin, "config", "-s", "current_epoch_millis" , "%d".formatted(epoch)));
-        ArrayList<String> command = new ArrayList<>(picotoolSetClock);
-        command.addLast("-a"); // a for application mode
 
-        Process p = new ProcessBuilder(command)
+        Process p = new ProcessBuilder(picotoolSetClock)
                 .inheritIO()
                 .start();
 
@@ -84,7 +83,6 @@ public class PicoService {
         if (exit != 0) {
                 throw new IOException("picotool stop failed: " + exit);
         }
-        return new ClockSetResponse("clock_set", epoch);
     }
 
     SerialPort findPicoPort() {
@@ -108,5 +106,4 @@ public class PicoService {
         throw new RuntimeException("No Pico found, list of ports empty.");
     }
 
-    public record ClockSetResponse(String status, Long currentmilis){}
 }
